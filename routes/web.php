@@ -51,7 +51,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('agrupacionespoliticas/{agrupacionespolitica}/edit', 'AgrupacionespoliticaController@edit')->name('agrupacionespoliticas.edit')
         ->middleware('can:agrupacionespoliticas.edit');
 
-    //Users
+    //Userssssssssssssssssss
             
     Route::get('users', 'UserController@index')->name('users.index')
         ->middleware('can:users.index');
