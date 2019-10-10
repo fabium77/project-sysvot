@@ -10,7 +10,8 @@
                 </div>
 
                 <div class="card-body">
-                   
+ 
+                    @include('agrupacionespoliticas.fragment.error')      
                     {!! Form::open(['route' => 'agrupacionespoliticas.store']) !!}
 
                         @include('agrupacionespoliticas.partials.form')

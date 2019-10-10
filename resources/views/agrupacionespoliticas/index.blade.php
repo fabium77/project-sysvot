@@ -15,6 +15,8 @@
                     @endcan
                 </div>
 
+                @include('agrupacionespoliticas.fragment.error')               
+
                 <div class="card-body">
 
                     <table class="table table-striped table-hover">

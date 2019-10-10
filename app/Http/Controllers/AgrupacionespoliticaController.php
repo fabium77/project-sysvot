@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Agrupacionespolitica;
 use Illuminate\Http\Request;
+use App\Http\Requests\AgrupacionespoliticaRequest;
 
 class AgrupacionespoliticaController extends Controller
 {
@@ -35,11 +36,11 @@ class AgrupacionespoliticaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AgrupacionespoliticaRequest $AgrupacionespoliticaRequest)
     {
-        $agrupacionespolitica = Agrupacionespolitica::create($request->all());
+        $agrupacionespolitica = Agrupacionespolitica::create($AgrupacionespoliticaRequest->all());
         return redirect()->route('agrupacionespoliticas.edit', $agrupacionespolitica->idAgrupacionesPoliticas)
-            ->with('info', 'Producto guardado con exito');
+            ->with('info', 'Agrupacion Politica guardado con exito');
     }
 
     /**
@@ -73,12 +74,12 @@ class AgrupacionespoliticaController extends Controller
      * @param  \App\Agrupacionespolitica  $agrupacionespolitica
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Agrupacionespolitica $agrupacionespolitica)
+    public function update(AgrupacionespoliticaRequest $AgrupacionespoliticaRequest, Agrupacionespolitica $agrupacionespolitica)
     {
-        $agrupacionespolitica->update($request->all());
+        $agrupacionespolitica->update($AgrupacionespoliticaRequest->all());
 
         return redirect()->route('agrupacionespoliticas.edit', $agrupacionespolitica->idAgrupacionesPoliticas)
-        ->with('info', 'Producto actualizado con exito');
+        ->with('info', 'Agrupacion Politica actualizado con exito');
     }
 
     /**

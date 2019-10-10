@@ -10,7 +10,9 @@
                 </div>
 
                 <div class="card-body">
-                   
+
+                     @include('agrupacionespoliticas.fragment.error')
+
                     {!! Form::model($agrupacionespolitica, ['route' => ['agrupacionespoliticas.update', $agrupacionespolitica->idAgrupacionesPoliticas],
                     'method' => 'PUT']) !!}
 
