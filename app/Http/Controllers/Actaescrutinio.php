@@ -76,8 +76,12 @@ class Actaescrutinio extends Controller
 
 
         return \Response::json([
-            'inscriVotar' => $inscriVotar,
+            'nombreTipoComicio' => $nombreTipoComicio,
+            'nombreDistricto' => $nombreDistricto,
+            'NombreEscuela' => $NombreEscuela,
+            'nombreCircuito' => $nombreCircuito,
             'nombreSeccion' => $nombreSeccion,
+            'inscriVotar' => $inscriVotar
         ]);
 
     }
