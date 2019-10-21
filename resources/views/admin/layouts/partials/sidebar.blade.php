@@ -80,7 +80,7 @@
                         @endcan
 
                         <li>
-                            <a href="listas.html" class="waves-effect">
+                            <a href="{{ url('listainternas') }}" class="waves-effect">
                                 Listas
                             </a>
                         </li>

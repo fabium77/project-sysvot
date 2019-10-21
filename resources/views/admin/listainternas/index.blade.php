@@ -31,7 +31,7 @@
             </div>     
             {{-- end page title  --}}
 
-            @include('admin.agrupacionespoliticas.fragment.error')
+            @include('admin.listainternas.fragment.error')
 
             @if(session('info'))
             <div class="alert alert-success">
@@ -48,7 +48,7 @@
                         <div class="row">
                             <div class="col-lg-4">
                                 <div class="text-lg-left mb-3 mt-3 mt-lg-0">
-                                    @can('agrupacionespoliticas.create')
+                                    @can('listainternas.create')
                                     <a href="#custom-modal" class="btn btn-success waves-effect waves-light" data-animation="fadein" data-plugin="custommodal" data-overlayColor="#38414a">
                                         <i class="mdi mdi-plus-circle mr-1"></i> 
                                         Agregar Nuevo
@@ -64,39 +64,43 @@
                                 <th class="font-weight-medium">ID</th>
                                 <th class="font-weight-medium">Nombre</th>
                                 <th class="font-weight-medium">Número</th>
+                                <th class="font-weight-medium">Letra</th>
                                 <th class="font-weight-medium">Acciones</th>
                             </tr>
                             </thead>
                             <tbody class="font-14">
-                                @foreach($agrupacionespoliticas as $agrupacionpolitica)
+                                @foreach($listainternas as $listainterna)
                                 <tr>
                                     <td>
-                                        {{ $agrupacionpolitica->idAgrupacionesPoliticas }}
+                                        {{ $listainterna->idListaInterna }}
                                     </td>
                                     <td>
-                                        @can('agrupacionespoliticas.show')
-                                        <a href="{{ route('agrupacionespoliticas.show', $agrupacionpolitica->idAgrupacionesPoliticas) }}">
-                                            {{ $agrupacionpolitica->nombre }}
+                                        @can('listainternas.show')
+                                        <a href="{{ route('listainternas.show', $listainterna->idListaInterna) }}">
+                                            {{ $listainterna->nombre }}
                                         </a>
                                         @endcan
                                     </td>
                                     <td>
-                                        {{ $agrupacionpolitica->numero }}
+                                        {{ $listainterna->numero }}
                                     </td>
+                                    <td>
+                                            {{ $listainterna->letra }}
+                                        </td>
                                     <td>
                                         <div class="btn-group dropdown">
                                             <a href="javascript: void(0);" class="dropdown-toggle arrow-none btn btn-light btn-sm" data-toggle="dropdown" aria-expanded="false">
                                                 <i class="mdi mdi-dots-horizontal"></i>
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-right">
-                                                @can('agrupacionespoliticas.edit')
-                                                <a class="dropdown-item" href="{{ route('agrupacionespoliticas.edit', $agrupacionpolitica->idAgrupacionesPoliticas) }}">
+                                                @can('listainternas.edit')
+                                                <a class="dropdown-item" href="{{ route('listainternas.edit', $listainterna->idListaInterna) }}">
                                                     <i class="mdi mdi-pencil mr-2 text-muted font-18 vertical-middle"></i>
                                                     Editar
                                                 </a>
                                                 @endcan
-                                                @can('agrupacionespoliticas.destroy')
-                                                {!! Form::open(['route' => ['agrupacionespoliticas.destroy', $agrupacionpolitica->idAgrupacionesPoliticas],
+                                                @can('listainternas.destroy')
+                                                {!! Form::open(['route' => ['listainternas.destroy', $listainterna->idListaInterna],
                                                 'method' =>'DELETE']) !!}
                                                     <button class="dropdown-item">
                                                         <i class="mdi mdi-delete mr-2 text-muted font-18 vertical-middle"></i>
@@ -125,9 +129,9 @@
                 </button>
                 <h4 class="custom-modal-title">Agregar Agrupación Política</h4>
                 <div class="custom-modal-text text-left">
-                    {!! Form::open(['route' => 'agrupacionespoliticas.store']) !!}
+                    {!! Form::open(['route' => 'listainternas.store']) !!}
                         @csrf
-                        @include('admin.agrupacionespoliticas.partials.form')
+                        @include('admin.listainternas.partials.form')
                     {!! Form::close() !!}
                 </div>
             </div>

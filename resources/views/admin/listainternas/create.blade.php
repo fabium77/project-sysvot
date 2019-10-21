@@ -6,15 +6,14 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    Agrupacion Politica
+                    Role
                 </div>
 
                 <div class="card-body">
- 
-                    @include('admin.agrupacionespoliticas.fragment.error')      
-                    {!! Form::open(['route' => 'agrupacionespoliticas.store']) !!}
+                   
+                    {!! Form::open(['route' => 'roles.store']) !!}
 
-                        @include('admin.agrupacionespoliticas.partials.form')
+                        @include('roles.partials.form')
 
                     {!! Form::close() !!}
                 
