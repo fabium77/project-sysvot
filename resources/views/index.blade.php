@@ -10,7 +10,6 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         {{-- App favicon --}}
         <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}">
-
         {{-- App css --}}
         <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('css/icons.min.css') }}" rel="stylesheet" type="text/css" />
@@ -43,81 +42,7 @@
                     </div>     
                     {{-- end page title --}}
 
-                    {{-- Widgets --}}
-                    <div class="row">
-                        <div class="col-xl-6 col-md-6">
-                            <div class="card-box">
-                                <!-- <h4 class="header-title mt-0 mb-4">Búsqueda Avanzada</h4> -->
-                                <form action="">
-                                    <div class="form-row">
-                                        <div class="form-group col-md-4">
-                                            <select class="selectpicker" data-live-search="true" data-style="btn-light">
-                                                <option title="Circuito">San Isidro</option>
-                                                <option title="Circuito">Villa Dolores</option>
-                                                <option title="Circuito">Sumalao</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group col-md-4">
-                                            <select class="selectpicker" data-live-search="true" data-style="btn-light">
-                                                <option title="Escuela">Escuela 1</option>
-                                                <option title="Escuela">Escuela 1</option>
-                                                <option title="Escuela">Escuela 1</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group col-md-4">
-                                            <select class="selectpicker" data-live-search="true" data-style="btn-light">
-                                                <option title="Mesa">Mesa 1</option>
-                                                <option title="Mesa">Mesa 2</option>
-                                                <option title="Mesa">Mesa 3</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group text-right">
-                                        <button type="submit" class="btn btn-primary btn-block mb-0">Buscar</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card-box">
-                                <h4 class="header-title mt-0 mb-3">Participación</h4>
-                                <div class="mt-1">
-                                    <div class="float-left" dir="ltr">
-                                        <input data-plugin="knob" data-width="64" data-height="64" data-fgColor="#675db7"
-                                            data-bgColor="#e8e7f4" value="80"
-                                            data-skin="tron" data-angleOffset="180" data-readOnly=true
-                                            data-thickness=".15"/>
-                                    </div>
-                                    <div class="text-right">
-                                        <h2 class="mt-3 pt-1 mb-1"> 25758 </h2>
-                                        <p class="text-muted mb-0">Votantes Habilitados</p>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                        </div><!-- end col -->
-
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card-box">
-                                <h4 class="header-title mt-0 mb-3">Mesas Escrutadas</h4>
-                                <div class="mt-1">
-                                    <div class="float-left" dir="ltr">
-                                        <input data-plugin="knob" data-width="64" data-height="64" data-fgColor="#23b397"
-                                            data-bgColor="#c8ece5" value="77"
-                                            data-skin="tron" data-angleOffset="180" data-readOnly=true
-                                            data-thickness=".15"/>
-                                    </div>
-                                    <div class="text-right">
-                                        <h2 class="mt-3 pt-1 mb-1"> 72 </h2>
-                                        <p class="text-muted mb-0">Mesas Habilitadas</p>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                        </div><!-- end col -->
-                    </div>
-                    {{-- end row --}}
+                    
 
                     {{-- Cards --}}
                     <div class="row">
@@ -246,6 +171,83 @@
                         </div> <!-- end col-->
                     </div>
                     {{-- end row --}}
+
+                    {{-- Widgets --}}
+                    <div class="row">
+                        <div class="col-xl-6 col-md-6">
+                            <div class="card-box">
+                                <!-- <h4 class="header-title mt-0 mb-4">Búsqueda Avanzada</h4> -->
+                                <form action="">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-4">
+                                            <select class="selectpicker" data-live-search="true" data-style="btn-light">
+                                                <option title="Circuito">San Isidro</option>
+                                                <option title="Circuito">Villa Dolores</option>
+                                                <option title="Circuito">Sumalao</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <select class="selectpicker" data-live-search="true" data-style="btn-light">
+                                                <option title="Escuela">Escuela 1</option>
+                                                <option title="Escuela">Escuela 1</option>
+                                                <option title="Escuela">Escuela 1</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <select class="selectpicker" data-live-search="true" data-style="btn-light">
+                                                <option title="Mesa">Mesa 1</option>
+                                                <option title="Mesa">Mesa 2</option>
+                                                <option title="Mesa">Mesa 3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group text-right">
+                                        <button type="submit" class="btn btn-primary btn-block mb-0">Buscar</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card-box">
+                                <h4 class="header-title mt-0 mb-3">Participación</h4>
+                                <div class="mt-1">
+                                    <div class="float-left" dir="ltr">
+                                        <input data-plugin="knob" data-width="64" data-height="64" data-fgColor="#675db7"
+                                            data-bgColor="#e8e7f4" value="80"
+                                            data-skin="tron" data-angleOffset="180" data-readOnly=true
+                                            data-thickness=".15"/>
+                                    </div>
+                                    <div class="text-right">
+                                        <h2 class="mt-3 pt-1 mb-1"> 25758 </h2>
+                                        <p class="text-muted mb-0">Votantes Habilitados</p>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div><!-- end col -->
+
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card-box">
+                                <h4 class="header-title mt-0 mb-3">Mesas Escrutadas</h4>
+                                <div class="mt-1">
+                                    <div class="float-left" dir="ltr">
+                                        <input data-plugin="knob" data-width="64" data-height="64" data-fgColor="#23b397"
+                                            data-bgColor="#c8ece5" value="77"
+                                            data-skin="tron" data-angleOffset="180" data-readOnly=true
+                                            data-thickness=".15"/>
+                                    </div>
+                                    <div class="text-right">
+                                        <h2 class="mt-3 pt-1 mb-1"> 72 </h2>
+                                        <p class="text-muted mb-0">Mesas Habilitadas</p>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div><!-- end col -->
+                    </div>
+                    {{-- end row --}}
+
 
                     {{-- Table --}}
                     <div class="row mb-4">
