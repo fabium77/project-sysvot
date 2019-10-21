@@ -1,86 +1,55 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8" />
+        <title>Escrutinio::Error</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="Old Valley Soft" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        {{-- App favicon --}}
+        <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}">
 
-        <title>404</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
+        {{-- App css --}}
+        <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('css/icons.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('css/app.min.css') }}" rel="stylesheet" type="text/css" />
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            
+        <div class="account-pages mt-5 mb-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8 col-lg-6 col-xl-5">
+                        <div class="card">
+                            <div class="card-body p-4">
+                                <div class="error-ghost text-center">
+                                    <img src="{{ asset('images/error.svg') }}" width="200" alt="error-image"/>
+                                </div>
 
+                                <div class="text-center">
+                                    <h3 class="mt-4 text-uppercase font-weight-bold">Page not found </h3>
+                                    <p class="text-muted mb-0 mt-3" style="line-height: 20px;">It's looking like you may have taken a wrong turn. Don't worry...
+                                        it happens to the best of us. You might want to check your internet connection.
+                                        Here's a little tip that might help you get back on track.</p>
 
-
-            <div class="content">
-                <div class="title m-b-md">
-
-                    404 - No existe esta ruta
-
+                                    <a class="btn btn-primary mt-3" href="{{ url('/') }}">
+                                        <i class="mdi mdi-reply mr-1"></i> 
+                                        Retornar al inicio
+                                    </a>
+                                </div>
+                            </div>
+                            {{-- end card-body --}}
+                        </div>
+                        {{-- end card --}}
+                    </div>
+                    {{-- end col --}}
                 </div>
-
-                <div class="links">
-                    
-
-                </div>
+                {{-- end row --}}
             </div>
+            {{-- end container --}}
         </div>
+        {{-- end page --}}
+        <footer class="footer footer-alt">
+            2019 &copy; Escrutinio por <a href="#" class="text-muted">Old Valley Soft</a> 
+        </footer>
     </body>
 </html>

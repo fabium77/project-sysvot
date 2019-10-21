@@ -1,0 +1,76 @@
+options = {
+    chart:{
+        height:380,
+        type:"bar",
+        toolbar:{
+            show:!1
+        }
+    },
+    plotOptions:{
+        bar:{
+            horizontal:!1,
+            endingShape:"rounded",
+            columnWidth:"55%"
+        }
+    },
+    dataLabels:{
+        enabled:!1
+    },
+    stroke:{
+        show:!0,
+        width:2,
+        colors:["transparent"]
+    },
+    colors:["#3bafda","#1abc9c","#CED4DC"],
+    series:[
+        {
+            name:"Frente de Todos",
+            data:[45,40,37,43,36]
+        },
+        {
+            name:"Juntos por el cambio",
+            data:[26,28,32,43,33]
+        },
+        {
+            name:"GEM",
+            data:[6,8,2,10,10]
+        },
+        {
+            name:"Consenso Federal",
+            data:[2,2,2,3,3]
+        },
+        {
+            name:"Otros",
+            data:[11,22,23,1,18]
+        }
+    ],
+    xaxis:{
+        categories:["Gobernador","Diputados","Senadores","Intendente","Concejales"]
+    },
+    legend:{
+        offsetY:-10
+    },
+    yaxis:{
+        title:{
+            text:"(%)Porcentaje"
+        }
+    },
+    fill:{
+        opacity:1
+    },
+    grid:{
+        row:{
+            colors:["transparent","transparent"],
+            opacity:0.2
+        },
+        borderColor:"#f1f3fa"
+    },
+    tooltip:{
+        y:{
+            formatter:function(e){
+                return e +"%";
+            }
+        }
+    }
+};
+(chart = new ApexCharts(document.querySelector("#apex-column-1"),options)).render();

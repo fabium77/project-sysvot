@@ -17,7 +17,9 @@ class UserController extends Controller
     {
         $users = User::paginate();
 
-        return view('users.index', compact('users'));
+        $roles = Role::all();
+
+        return view('admin.users.index', compact('users', 'roles'));
     }
 
 
@@ -30,7 +32,7 @@ class UserController extends Controller
     public function show(User $user)
     {
         
-        return view('users.show', compact('user'));
+        return view('admin.users.show', compact('user'));
     }
 
     /**
@@ -43,7 +45,7 @@ class UserController extends Controller
     {
         $roles = Role::get();
 
-        return view('users.edit', compact('user', 'roles'));
+        return view('admin.users.edit', compact('user', 'roles'));
     }
 
     /**
@@ -64,7 +66,7 @@ class UserController extends Controller
 
         $user->roles()->sync($request->get('roles'));
 
-        return redirect()->route('users.edit', $user->id)
+        return redirect()->route('users.index', $user->id)
             ->with('info', 'Usuario actualizado con exito');
 
     }
@@ -80,5 +82,21 @@ class UserController extends Controller
         $user->delete();
 
         return back()->with('info', 'Eliminado correctamente');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $input = $request->all();
+
+        User::create($input);
+
+        return redirect()->route('users.index')
+            ->with('info', 'Usuario guardado con exito');
     }
 }

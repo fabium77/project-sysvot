@@ -11,23 +11,24 @@
 |
 */
 
+Route::get('/', 'EstadisticasController@index');
+
 Route::get('/ingresar', function () {
-    return view('index');
+    return view('auth.login');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-
 Route::post('actaescrutinio', 'Actaescrutinio@actaescrutinio')->name('actaescrutinio');
 
-
-   //Routers
+//Routers
 
 Route::middleware(['auth'])->group(function(){
-    //Roles
 
+    //Dashboard
+    Route::get('/home', 'HomeController@index')->name('home');
+
+    //Roles
     Route::resource('roles', 'RoleController');
  
     //Agrupaciones Politicas
@@ -56,6 +57,9 @@ Route::middleware(['auth'])->group(function(){
             
     Route::get('users', 'UserController@index')->name('users.index')
         ->middleware('can:users.index');
+
+    Route::post('users/store', 'UserController@store')->name('users.store')
+        ->middleware('can:users.create');
         
     Route::put('users/{user}', 'UserController@update')->name('users.update')
         ->middleware('can:users.edit');

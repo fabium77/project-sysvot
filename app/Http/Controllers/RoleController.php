@@ -18,7 +18,9 @@ class RoleController extends Controller
     {
         $roles = Role::paginate();
 
-        return view('roles.index', compact('roles'));
+        $permissions = Permission::get();
+
+        return view('admin.roles.index', compact('roles', 'permissions'));
     }
 
     /**
@@ -31,7 +33,7 @@ class RoleController extends Controller
 
         $permissions = Permission::get();
 
-        return view('roles.create', compact('permissions'));
+        return view('admin.roles.create', compact('permissions'));
     }
 
     /**
@@ -61,7 +63,7 @@ class RoleController extends Controller
     public function show(Role $role)
     {
         //dd($role->idRoles); 
-        return view('roles.show', compact('role'));
+        return view('admin.roles.show', compact('role'));
         
     }
 
@@ -75,7 +77,7 @@ class RoleController extends Controller
     {
         $permissions = Permission::get();
 
-        return view('roles.edit', compact('role', 'permissions'));
+        return view('admin.roles.edit', compact('role', 'permissions'));
     }
 
     /**

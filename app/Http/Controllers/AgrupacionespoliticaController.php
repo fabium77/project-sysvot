@@ -17,7 +17,7 @@ class AgrupacionespoliticaController extends Controller
     {
         $agrupacionespoliticas = Agrupacionespolitica::paginate();
 
-        return view('agrupacionespoliticas.index', compact('agrupacionespoliticas'));
+        return view('admin.agrupacionespoliticas.index', compact('agrupacionespoliticas'));
     }
 
     /**
@@ -27,7 +27,7 @@ class AgrupacionespoliticaController extends Controller
      */
     public function create()
     {
-        return view('agrupacionespoliticas.create');
+        return view('admin.agrupacionespoliticas.create');
     }
 
     /**
@@ -39,7 +39,8 @@ class AgrupacionespoliticaController extends Controller
     public function store(AgrupacionespoliticaRequest $AgrupacionespoliticaRequest)
     {
         $agrupacionespolitica = Agrupacionespolitica::create($AgrupacionespoliticaRequest->all());
-        return redirect()->route('agrupacionespoliticas.edit', $agrupacionespolitica->idAgrupacionesPoliticas)
+
+        return redirect()->route('agrupacionespoliticas.index')
             ->with('info', 'Agrupacion Politica guardado con exito');
     }
 
@@ -52,7 +53,12 @@ class AgrupacionespoliticaController extends Controller
     public function show(Agrupacionespolitica $agrupacionespolitica)
     {
         //dd($agrupacionespolitica->idAgrupacionesPoliticas); 
-        return view('agrupacionespoliticas.show', compact('agrupacionespolitica'));
+        $data = [
+            'title' => 'Agrupación Política',
+            'agrupacionespolitica' => $agrupacionespolitica
+        ];
+
+        return view('admin.agrupacionespoliticas.show', $data);
         
     }
 
@@ -64,7 +70,12 @@ class AgrupacionespoliticaController extends Controller
      */
     public function edit(Agrupacionespolitica $agrupacionespolitica)
     {
-        return view('agrupacionespoliticas.edit', compact('agrupacionespolitica'));
+        $data = [
+            'title' => 'Agrupación Política',
+            'agrupacionespolitica' => $agrupacionespolitica
+        ];
+
+        return view('admin.agrupacionespoliticas.edit', $data);
     }
 
     /**
@@ -78,7 +89,7 @@ class AgrupacionespoliticaController extends Controller
     {
         $agrupacionespolitica->update($AgrupacionespoliticaRequest->all());
 
-        return redirect()->route('agrupacionespoliticas.edit', $agrupacionespolitica->idAgrupacionesPoliticas)
+        return redirect()->route('agrupacionespoliticas.index', $agrupacionespolitica->idAgrupacionesPoliticas)
         ->with('info', 'Agrupacion Politica actualizado con exito');
     }
 
