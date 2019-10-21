@@ -580,7 +580,7 @@ INSERT INTO `secciones` VALUES (8,'Valle Viejo',1),(14,'Chilecito',2);
 UNLOCK TABLES;
 
 --
--- Table structure for table `tipocomicios`
+-- Table structure for table `tipocomicioss`
 --
 
 DROP TABLE IF EXISTS `tipocomicios`;
