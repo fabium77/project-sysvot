@@ -11,7 +11,7 @@
             {{-- Start Content --}}
             <div class="container-fluid">
                 
-                {{-- start page title --}}
+               {{-- start page title --}}
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box">
@@ -19,7 +19,7 @@
                         </div>
                     </div>
                 </div>     
-                {{-- end page title  --}}
+                {{-- end page title  --}} 
 
                 <div class="row">
                     <div class="col-xl-3 col-md-6">

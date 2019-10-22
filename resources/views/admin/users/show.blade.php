@@ -1,32 +1,66 @@
 @extends('admin.layouts.layout')
-
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">
-                   Usuario
-                </div>
 
-                <div class="card-body">
-                    <p>
-                        <strong>
-                            Nombre
-                        </strong>
-                        {{ $user->name }}
-                    </p>
-                    <p>
-                        <strong>
-                            Email
-                        </strong>
-                        {{ $user->email }}
-                    </p>
-                
+<div class="content-page">
+    <div class="content">
+        {{-- Start Content --}}
+        <div class="container-fluid">
+            {{-- start page title --}}
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box">
+                        <h4 class="page-title">Usuario</h4>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
+            {{-- end page title --}}
+            <div class="row">
+                <div class="col-12">
+                    <div class="card-box">
+                        <div class="row">
+                            <div class="card-body">
+                                <p>
+                                    <strong class="font-weight-bold">
+                                        Nombre:
+                                    </strong>
+                                    {{ $user->name }}
+                                </p>
+                                <p>
+                                    <strong class="font-weight-bold">
+                                        Email:
+                                    </strong>
+                                    {{ $user->email }}
+                                </p>
+                                <p>
+                                    <strong class="font-weight-bold">
+                                        Rol:
+                                    </strong>
+                                    @foreach($roles as $role)
 
+                                    {{ $role->name }}
+
+                                    @endforeach
+                                </p>
+                                <p>
+                                    <strong class="font-weight-bold">
+                                        Fecha de Creacion:
+                                    </strong>
+                                    {{ $user->created_at }}
+                                </p>
+                            </div>
+                        </div>
+                        {{-- end row --}}
+                    </div>
+                    {{-- end card-box --}}
+                </div>
+                {{-- end col --}}
+            </div>
+            {{-- end row --}}
+        </div>
+        {{-- container --}}
+    </div>
+    {{-- content --}}
+</div>
+    
 @endsection
+

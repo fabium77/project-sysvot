@@ -67,7 +67,7 @@
                 <li>
                     <a href="javascript: void(0);" class="waves-effect">
                         <i class="remixicon-group-line"></i>
-                        <span> Agrupaciones Políticas </span>
+                        <span>Agrupaciones Políticas  </span>
                         <span class="menu-arrow"></span>
                     </a>
                     <ul class="nav-second-level" aria-expanded="false">
@@ -85,11 +85,6 @@
                             </a>
                         </li>
 
-                        <li>
-                            <a href="candidatos.html" class="waves-effect">
-                                Candidatos
-                            </a>
-                        </li>
                     </ul>
                 </li>
 
