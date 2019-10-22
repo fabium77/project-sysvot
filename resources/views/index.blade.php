@@ -51,7 +51,7 @@
                                     <h5 class="card-title text-white">Gustavo Jalile</h5>
                                     <h6 class="card-subtitle text-white">Lista 506 - Juntos por el cambio</h6>
                                 </div>
-                                <img class="img-fluid" src="{{ asset('images/candidatos/gallo.jpg') }}" alt="Gustavo Jalile">
+                                <img class="img-fluid" src="{{ asset('images/candidatos/gallogif.gif') }}" alt="Gustavo Jalile">
                                 <div class="card-body">
                                     <div class="mt-1">
                                         <div class="float-left" dir="ltr">
@@ -75,7 +75,7 @@
                                     <h5 class="card-title text-white">Susana Zenteno</h5>
                                     <h6 class="card-subtitle text-white">Lista 503 - Frente de Todos</h6>
                                 </div>
-                                <img class="img-fluid" src="{{ asset('images/candidatos/susana.jpg') }}" alt="Susana Zenteno">
+                                <img class="img-fluid" src="{{ asset('images/candidatos/susagif.gif') }}" alt="Susana Zenteno">
                                 <div class="card-body">
                                     <div class="mt-1">
                                         <div class="float-left" dir="ltr">
@@ -99,7 +99,7 @@
                                     <h5 class="card-title text-white">Guido Medina</h5>
                                     <h6 class="card-subtitle text-white">Lista 69 - GEM</h6>
                                 </div>
-                                <img class="img-fluid" src="{{ asset('images/candidatos/guido.jpg') }}" alt="Guido Medina">
+                                <img class="img-fluid" src="{{ asset('images/candidatos/guidogif.gif') }}" alt="Guido Medina">
                                 <div class="card-body">
                                     <div class="mt-1">
                                         <div class="float-left" dir="ltr">
@@ -123,7 +123,7 @@
                                     <h5 class="card-title text-white">Cristian Barrionuevo</h5>
                                     <h6 class="card-subtitle text-white">Consenso Federal</h6>
                                 </div>
-                            <img class="img-fluid" src="{{ asset('images/candidatos/gordo.jpg') }}" alt="Cristian Barrionuevo">
+                            <img class="img-fluid" src="{{ asset('images/candidatos/gordogif.gif') }}" alt="Cristian Barrionuevo">
                                 <div class="card-body">
                                     <div class="mt-1">
                                         <div class="float-left" dir="ltr">
