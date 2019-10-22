@@ -89,6 +89,7 @@ Route::middleware(['auth'])->group(function(){
 
 
     //Circuitos
+    
 
     Route::post('circuitos/store', 'CircuitoController@store')->name('circuitos.store')
         ->middleware('can:circuitos.create');

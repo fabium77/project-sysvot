@@ -51,7 +51,7 @@
                                     @can('circuitos.create')
                                     <a href="#custom-modal" class="btn btn-success waves-effect waves-light" data-animation="fadein" data-plugin="custommodal" data-overlayColor="#38414a">
                                         <i class="mdi mdi-plus-circle mr-1"></i> 
-                                        Agregar Nuevo
+                                        Agregar Circuito
                                     </a>
                                     @endcan
                                 </div>

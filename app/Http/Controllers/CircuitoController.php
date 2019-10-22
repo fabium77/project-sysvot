@@ -66,7 +66,7 @@ class CircuitoController extends Controller
 
         $circuito = Circuito::create($CircuitoRequest->all());
 
-        return redirect()->route('circuitos.index')
+        return redirect()->route('circuitos.store')
             ->with('info', 'Guardado con exito');
 
             //

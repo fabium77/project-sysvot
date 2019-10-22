@@ -25,7 +25,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box">
-                        <h4 class="page-title">Listas Partidarias</h4>
+                        <h4 class="page-title">Listas Internas</h4>
                     </div>
                 </div>
             </div>     
@@ -51,7 +51,7 @@
                                     @can('listainternas.create')
                                     <a href="#custom-modal" class="btn btn-success waves-effect waves-light" data-animation="fadein" data-plugin="custommodal" data-overlayColor="#38414a">
                                         <i class="mdi mdi-plus-circle mr-1"></i> 
-                                        Agregar Nuevo
+                                        Agregar Lista
                                     </a>
                                     @endcan
                                 </div>

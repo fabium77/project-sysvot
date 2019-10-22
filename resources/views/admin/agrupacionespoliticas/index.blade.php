@@ -25,7 +25,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box">
-                        <h4 class="page-title">Listas Partidarias</h4>
+                        <h4 class="page-title">Agrupaciones Politicas</h4>
                     </div>
                 </div>
             </div>     
@@ -51,7 +51,7 @@
                                     @can('agrupacionespoliticas.create')
                                     <a href="#custom-modal" class="btn btn-success waves-effect waves-light" data-animation="fadein" data-plugin="custommodal" data-overlayColor="#38414a">
                                         <i class="mdi mdi-plus-circle mr-1"></i> 
-                                        Agregar Nuevo
+                                        Agregar Partido
                                     </a>
                                     @endcan
                                 </div>
@@ -128,6 +128,7 @@
                     {!! Form::open(['route' => 'agrupacionespoliticas.store']) !!}
                         @csrf
                         @include('admin.agrupacionespoliticas.partials.form')
+                        
                     {!! Form::close() !!}
                 </div>
             </div>

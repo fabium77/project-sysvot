@@ -14,7 +14,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box">
-                            <h4 class="page-title">Detalle Rol</h4>
+                            <h4 class="page-title">Detalle del Rol</h4>
                         </div>
                     </div>
                 </div>     
@@ -25,20 +25,20 @@
                             <div class="row">
                                 <div class="card-body">
                                     <p>
-                                        <strong>
+                                        <strong class="font-weight-bold">
                                             Nombre: 
                                         </strong>
                                         {{ $role->name }}
                                     </p>
                                     <p>
-                                        <strong>
+                                        <strong class="font-weight-bold">
                                             Slug: 
                                         </strong>
                                         {{ $role->slug }}
                                     </p>
                                     <p>
-                                        <strong>
-                                            Descripcion
+                                        <strong class="font-weight-bold">
+                                            Descripcion:
                                         </strong>
                                         {{ $role->description }}
                                     </p>                                                                    
@@ -46,12 +46,13 @@
                             </div>
                             {{-- end row --}}
     
-                            <div class="mt-4 mb-1">
-                                <div class="text-right d-print-none">
-                                    <a href="javascript:window.print()" class="btn btn-primary waves-effect waves-light"><i class="mdi mdi-printer mr-1"></i> Imprimir</a>
-                                </div>
-                            </div>
+                            
                         </div> 
+                        <div class="mt-4 mb-1">
+                            <div class="text-center d-print-none">
+                                <a href="javascript:window.print()" class="btn btn-primary waves-effect waves-light"><i class="mdi mdi-printer mr-1"></i> Imprimir</a>
+                            </div>
+                        </div>
                         {{-- end card-box --}}
                     </div> 
                     {{-- end col --}}

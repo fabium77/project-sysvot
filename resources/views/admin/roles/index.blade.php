@@ -49,7 +49,7 @@
                                     @can('roles.create')
                                     <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="modal" data-target="#exampleModalScrollable" data-animation="fadein" data-overlayColor="#38414a">
                                         <i class="mdi mdi-plus-circle mr-1"></i> 
-                                        Agregar Nuevo
+                                        Agregar Rol
                                     </button>
                                     @endcan
                                 </div>
