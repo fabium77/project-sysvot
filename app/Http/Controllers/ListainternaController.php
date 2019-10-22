@@ -19,7 +19,7 @@ class ListainternaController extends Controller
     {
         $listainternas = Listainterna::paginate();
 
-        $agrupacionespoliticas = Agrupacionespolitica::get();
+        $agrupacionespoliticas = Agrupacionespolitica::pluck('nombre', 'idAgrupacionesPoliticas')->prepend('Cambiar Partido Politico ', ''); // creating list;
 
         return view('admin.listainternas.index', compact('listainternas','agrupacionespoliticas'));
 
@@ -33,7 +33,8 @@ class ListainternaController extends Controller
     public function create()
     {
 
-        $agrupacionespoliticas = Agrupacionespolitica::get();
+
+        $agrupacionespoliticas = Agrupacionespolitica::pluck('nombre', 'idAgrupacionesPoliticas')->prepend('Cambiar Partido Politico ', ''); // creating list;
 
         return view('admin.listainternas.create', compact('agrupacionespoliticas'));
     }

@@ -13,8 +13,9 @@
 <div class="form-group">
 	<div class="text-right">
 	{{ Form::submit('Guardar', ['class' => 'btn btn-primary waves-effect waves-light']) }}
-	<button type="button" class="btn btn-danger waves-effect waves-light m-l-10">
+	<button type="button"  class="btn btn-danger waves-effect waves-light m-l-10">
 		Cancelar
 	</button>
+	
 	</div>
 </div>

@@ -26,48 +26,39 @@
                         <span class="menu-arrow"></span>
                     </a>
                     <ul class="nav-second-level" aria-expanded="false">
-                        <li>
-                            <a href="elecciones.html" class="waves-effect">
-                                Elecciones
-                            </a>
-                        </li>
 
-                        <li>
-                            <a href="provincias.html" class="waves-effect">
-                                Provincias
-                            </a>
-                        </li>
+                        @can('circuitos.index')     
 
-                        <li>
-                            <a href="secciones.html" class="waves-effect">
-                                Secciones
-                            </a>
-                        </li>
+                            <li>
+                                <a href="{{ route('circuitos.index') }}" class="waves-effect">
+                                    
+                                     Circuitos
+                                </a>
+                            </li>
+                            
+                        @endcan
 
+                        @can('escuelas.index') 
                         <li>
-                            <a href="circuitos.html" class="waves-effect">
-                                Circuitos
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="escuelas.html" class="waves-effect">
+                            <a href="{{ route('escuelas.index') }}" class="waves-effect">
                                 Escuelas
                             </a>
                         </li>
-                        
+                        @endcan
+                        @can('mesas.index')                         
                         <li>
-                            <a href="mesas.html" class="waves-effect">
+                            <a href="{{ route('mesas.index') }}" class="waves-effect">
                                 Mesas
                             </a>
                         </li>
+                        @endcan
                     </ul>
                 </li>
 
                 <li>
                     <a href="javascript: void(0);" class="waves-effect">
                         <i class="remixicon-group-line"></i>
-                        <span> Agrupaciones Políticas </span>
+                        <span>Agrupaciones Políticas  </span>
                         <span class="menu-arrow"></span>
                     </a>
                     <ul class="nav-second-level" aria-expanded="false">
@@ -78,27 +69,24 @@
                             </a>
                         </li>
                         @endcan
-
+                        @can('listainternas.index')
                         <li>
                             <a href="{{ url('listainternas') }}" class="waves-effect">
                                 Listas
                             </a>
                         </li>
+                        @endcan
 
-                        <li>
-                            <a href="candidatos.html" class="waves-effect">
-                                Candidatos
-                            </a>
-                        </li>
                     </ul>
                 </li>
-
+                @can('cargoselectivos.index')
                 <li>
-                    <a href="cargos.html" class="waves-effect">
+                    <a href="{{ url('cargoselectivos') }}" class="waves-effect">
                         <i class="remixicon-file-list-line"></i>
-                        <span> Cargos </span>
+                        <span> Cargos Electivos </span>
                     </a>
                 </li>
+                @endcan
 
                 <li class="menu-title mt-2">Administración</li>
 

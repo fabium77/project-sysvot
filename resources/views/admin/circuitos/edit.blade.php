@@ -14,7 +14,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box">
-                        <h4 class="page-title">Detalle de la {{ $title }}</h4>
+                        <h4 class="page-title">Editar {{ $title }}</h4>
                     </div>
                 </div>
             </div>     
@@ -24,30 +24,15 @@
                     <div class="card-box">
                         <div class="row">
                             <div class="card-body">
-                                <p>
-                                    <strong class="font-weight-bold">
-                                        Nombre: 
-                                    </strong>
-                                    {{ $agrupacionespolitica->nombre }}
-                                </p>
-                                <p>
-                                    <strong class="font-weight-bold">
-                                        Numero: 
-                                    </strong>
-                                    {{ $agrupacionespolitica->numero }}
-                                </p>
-                            
+                                @include('admin.circuitos.fragment.error')
+                                {!! Form::model($circuito, ['route' => ['circuitos.update', $circuito->idCircuitos],
+                                'method' => 'PUT']) !!}
+                                    @include('admin.circuitos.partials.form')
+                                {!! Form::close() !!}                            
                             </div>
                         </div>
                         {{-- end row --}}
-
-                        
                     </div> 
-                    <div class="mt-4 mb-1">
-                        <div class="text-center d-print-none">
-                            <a href="javascript:window.print()" class="btn btn-primary waves-effect waves-light"><i class="mdi mdi-printer mr-1"></i> Imprimir</a>
-                        </div>
-                    </div>
                     {{-- end card-box --}}
                 </div> 
                 {{-- end col --}}
