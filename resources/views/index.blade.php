@@ -3,7 +3,7 @@
     
     <head>
         <meta charset="utf-8" />
-        <title>Escrutinio::{{ $title }}</title>
+        <title>SysVot::{{ $title }}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -178,6 +178,7 @@
                             <div class="card-box">
                                 <!-- <h4 class="header-title mt-0 mb-4">Búsqueda Avanzada</h4> -->
                                 <form action="">
+                                   
                                     <div class="form-row">
                                         <div class="form-group col-md-4">
                                             <select class="selectpicker" data-live-search="true" data-style="btn-light">
@@ -253,17 +254,19 @@
                     <div class="row mb-4">
                         <div class="col-xl-12">
                             <div class="card-box">
-                                <h4 class="header-title">Resultado Provisorio</h4>
-                                <div class="table-responsive">
+                                
+                                <h4 class=" text-center header-title mb-3">Resultados Generales</h4>
+                                
+                                <div class="table-responsive border">
                                     <table class="table mb-0">
                                         <thead>
-                                        <tr class="table-active">
+                                        <tr class="table-active ">
                                             <th></th>
-                                            <th>Gobernador</th>
-                                            <th>Diputados Provinciales</th>
-                                            <th>Senadores Provinciales</th>
-                                            <th>Intendente</th>
-                                            <th>Concejales</th>
+                                            <th class="font-weight-bold">Gobernador</th>
+                                            <th class="font-weight-bold">Diputados Provinciales</th>
+                                            <th class="font-weight-bold">Senadores Provinciales</th>
+                                            <th class="font-weight-bold">Intendente</th>
+                                            <th class="font-weight-bold">Concejales</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -339,7 +342,7 @@
             {{-- content --}}
 
             {{-- Footer Start --}}
-            <footer class="footer">
+            <footer class="footer py-2 border " style="left: 0.8%; right: 0.8%">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-6">

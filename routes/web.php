@@ -53,27 +53,27 @@ Route::middleware(['auth'])->group(function(){
     Route::get('agrupacionespoliticas/{agrupacionespolitica}/edit', 'AgrupacionespoliticaController@edit')->name('agrupacionespoliticas.edit')
         ->middleware('can:agrupacionespoliticas.edit');
 
-    //Agrupaciones Politicas Listas
-    Route::post('agrupacionespoliticaslistas/store', 'AgrupacionespoliticalistaController@store')->name('agrupacionespoliticaslistas.store')
-        ->middleware('can:agrupacionespoliticaslistas.create');
+    //Lista Politicas
+    Route::post('listainternas/store', 'ListainternaController@store')->name('listainternas.store')
+        ->middleware('can:listainternas.create');
             
-    Route::get('agrupacionespoliticaslistas', 'AgrupacionespoliticalistaController@index')->name('agrupacionespoliticaslistas.index')
-        ->middleware('can:agrupacionespoliticaslistas.index');
+    Route::get('listainternas', 'ListainternaController@index')->name('listainternas.index')
+        ->middleware('can:listainternas.index');
 
-    Route::get('agrupacionespoliticaslistas/create', 'AgrupacionespoliticalistaController@create')->name('agrupacioneslistaspoliticas.create')
-        ->middleware('can:agrupacionespoliticaslistas.create');
+    Route::get('listainternas/create', 'ListainternaController@create')->name('listainternas.create')
+        ->middleware('can:listainternas.create');
         
-    Route::put('agrupacionespoliticaslistas/{agrupacionespoliticalista}', 'AgrupacionespoliticalistaController@update')->name('agrupacioneslistapoliticas.update')
-        ->middleware('can:agrupacionespoliticaslistas.edit');
+    Route::put('listainternas/{listainterna}', 'ListainternaController@update')->name('listainternas.update')
+        ->middleware('can:listainternas.edit');
 
-    Route::get('agrupacionespoliticaslistas/{agrupacionespoliticalista}', 'AgrupacionespoliticalistaController@show')->name('agrupacionespoliticaslistas.show')
-        ->middleware('can:agrupacionespoliticaslistas.show');
+    Route::get('listainternas/{listainterna}', 'ListainternaController@show')->name('listainternas.show')
+        ->middleware('can:listainternas.show');
   
-    Route::delete('agrupacionespoliticaslistas/{agrupacionespoliticalista}', 'AgrupacionespoliticalistaController@destroy')->name('agrupacionespoliticaslistas.destroy')
-        ->middleware('can:agrupacionespoliticaslistas.destroy');
+    Route::delete('listainternas/{listainterna}', 'ListainternaController@destroy')->name('listainternas.destroy')
+        ->middleware('can:listainternas.destroy');
 
-    Route::get('agrupacionespoliticaslistas/{agrupacionespoliticalista}/edit', 'AgrupacionespoliticalistaController@edit')->name('agrupacioneslistaspoliticas.edit')
-        ->middleware('can:agrupacionespoliticaslistas.edit');
+    Route::get('listainternas/{listainterna}/edit', 'ListainternaController@edit')->name('listainternas.edit')
+        ->middleware('can:listainternas.edit');
 
     //Users
             
