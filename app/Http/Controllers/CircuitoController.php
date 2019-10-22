@@ -32,11 +32,9 @@ class CircuitoController extends Controller
 
         $circuitos = Circuito::paginate();
 
-        //$secciones = Seccione::where('idSecciones', $seccioneEstatica)->first();
+        $secciones = Seccione::pluck('nombre', 'idsecciones')->prepend('Seleccionar ', ''); // creating list;
 
-        $secciones = Seccione::get();
-
-        return view('admin.circuitos.index', compact('circuitos','secciones'));
+        return view('admin.circuitos.index', compact('circuitos', 'secciones'));
 
     }
 
@@ -69,7 +67,7 @@ class CircuitoController extends Controller
         $circuito = Circuito::create($CircuitoRequest->all());
 
         return redirect()->route('circuitos.index')
-            ->with('info', 'Lista guardada con exito');
+            ->with('info', 'Guardado con exito');
 
             //
 

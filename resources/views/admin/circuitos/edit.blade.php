@@ -24,10 +24,10 @@
                     <div class="card-box">
                         <div class="row">
                             <div class="card-body">
-                                @include('admin.listainternas.fragment.error')
-                                {!! Form::model($listainterna, ['route' => ['listainternas.update', $listainterna->idListaInterna],
+                                @include('admin.circuitos.fragment.error')
+                                {!! Form::model($circuito, ['route' => ['circuitos.update', $circuito->idCircuitos],
                                 'method' => 'PUT']) !!}
-                                    @include('admin.listainternas.partials.form')
+                                    @include('admin.circuitos.partials.form')
                                 {!! Form::close() !!}                            
                             </div>
                         </div>

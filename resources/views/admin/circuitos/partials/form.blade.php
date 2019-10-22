@@ -8,13 +8,13 @@
 
 
 
-<h3>Provincia</h3>
+<h3>Seccion</h3>
 
 <div class="form-group">
     
 
 
-    {!! Form::select('Provincias_idProvincias', $secciones, old('Provincias_idProvincias'), ['class' => 'form-control', 'required']) !!}
+    {!! Form::select('Secciones_idSecciones', $secciones, old('Secciones_idSecciones'), ['class' => 'form-control', 'required']) !!}
             
 
 

@@ -63,8 +63,6 @@
                             <tr>
                                 <th class="font-weight-medium">ID</th>
                                 <th class="font-weight-medium">Nombre</th>
-                                <th class="font-weight-medium">Número</th>
-                                <th class="font-weight-medium">Letra</th>
                                 <th class="font-weight-medium">Acciones</th>
                             </tr>
                             </thead>
@@ -80,11 +78,6 @@
                                             {{ $circuito->nombre }}
                                         </a>
                                         @endcan
-                                    </td>
-                                    <td>
-                                        
-                                    </td>
-                                    <td>
                                             
                                         </td>
                                     <td>
@@ -127,7 +120,7 @@
                 <button type="button" class="close" onclick="Custombox.modal.close();">
                     <span>&times;</span><span class="sr-only">Cerrar</span>
                 </button>
-                <h4 class="custom-modal-title">Agregar Agrupación Política</h4>
+                <h4 class="custom-modal-title">Agregar Circuito</h4>
                 <div class="custom-modal-text text-left">
                     {!! Form::open(['route' => 'circuitos.store']) !!}
                         @csrf
