@@ -3,9 +3,12 @@
     {{ Form::text('nombre', null, ['class' => 'form-control']) }}
 </div>
 
-    
+<div class="form-group">
+    {{ Form::label('numero', 'Numero') }}
+    {{ Form::text('numero', null, ['class' => 'form-control']) }}
+</div>
+  
 <hr>
-
 
 
 <h3>Seccion</h3>

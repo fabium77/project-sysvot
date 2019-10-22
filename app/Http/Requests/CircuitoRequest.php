@@ -13,7 +13,7 @@ class CircuitoRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,9 @@ class CircuitoRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'nombre' => 'required',
+            'numero' => 'required',
+            'Secciones_idSecciones' => 'required',
         ];
     }
 }

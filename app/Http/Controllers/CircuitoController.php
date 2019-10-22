@@ -66,7 +66,7 @@ class CircuitoController extends Controller
 
         $circuito = Circuito::create($CircuitoRequest->all());
 
-        return redirect()->route('circuitos.store')
+        return redirect()->route('circuitos.index')
             ->with('info', 'Guardado con exito');
 
             //
@@ -83,7 +83,13 @@ class CircuitoController extends Controller
     public function show(Circuito $circuito)
     {
         //dd($circuito->idCircuitos); 
-        return view('admin.circuitos.show', compact('circuito'));
+        $secciones = Seccione::get();
+
+        //$secciones = $circuito->secciones()->get();
+
+        $secciones = Seccione::where('idSecciones', $circuito->Secciones_idSecciones)->first()->nombre;   
+
+        return view('admin.circuitos.show', compact('circuito','secciones'));
         
     }
 
@@ -96,11 +102,8 @@ class CircuitoController extends Controller
     public function edit(Circuito $circuito)
     {
 
-        //$secciones = Seccione::get();
 
-        //$secciones = Seccione::lists('idAgrupacionesPoliticas', 'nombre')->toArray();
-
-        $secciones = Seccione::pluck('nombre', 'idAgrupacionesPoliticas')->prepend('Cambiar Partido Politico ', ''); // creating list;
+        $secciones = Seccione::pluck('nombre', 'idSecciones')->prepend('Cambiar', ''); // creating list;
 
         $data = [
             'title' => 'Lista Interna',
