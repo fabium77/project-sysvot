@@ -41,8 +41,7 @@
                         </div>
                     </div>     
                     {{-- end page title --}}
-
-                    
+                   
 
                     {{-- Cards --}}
                     <div class="row">
