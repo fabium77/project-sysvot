@@ -45,7 +45,7 @@
                         </li>
 
                         <li>
-                            <a href="circuitos.html" class="waves-effect">
+                            <a href="{{ url('circuitos') }}" class="waves-effect">
                                 Circuitos
                             </a>
                         </li>

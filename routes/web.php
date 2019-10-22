@@ -11,6 +11,18 @@
 |
 */
 
+// Variables para la  configuracion del caso escrutinio 28/10/2019 Valle Viejo
+
+$provincia = 1;
+
+$seccion = 8;
+
+$tipoComicio = 1;
+
+$comicio = 1;
+
+////
+
 Route::get('/', 'EstadisticasController@index');
 
 Route::get('/ingresar', function () {
@@ -74,6 +86,30 @@ Route::middleware(['auth'])->group(function(){
 
     Route::get('listainternas/{listainterna}/edit', 'ListainternaController@edit')->name('listainternas.edit')
         ->middleware('can:listainternas.edit');
+
+
+    //Circuitos
+
+    Route::post('circuitos/store', 'CircuitoController@store')->name('circuitos.store')
+        ->middleware('can:circuitos.create');
+            
+    Route::get('circuitos', 'CircuitoController@index')->name('circuitos.index')
+        ->middleware('can:circuitos.index');
+
+    Route::get('circuitos/create', 'CircuitoController@create')->name('circuitos.create')
+        ->middleware('can:circuitos.create');
+        
+    Route::put('circuitos/{circuito}', 'CircuitoController@update')->name('circuitos.update')
+        ->middleware('can:circuitos.edit');
+
+    Route::get('circuitos/{circuito}', 'CircuitoController@show')->name('circuitos.show')
+        ->middleware('can:circuitos.show');
+  
+    Route::delete('circuitos/{circuito}', 'CircuitoController@destroy')->name('circuitos.destroy')
+        ->middleware('can:circuitos.destroy');
+
+    Route::get('circuitos/{circuito}/edit', 'CircuitoController@edit')->name('circuitos.edit')
+        ->middleware('can:circuitos.edit');
 
     //Users
             
