@@ -112,6 +112,54 @@ Route::middleware(['auth'])->group(function(){
     Route::get('circuitos/{circuito}/edit', 'CircuitoController@edit')->name('circuitos.edit')
         ->middleware('can:circuitos.edit');
 
+    //Escuelas
+    
+
+    Route::post('escuelas/store', 'EscuelaController@store')->name('escuelas.store')
+        ->middleware('can:escuelas.create');
+            
+    Route::get('escuelas', 'EscuelaController@index')->name('escuelas.index')
+        ->middleware('can:escuelas.index');
+
+    Route::get('escuelas/create', 'EscuelaController@create')->name('escuelas.create')
+        ->middleware('can:escuelas.create');
+        
+    Route::put('escuelas/{escuela}', 'EscuelaController@update')->name('escuelas.update')
+        ->middleware('can:escuelas.edit');
+
+    Route::get('escuelas/{escuela}', 'EscuelaController@show')->name('escuelas.show')
+        ->middleware('can:escuelas.show');
+  
+    Route::delete('escuelas/{escuela}', 'EscuelaController@destroy')->name('escuelas.destroy')
+        ->middleware('can:escuelas.destroy');
+
+    Route::get('escuelas/{escuela}/edit', 'EscuelaController@edit')->name('escuelas.edit')
+        ->middleware('can:escuelas.edit');
+
+    //Mesas
+    
+
+    Route::post('mesas/store', 'MesaController@store')->name('mesas.store')
+        ->middleware('can:mesas.create');
+            
+    Route::get('mesas', 'MesaController@index')->name('mesas.index')
+        ->middleware('can:mesas.index');
+
+    Route::get('mesas/create', 'MesaController@create')->name('mesas.create')
+        ->middleware('can:mesas.create');
+        
+    Route::put('mesas/{mesa}', 'MesaController@update')->name('mesas.update')
+        ->middleware('can:mesas.edit');
+
+    Route::get('mesas/{mesa}', 'MesaController@show')->name('mesas.show')
+        ->middleware('can:mesas.show');
+  
+    Route::delete('mesas/{mesa}', 'MesaController@destroy')->name('mesas.destroy')
+        ->middleware('can:mesas.destroy');
+
+    Route::get('mesas/{mesa}/edit', 'MesaController@edit')->name('mesas.edit')
+        ->middleware('can:mesas.edit');
+
     //Users
             
     Route::get('users', 'UserController@index')->name('users.index')
