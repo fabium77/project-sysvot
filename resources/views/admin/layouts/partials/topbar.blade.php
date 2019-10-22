@@ -28,7 +28,7 @@
                         <div class="notify-icon bg-soft-primary text-primary">
                             <i class="mdi mdi-comment-account-outline"></i>
                         </div>
-                        <p class="notify-details">Doug Dukes commented on Admin Dashboard
+                        <p class="notify-details">Putito el que lee
                             <small class="text-muted">1 min ago</small>
                         </p>
                     </a>
@@ -110,7 +110,7 @@
                 </div>
 
                 {{-- item --}}
-                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                <a href="#" class="dropdown-item notify-item">
                     <i class="remixicon-account-circle-line"></i>
                     <span>Mi Cuenta</span>
                 </a>

@@ -45,30 +45,31 @@
                     <div class="card-box">
                         <div class="row">
                             <div class="col-lg-4">
-                                <div class="text-lg-left mb-3 mt-3 mt-lg-0">
+                                {{-- <div class="text-lg-left mb-3 mt-3 mt-lg-0">
                                     @can('users.create')
                                     <a href="#custom-modal" class="btn btn-success waves-effect waves-light" data-animation="fadein" data-plugin="custommodal" data-overlayColor="#38414a">
                                         <i class="mdi mdi-plus-circle mr-1"></i> 
                                         Agregar Nuevo
                                     </a>
                                     @endcan
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
 
-                        <table class="table table-hover m-0 table-centered dt-responsive nowrap w-100" cellspacing="0" id="tickets-table">
+                        <table class="border table table-hover m-0 table-centered dt-responsive nowrap w-100" cellspacing="0" id="tickets-table">
                             <thead class="bg-light">
                             <tr>
                                 <th class="font-weight-medium">ID</th>
                                 <th class="font-weight-medium">Nombre</th>
-                                <th class="font-weight-medium">Acciones</th>
+                                <th class="font-weight-medium">Mail</th>
+                                <th class="font-weight-medium text-center">Acciones</th>
                             </tr>
                             </thead>
                             <tbody class="font-14">
                                 @foreach($users as $user)
                                 <tr>
                                     <td>
-                                        {{ $user->id }}
+                                        #{{ $user->id }}
                                     </td>
                                     <td>
                                         @can('users.show')
@@ -78,11 +79,18 @@
                                         @endcan
                                     </td>
                                     <td>
+                                        @can('users.show')
+                                        <a href="{{ route('users.show', $user->id) }}">
+                                            {{ $user->email }}
+                                        </a>
+                                        @endcan
+                                    </td>
+                                    <td class="text-center">
                                         <div class="btn-group dropdown">
                                             <a href="javascript: void(0);" class="dropdown-toggle arrow-none btn btn-light btn-sm" data-toggle="dropdown" aria-expanded="false">
                                                 <i class="mdi mdi-dots-horizontal"></i>
                                             </a>
-                                            <div class="dropdown-menu dropdown-menu-right">
+                                            <div class=" dropdown-menu dropdown-menu-right">
                                                 @can('users.edit')
                                                 <a class="dropdown-item" href="{{ route('users.edit', $user->id) }}">
                                                     <i class="mdi mdi-pencil mr-2 text-muted font-18 vertical-middle"></i>
