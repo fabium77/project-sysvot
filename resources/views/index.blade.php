@@ -379,8 +379,7 @@
         <script src="{{ asset('js/pages/apexcharts.init.js') }}"></script>
 
         {{-- App js --}}
-        <script src="{{ asset('js/app.min.js') }}"></script>
-        
+        <script src="{{ asset('js/app.min.js') }}"></script>        
     </body>
 
 </html>
