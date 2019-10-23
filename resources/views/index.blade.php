@@ -41,9 +41,7 @@
                         </div>
                     </div>     
                     {{-- end page title --}}
-
-                    
-
+ 
                     {{-- Cards --}}
                     <div class="row">
                         <div class="col-md-6 col-xl-3">
@@ -383,7 +381,25 @@
 
         {{-- App js --}}
         <script src="{{ asset('js/app.min.js') }}"></script>
-        
+
+        {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> --}}
+
+        <script>
+            $(document).ready(function(){
+                let url = @json(route('actaescrutinio'));
+                $.post(url,
+                {
+                    districto: 1,
+                    eleccion: 1,
+                    mesa: 1,
+                    tipocomicio: 1
+                },
+                function(data, status) {
+                    console.log("Data: " + JSON.stringify(data) + "\nStatus: " + status);
+                });
+            });
+        </script>
+
     </body>
 
 </html>

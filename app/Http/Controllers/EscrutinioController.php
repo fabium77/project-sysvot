@@ -14,7 +14,7 @@ class EscrutinioController extends Controller
      */
     public function index()
     {
-        //
+        return view('escrutinio.index');
     }
 
     /**
