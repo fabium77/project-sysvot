@@ -24,10 +24,10 @@
                     <div class="card-box">
                         <div class="row">
                             <div class="card-body">
-                                @include('admin.mesas.fragment.error')
-                                {!! Form::model($mesa, ['route' => ['mesas.update', $mesa->idMesas],
+                                @include('admin.listainterna_has_cargoselectivos.fragment.error')
+                                {!! Form::model($listainterna_has_cargoselectivo, ['route' => ['listainterna_has_cargoselectivos.update', $listainterna_has_cargoselectivo->idListInternaHasCargElectivo],
                                 'method' => 'PUT']) !!}
-                                    @include('admin.mesas.partials.form')
+                                    @include('admin.listainterna_has_cargoselectivos.partials.form')
                                 {!! Form::close() !!}                            
                             </div>
                         </div>

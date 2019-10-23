@@ -87,6 +87,8 @@
 
                     </ul>
                 </li>
+
+                <!-- 
                 @can('cargoselectivos.index')
                 <li>
                     <a href="{{ url('cargoselectivos') }}" class="waves-effect">
@@ -95,6 +97,8 @@
                     </a>
                 </li>
                 @endcan
+
+                -->
 
                 <li class="menu-title mt-2">Administración</li>
 

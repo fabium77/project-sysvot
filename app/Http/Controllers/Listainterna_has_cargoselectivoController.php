@@ -31,15 +31,40 @@ class Listainterna_has_cargoselectivoController extends Controller
 
 
 
-        $listainterna_has_cargoselectivos = Listainterna_has_cargoselectivo::paginate();
+        $listainterna_has_cargoselectivos = Listainterna_has_cargoselectivo::get();
 
         $listainternas = Listainterna::pluck('nombre', 'idListaInterna')->prepend('Seleccionar ', ''); // creating list;
+
+        //$cantListainternas = count($listainternas);
 
         $cargoselectivos = Cargoselectivo::pluck('nombre', 'idCargosElectivos')->prepend('Seleccionar ', ''); // creating list;
 
         $listainternasNombres = Listainterna::get();
 
+        $i = 1;
+
+        foreach ($listainternasNombres as $listainternasNombre)
+
+            {
+
+                if ($listainternas[$i] == "Votos Nulos" or $listainternas[$i] == "Votos Recurridos" or $listainternas[$i] == "Votos Impugnados")
+
+                    {
+                        unset($listainternas[$i]);
+
+                    }else
+
+                    {
+
+                        $listainternas[$i] = $listainternasNombre->numero." ".$listainternas[$i]." ".$listainternasNombre->letra;             
+
+                    }
+                    $i++;  
+
+            }
+
         $cargoselectivosNombres = Cargoselectivo::get();
+        
 
         return view('admin.listainterna_has_cargoselectivos.index', compact('listainterna_has_cargoselectivos', 'listainternas', 'listainternasNombres', 'cargoselectivos', 'cargoselectivosNombres'));
 
@@ -104,19 +129,46 @@ class Listainterna_has_cargoselectivoController extends Controller
     {
 
 
-        $listainternas = Listainterna::pluck('nombre', 'idListainternas')->prepend('Cambiar', ''); // creating list;
+        $listainternas = Listainterna::pluck('nombre', 'idListaInterna')->prepend('Seleccionar ', ''); // creating list;
+
+        $cargoselectivos = Cargoselectivo::pluck('nombre', 'idCargosElectivos')->prepend('Seleccionar ', ''); // creating list;
+
+        $listainternasNombres = Listainterna::get();
+
+        $i = 1;
+
+        foreach ($listainternasNombres as $listainternasNombre)
+
+            {
+
+                if ($listainternas[$i] == "Votos Nulos" or $listainternas[$i] == "Votos Recurridos" or $listainternas[$i] == "Votos Impugnados")
+
+                    {
+                        unset($listainternas[$i]);
+
+                    }else
+
+                    {
+
+                        $listainternas[$i] = $listainternasNombre->numero." ".$listainternas[$i]." ".$listainternasNombre->letra;             
+
+                    }
+                    $i++;  
+
+            }
 
         $data = [
-            'title' => 'Lista Interna',
+            'title' => 'Candidato',
             'listainterna_has_cargoselectivo' => $listainterna_has_cargoselectivo,
+            'listainternas' => $listainternas,
+            'cargoselectivos' => $cargoselectivos,
            
         ];
 
-        $title = "Lista Interna";
+        $title = "Candidatos";
 
         
-
-        return view('admin.listainterna_has_cargoselectivos.edit', $data, compact('listainternas'));
+        return view('admin.listainterna_has_cargoselectivos.edit', $data, compact('listainternas, cargoselectivos'));
 
 
     }
@@ -139,7 +191,7 @@ class Listainterna_has_cargoselectivoController extends Controller
         //$listainterna_has_cargoselectivo->listainternas()->sync($Listainterna_has_cargoselectivoRequest->get('listainternas'));
 
         return redirect()->route('listainterna_has_cargoselectivos.index', $listainterna_has_cargoselectivo->idListaInterna)
-        ->with('info', 'Lista interna actualizado con exito');
+        ->with('info', 'Candidato actualizado con exito');
 
 
     }
