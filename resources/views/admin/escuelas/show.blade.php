@@ -23,27 +23,27 @@
                                     <strong class="font-weight-bold">
                                         Nombre:
                                     </strong>
-                                    {{ $circuito->nombre }}
+                                    {{ $escuela->nombre }}
                                 </p>
                                 <p>
                                     <strong class="font-weight-bold">
                                         Numero:
                                     </strong>
-                                    {{ $circuito->numero }}
+                                    {{ $escuela->direccion }}
                                 </p>
                                 <p>
                                     <strong class="font-weight-bold">
-                                        Seccion:
+                                        Direccion:
                                     </strong>
 
-                                    {{ $secciones }}
+                                    {{ $circuitos }}
 
                                 </p>
                                 <p>
                                     <strong class="font-weight-bold">
                                         Fecha de Creacion:
                                     </strong>
-                                    {{ $circuito->created_at }}
+                                    {{ $escuela->created_at }}
                                 </p>
                             </div>
                         </div>

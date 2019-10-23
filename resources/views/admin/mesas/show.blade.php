@@ -21,29 +21,23 @@
                             <div class="card-body">
                                 <p>
                                     <strong class="font-weight-bold">
-                                        Nombre:
-                                    </strong>
-                                    {{ $circuito->nombre }}
-                                </p>
-                                <p>
-                                    <strong class="font-weight-bold">
                                         Numero:
                                     </strong>
-                                    {{ $circuito->numero }}
+                                    {{ $mesa->numero }}
                                 </p>
                                 <p>
                                     <strong class="font-weight-bold">
-                                        Seccion:
+                                        Escuela:
                                     </strong>
 
-                                    {{ $secciones }}
+                                    {{ $escuelas }}
 
                                 </p>
                                 <p>
                                     <strong class="font-weight-bold">
                                         Fecha de Creacion:
                                     </strong>
-                                    {{ $circuito->created_at }}
+                                    {{ $mesa->created_at }}
                                 </p>
                             </div>
                         </div>

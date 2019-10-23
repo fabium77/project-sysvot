@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CircuitoRequest extends FormRequest
+class EscuelaRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,8 +25,8 @@ class CircuitoRequest extends FormRequest
     {
         return [
             'nombre' => 'required',
-            'numero' => 'required',
-            'Secciones_idSecciones' => 'required',
+            'direccion' => 'required',
+            'Circuitos_idCircuitos' => 'required',
         ];
     }
 }

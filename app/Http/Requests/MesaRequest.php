@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CircuitoRequest extends FormRequest
+class MesaRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +24,9 @@ class CircuitoRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombre' => 'required',
             'numero' => 'required',
-            'Secciones_idSecciones' => 'required',
+            'Escuelas_idEscuelas' => 'required',
+            'CantidadElectores' => 'required',
         ];
     }
 }

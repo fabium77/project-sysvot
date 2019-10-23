@@ -4,8 +4,8 @@
 </div>
 
 <div class="form-group">
-    {{ Form::label('numero', 'Numero') }}
-    {{ Form::text('numero', null, ['class' => 'form-control']) }}
+    {{ Form::label('direccion', 'Direccion') }}
+    {{ Form::text('direccion', null, ['class' => 'form-control']) }}
 </div>
   
 <hr>
@@ -17,7 +17,7 @@
     
 
 
-    {!! Form::select('Secciones_idSecciones', $secciones, old('Secciones_idSecciones'), ['class' => 'form-control', 'required']) !!}
+    {!! Form::select('Circuitos_idCircuitos', $circuitos, old('Circuitos_idCircuitos'), ['class' => 'form-control', 'required']) !!}
             
 
 
