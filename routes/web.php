@@ -179,6 +179,9 @@ Route::middleware(['auth'])->group(function(){
 
     Route::get('users/{user}/edit', 'UserController@edit')->name('users.edit')
         ->middleware('can:users.edit');
+
+    //Fiscales
+    Route::get('escrutinio', 'EscrutinioController@index')->name('escrutinio.index');
             
 });
 
