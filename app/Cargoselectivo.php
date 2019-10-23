@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cargoselectivo extends Model
 {
-    protected $primaryKey = 'idCircuitos';
+    protected $primaryKey = 'idCargosElectivos';
 
     protected $fillable = [
-        'nombre', 'numero', 'Secciones_idSecciones'
+        'nombre', 'Comicios_idComicios', 'TiposCargosElectivos_idTiposCargosElectivos'
     ];
 }

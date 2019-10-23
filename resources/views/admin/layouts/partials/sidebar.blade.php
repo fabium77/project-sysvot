@@ -77,6 +77,14 @@
                         </li>
                         @endcan
 
+                        @can('listainternas.index')
+                        <li>
+                            <a href="{{ url('listainterna_has_cargoselectivos') }}" class="waves-effect">
+                                Candidatos
+                            </a>
+                        </li>
+                        @endcan
+
                     </ul>
                 </li>
                 @can('cargoselectivos.index')

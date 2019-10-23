@@ -160,6 +160,29 @@ Route::middleware(['auth'])->group(function(){
     Route::get('mesas/{mesa}/edit', 'MesaController@edit')->name('mesas.edit')
         ->middleware('can:mesas.edit');
 
+
+    // Candidatos
+    Route::post('listainterna_has_cargoselectivos/store', 'Listainterna_has_cargoselectivoController@store')->name('listainterna_has_cargoselectivos.store')
+        ->middleware('can:listainternas.create');
+            
+    Route::get('listainterna_has_cargoselectivos', 'Listainterna_has_cargoselectivoController@index')->name('listainterna_has_cargoselectivos.index')
+        ->middleware('can:listainternas.index');
+
+    Route::get('listainterna_has_cargoselectivos/create', 'Listainterna_has_cargoselectivoController@create')->name('listainterna_has_cargoselectivos.create')
+        ->middleware('can:listainternas.create');
+        
+    Route::put('listainterna_has_cargoselectivos/{listainterna_has_cargoselectivo}', 'Listainterna_has_cargoselectivoController@update')->name('listainterna_has_cargoselectivos.update')
+        ->middleware('can:listainternas.edit');
+
+    Route::get('listainterna_has_cargoselectivos/{listainterna_has_cargoselectivo}', 'Listainterna_has_cargoselectivoController@show')->name('listainterna_has_cargoselectivos.show')
+        ->middleware('can:listainternas.show');
+  
+    Route::delete('listainterna_has_cargoselectivos/{listainterna_has_cargoselectivo}', 'Listainterna_has_cargoselectivoController@destroy')->name('listainterna_has_cargoselectivos.destroy')
+        ->middleware('can:listainternas.destroy');
+
+    Route::get('listainterna_has_cargoselectivos/{listainterna_has_cargoselectivo}/edit', 'Listainterna_has_cargoselectivoController@edit')->name('listainterna_has_cargoselectivos.edit')
+        ->middleware('can:listainternas.edit');
+
     //Users
             
     Route::get('users', 'UserController@index')->name('users.index')
