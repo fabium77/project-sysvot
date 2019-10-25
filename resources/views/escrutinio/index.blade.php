@@ -101,6 +101,9 @@
                                                         <span class="d-none d-sm-inline">Mesa</span>
                                                     </a>
                                                 </li>
+                                                @foreach ($listas as $lista)
+                                            <p>{{ $lista->nombre }}</p>
+                                                @endforeach
                                                 <li class="nav-item" data-target-form="#gemForm">
                                                     <a href="#gem" data-toggle="tab" class="nav-link">
                                                         <span class="number">69</span>
