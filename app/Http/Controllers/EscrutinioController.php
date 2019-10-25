@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Escrutinio;
+use App\Mesa;
 use Illuminate\Http\Request;
 
 class EscrutinioController extends Controller
@@ -35,7 +36,19 @@ class EscrutinioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        
+        // dd($input);
+
+        //Busco mesa
+        $mesa = Mesa::where('numero', '=', $input['mesa'])->firstOrFail();
+        dd($mesa);
+
+        Escrutinio::create($input);
+        
+        return redirect('/escrutinio/success');
+        
+        // dd('Okey');
     }
 
     /**
