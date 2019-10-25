@@ -7,7 +7,10 @@
         {{ Form::label('CantidadElectores', 'Cantidad de Electores') }}
         {{ Form::number('CantidadElectores', null, ['class' => 'form-control']) }}
 </div>
-    {{ Form::hidden('idMesas', $mesa->idMesas, ['class' => 'form-control']) }}
+
+    {{ Form::hidden('idMesasUpdate', $mesa->idMesas, ['class' => 'form-control']) }}
+
+
 
 
   

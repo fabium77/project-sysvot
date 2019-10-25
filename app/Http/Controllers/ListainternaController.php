@@ -17,7 +17,7 @@ class ListainternaController extends Controller
      */
     public function index()
     {
-        $listainternas = Listainterna::paginate();
+        $listainternas = Listainterna::get();
 
         $agrupacionespoliticas = Agrupacionespolitica::pluck('nombre', 'idAgrupacionesPoliticas')->prepend('Cambiar Partido Politico ', ''); // creating list;
 

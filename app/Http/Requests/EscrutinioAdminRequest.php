@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class MesaRequest extends FormRequest
+class EscrutinioAdminRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,9 +25,11 @@ class MesaRequest extends FormRequest
     {
         return [
 
-            'numero' => 'required',
-            'CantidadElectores' => 'required',
-            'Escuelas_idEscuelas' => 'required',
+            'Comicios_has_Mesas' => 'required',
+            'ListaInter_has_CargosElectivos' => 'required',
+            'voto' => 'required',
+            'users_id' => 'required',
+
         ];
     }
 }

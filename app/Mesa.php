@@ -17,7 +17,7 @@ class Mesa extends Model
     }
 
     public function comicios_has_mesas() {
-        return $this->hasOne('App\Comicios_has_mesa');
+        return $this->belongsToMany('App\Comicios_has_mesa');
     }
 
 

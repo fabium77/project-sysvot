@@ -386,6 +386,7 @@
 
         <script>
             $(document).ready(function(){
+/*
                 let url = @json(route('actaescrutinio'));
                 $.post(url,
                 {
@@ -397,6 +398,41 @@
                 function(data, status) {
                     console.log("Data: " + JSON.stringify(data) + "\nStatus: " + status);
                 });
+
+                */
+
+     
+
+
+                var timeout = setInterval(function() {
+
+
+                 }, 1000);
+
+                 $.get('/listamesas',
+                function(listarmesas, status) {
+
+                    listarmesas.forEach(listarmesa => {
+
+                        console.log(listarmesa.idMesas);
+
+                        let url = @json(route('actaescrutinio'));
+                        $.post(url,
+                        {
+                            districto: 1,
+                            eleccion: 1,
+                            mesa: 1,
+                            tipocomicio: listarmesa.idMesas
+                        },
+                        function(data, status) {
+                            console.log("Data: " + JSON.stringify(data) + "\nStatus: " + status);
+                        });
+                        
+                    });
+                });
+      
+
+            
             });
         </script>
 

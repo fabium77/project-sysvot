@@ -30,7 +30,7 @@ class CircuitoController extends Controller
 
         $seccioneEstatica = 8;
 
-        $circuitos = Circuito::paginate();
+        $circuitos = Circuito::get();
 
         $secciones = Seccione::pluck('nombre', 'idsecciones')->prepend('Seleccionar ', ''); // creating list;
 

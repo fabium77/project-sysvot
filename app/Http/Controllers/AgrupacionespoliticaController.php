@@ -15,7 +15,7 @@ class AgrupacionespoliticaController extends Controller
      */
     public function index()
     {
-        $agrupacionespoliticas = Agrupacionespolitica::paginate();
+        $agrupacionespoliticas = Agrupacionespolitica::get();
 
         return view('admin.agrupacionespoliticas.index', compact('agrupacionespoliticas'));
     }

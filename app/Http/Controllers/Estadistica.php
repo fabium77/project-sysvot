@@ -30,26 +30,13 @@ use App\Listainterna;
 
 class Estadistica extends Controller
 {
-    function Estadisticas(Request $request)
+    function Estadistica(Request $request, Actaescrutinio $actaescrutinio)
 
     {
 
-        return \Response::json([
-            'nombreTipoComicio' => $nombreTipoComicio,
-            'nombreDistricto' => $nombreDistricto,
-            'NombreEscuela' => $NombreEscuela,
-            'nombreCircuito' => $nombreCircuito,
-            'nombreSeccion' => $nombreSeccion,
-            'inscriVotar' => $inscriVotar,
-            'cargosAElegir' => $cargosAElegir,
-            'votosPartidos' => $fila,
-            'votantes' => $votantes,
-            'votosNulos' => $votosNulos,
-            'votosRecurridos' => $votosRecurridos,
-            'votosImpugnados' => $votosImpugnados,
-            'votosBlancos' => $votosBlancos,
-            'totalVotosEspeciales' => $totalVotosEspeciales
-        ]);
+        
+
+        return $actaescrutinio;
 
     }
 
