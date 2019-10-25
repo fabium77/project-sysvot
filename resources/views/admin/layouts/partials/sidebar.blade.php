@@ -52,6 +52,13 @@
                             </a>
                         </li>
                         @endcan
+                        @can('mesas.index')                         
+                        <li>
+                            <a href="{{ route('escrutinioAdmins.index') }}" class="waves-effect">
+                                Escrutinio
+                            </a>
+                        </li>
+                        @endcan
                     </ul>
                 </li>
 

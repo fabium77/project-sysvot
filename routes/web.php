@@ -33,6 +33,11 @@ Auth::routes();
 
 Route::post('actaescrutinio', 'Actaescrutinio@actaescrutinio')->name('actaescrutinio');
 
+Route::get('/test', 'Estadistica@Estadistica');
+
+Route::get('/listamesas', 'MesaController@listarmesas');
+
+
 //Routers
 
 Route::middleware(['auth'])->group(function(){
@@ -202,6 +207,30 @@ Route::middleware(['auth'])->group(function(){
 
     Route::get('users/{user}/edit', 'UserController@edit')->name('users.edit')
         ->middleware('can:users.edit');
+
+    //Escrutinio Administracion
+
+    Route::post('escrutinioAdmin/store', 'EscrutinioAdminController@store')->name('escrutinioAdmins.store')
+    ->middleware('can:mesas.create');
+        
+    Route::get('escrutinioAdmins', 'EscrutinioAdminController@index')->name('escrutinioAdmins.index')
+        ->middleware('can:mesas.index');
+
+    Route::get('escrutinioAdmins/create', 'EscrutinioAdminController@create')->name('escrutinioAdmins.create')
+        ->middleware('can:mesas.create');
+        
+    Route::put('escrutinioAdmins/{escrutinioAdmin}', 'EscrutinioAdminController@update')->name('escrutinioAdmins.update')
+        ->middleware('can:mesas.edit');
+
+    Route::get('escrutinioAdmins/{escrutinioAdmin}', 'EscrutinioAdminController@show')->name('escrutinioAdmins.show')
+        ->middleware('can:mesas.show');
+
+    Route::delete('escrutinioAdmins/{escrutinioAdmin}', 'EscrutinioAdminController@destroy')->name('escrutinioAdmins.destroy')
+        ->middleware('can:mesas.destroy');
+
+    Route::get('escrutinioAdmins/{escrutinioAdmin}/edit', 'EscrutinioAdminController@edit')->name('escrutinioAdmins.edit')
+        ->middleware('can:mesas.edit');
+            
 
     //Fiscales
     Route::get('escrutinio', 'EscrutinioController@index')->name('escrutinio.index')

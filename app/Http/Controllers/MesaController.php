@@ -32,7 +32,7 @@ class MesaController extends Controller
 
 
 
-        $mesas = Mesa::paginate();
+        $mesas = Mesa::get();
 
         $escuelas = Escuela::pluck('nombre', 'idescuelas')->prepend('Seleccionar ', ''); // creating list;
 
@@ -69,11 +69,17 @@ class MesaController extends Controller
 
         $mesa = Mesa::create($MesaRequest->all());
 
+        //$ultimoReg = Mesa::get()->last();
+
+        $ultimo = $mesa->idMesas;
+
+        //$idAreaRecienGuardada = $area->id;
+
         $comicios_has_mesa = new Comicios_has_mesa;
 
         $comicios_has_mesa->Comicios_idComicios = 1;
 
-        $comicios_has_mesa->Mesas_idMesas = $MesaRequest->idMesas;
+        $comicios_has_mesa->Mesas_idMesas = $ultimo;
 
         $comicios_has_mesa->CantidadElectores = $MesaRequest->CantidadElectores;
 
@@ -81,7 +87,7 @@ class MesaController extends Controller
 
 
         return redirect()->route('mesas.index')
-            ->with('info', 'Guardado con exito');
+            ->with('info', 'Guardado con exito Mesa: '.$mesa->numero);
 
             //
 
@@ -113,19 +119,21 @@ class MesaController extends Controller
      * @param  \App\Mesa  $mesa
      * @return \Illuminate\Http\Response
      */
-    public function edit(Mesa $mesa)
+    public function edit(Mesa $mesa, Comicios_has_mesa $comicios_has_mesa)
     {
 
 
         $escuelas = Escuela::pluck('nombre', 'idEscuelas')->prepend('Cambiar', ''); // creating list;
 
+        //$mesa->comicios_has_mesas()->sync($comicios_has_mesa);
+
         $data = [
-            'title' => 'Lista Interna',
+            'title' => 'Mesa',
             'mesa' => $mesa,
            
         ];
 
-        $title = "Lista Interna";
+        $title = "Mesa";
 
         
 
@@ -141,18 +149,33 @@ class MesaController extends Controller
      * @param  \App\Mesa  $mesa
      * @return \Illuminate\Http\Response
      */
-    public function update(MesaRequest $MesaRequest, Mesa $mesa)
+    public function update(MesaRequest $MesaRequest, Mesa $mesa, Comicios_has_mesa $comicios_has_mesa)
     {
 
         //actualizar
 
         $mesa->update($MesaRequest->all());
 
+        //$comicios_has_mesa = new Comicios_has_mesa;
+
+        //$comicios_has_mesa=Comicios_has_mesa::where('CantidadElectores', '=', $MesaRequest->CantidadElectores);
+
+        $comicios_has_mesa=Comicios_has_mesa::where('Mesas_idMesas', '=', $MesaRequest->idMesasUpdate)->first();
+
+        //$comicios_has_mesa = Comicios_has_mesa::find($MesaRequest->Mesas_idMesas);
+
+        $comicios_has_mesa->CantidadElectores = $MesaRequest->CantidadElectores;
+
+        $comicios_has_mesa->save();
+
+
+
+
         // actualizar
         //$mesa->escuelas()->sync($MesaRequest->get('escuelas'));
 
-        return redirect()->route('mesas.index', $mesa->idListaInterna)
-        ->with('info', 'Lista interna actualizado con exito');
+        return redirect()->route('mesas.index', $mesa->idMesas)
+        ->with('info', 'Mesa actualizada con exito');
 
 
     }
@@ -169,4 +192,14 @@ class MesaController extends Controller
 
         return back()->with('info', 'Eliminado correctamente');
     }
+
+    public function listarmesas(Mesa $mesa)
+    {
+        $listarmesas = Mesa::get();
+
+        return $listarmesas;
+    }    
+
+
+
 }
