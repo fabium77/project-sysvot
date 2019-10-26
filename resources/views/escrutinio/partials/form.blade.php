@@ -1,3 +1,5 @@
+{{ Form::hidden('usuario', Auth::user()->id) }}
+
 <div class="tab-content mb-0 b-0">
     
     <div class="tab-pane" id="mesa">
@@ -341,4 +343,47 @@
     </ul>
 
 </div> 
-    {{-- tab-content --}}
+{{-- tab-content --}}
+
+{{-- @foreach ($listas as $lista)
+    <div class="tab-pane fade" id="{{ $lista->numero }}{{ $lista->letra }}">
+        <div id="{{ $lista->numero }}{{ $lista->letra }}Form" class="form-horizontal"> --}}
+            {{-- <div class="row">
+                <div class="col-12">
+                    <div class="form-group row mb-3">
+                        {{ Form::label('gob$lista->numero$lista->letra', 'Gobernador', ['class' => 'col-md-3 col-form-label']) }}
+                        <div class="col-md-9">
+                            {{ Form::number('gob{!! $lista->numero !!}{!! $lista->letra !!}', null, ['class' => 'form-control']) }}
+                        </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                        {{ Form::label('dip{!! $lista->numero !!}{!! $lista->letra !!}', 'Diputados', ['class' => 'col-md-3 col-form-label']) }}
+                        <div class="col-md-9">
+                            {{ Form::number('dip{!! $lista->numero !!}{!! $lista->letra !!}', null, ['class' => 'form-control']) }}
+                        </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                        {{ Form::label('sen{!! $lista->numero !!}{!! $lista->letra !!}', 'Senadores', ['class' => 'col-md-3 col-form-label']) }}
+                        <div class="col-md-9">
+                            {{ Form::number('sen{!! $lista->numero !!}{!! $lista->letra !!}', null, ['class' => 'form-control']) }}
+                        </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                        {{ Form::label('int{!! $lista->numero !!}{!! $lista->letra !!}', 'Intendente', ['class' => 'col-md-3 col-form-label']) }}
+                        <div class="col-md-9">
+                            {{ Form::number('int{!! $lista->numero !!}{!! $lista->letra !!}', null, ['class' => 'form-control']) }}
+                        </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                        {{ Form::label('con{!! $lista->numero !!}{!! $lista->letra !!}', 'Concejales', ['class' => 'col-md-3 col-form-label']) }}
+                        <div class="col-md-9">
+                            {{ Form::number('con{!! $lista->numero !!}{!! $lista->letra !!}', null, ['class' => 'form-control']) }}
+                        </div>
+                    </div>
+                </div> 
+            </div>  --}}
+            {{-- 1
+        </div>
+    </div>
+@endforeach --}}
+
