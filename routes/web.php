@@ -233,7 +233,11 @@ Route::middleware(['auth'])->group(function(){
             
 
     //Fiscales
-    Route::get('escrutinio', 'EscrutinioController@index')->name('escrutinio.index');
-            
+    Route::get('escrutinio', 'EscrutinioController@index')->name('escrutinio.index')
+        ->middleware('can:escrutinio.index');
+
+    Route::post('escrutinio/store', 'EscrutinioController@store')->name('escrutinio.store')
+        ->middleware('can:escrutinio.create');    
+                
 });
 

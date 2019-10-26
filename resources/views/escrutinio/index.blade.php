@@ -95,6 +95,15 @@
                                         <h4 class="header-title mb-3"> Ingrese los datos</h4>
                                         <div id="rootwizard">
                                             <ul class="nav nav-pills nav-justified form-wizard-header mb-3">
+                                                <li class="nav-item" data-target-form="#mesaForm">
+                                                    <a href="#mesa" data-toggle="tab" class="nav-link">
+                                                        <span class="number">1</span>
+                                                        <span class="d-none d-sm-inline">Mesa</span>
+                                                    </a>
+                                                </li>
+                                                @foreach ($listas as $lista)
+                                            <p>{{ $lista->nombre }}</p>
+                                                @endforeach
                                                 <li class="nav-item" data-target-form="#gemForm">
                                                     <a href="#gem" data-toggle="tab" class="nav-link">
                                                         <span class="number">69</span>
@@ -121,208 +130,26 @@
                                                 </li>
                                                 <li class="nav-item" data-target-form="#finForm">
                                                     <a href="#fin" data-toggle="tab" class="nav-link">
-                                                        <span class="number">5.</span>
+                                                        <span class="number">Fin</span>
                                                         <span class="d-none d-sm-inline">Fin de carga</span>
                                                     </a>
                                                 </li>
                                             </ul>
 
-                                            <div class="tab-content mb-0 b-0">
+                                            {!! Form::open(['route' => 'escrutinio.store']) !!}
+                                                @csrf
+                                                @include('escrutinio.partials.form')
+                                            {!! Form::close() !!}
+                                                
+                                        </div> 
+                                        {{-- end #rootwizard --}}
 
-                                                <div class="tab-pane" id="gem">
-                                                    <form id="gemForm" method="post" action="#" class="form-horizontal">
-                                                        <div class="row">
-                                                            <div class="col-12">
-                                                                <div class="form-group row mb-3">
-                                                                    <label class="col-md-3 col-form-label" for="gobernador">Gobernador</label>
-                                                                    <div class="col-md-9">
-                                                                        <input type="number" class="form-control" id="gobernador" name="gobernador" required>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group row mb-3">
-                                                                    <label class="col-md-3 col-form-label" for="diputados"> Diputados</label>
-                                                                    <div class="col-md-9">
-                                                                        <input type="number" id="diputados" name="diputados" class="form-control" required>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group row mb-3">
-                                                                    <label class="col-md-3 col-form-label" for="senadores"> Senadores</label>
-                                                                    <div class="col-md-9">
-                                                                        <input type="number" id="senadores" name="senadores" class="form-control" required>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group row mb-3">
-                                                                    <label class="col-md-3 col-form-label" for="intendente"> Intendente</label>
-                                                                    <div class="col-md-9">
-                                                                        <input type="number" id="intendente" name="intendente" class="form-control" required>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group row mb-3">
-                                                                    <label class="col-md-3 col-form-label" for="concejales"> Concejales</label>
-                                                                    <div class="col-md-9">
-                                                                        <input type="number" id="concejales" name="concejales" class="form-control" required>
-                                                                    </div>
-                                                                </div>
-                                                            </div> <!-- end col -->
-                                                        </div> <!-- end row -->
-                                                    </form>
-                                                </div>
-
-                                                <div class="tab-pane fade" id="cf">
-                                                    <form id="cfForm" method="post" action="#" class="form-horizontal">
-                                                        <div class="row">
-                                                            <div class="col-12">
-                                                                <div class="form-group row mb-3">
-                                                                    <label class="col-md-3 col-form-label" for="gobernador">Gobernador</label>
-                                                                    <div class="col-md-9">
-                                                                        <input type="number" class="form-control" id="gobernador" name="gobernador" required>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group row mb-3">
-                                                                    <label class="col-md-3 col-form-label" for="diputados"> Diputados</label>
-                                                                    <div class="col-md-9">
-                                                                        <input type="number" id="diputados" name="diputados" class="form-control" required>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group row mb-3">
-                                                                    <label class="col-md-3 col-form-label" for="senadores"> Senadores</label>
-                                                                    <div class="col-md-9">
-                                                                        <input type="number" id="senadores" name="senadores" class="form-control" required>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group row mb-3">
-                                                                    <label class="col-md-3 col-form-label" for="intendente"> Intendente</label>
-                                                                    <div class="col-md-9">
-                                                                        <input type="number" id="intendente" name="intendente" class="form-control" required>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group row mb-3">
-                                                                    <label class="col-md-3 col-form-label" for="concejales"> Concejales</label>
-                                                                    <div class="col-md-9">
-                                                                        <input type="number" id="concejales" name="concejales" class="form-control" required>
-                                                                    </div>
-                                                                </div>
-                                                            </div> <!-- end col -->
-                                                        </div> <!-- end row -->
-                                                    </form>
-                                                </div>
-
-                                                <div class="tab-pane fade" id="ft">
-                                                    <form id="ftForm" method="post" action="#" class="form-horizontal">
-                                                        <div class="row">
-                                                            <div class="col-12">
-                                                                <div class="form-group row mb-3">
-                                                                    <label class="col-md-3 col-form-label" for="gobernador">Gobernador</label>
-                                                                    <div class="col-md-9">
-                                                                        <input type="number" class="form-control" id="gobernador" name="gobernador" required>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group row mb-3">
-                                                                    <label class="col-md-3 col-form-label" for="diputados"> Diputados</label>
-                                                                    <div class="col-md-9">
-                                                                        <input type="number" id="diputados" name="diputados" class="form-control" required>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group row mb-3">
-                                                                    <label class="col-md-3 col-form-label" for="senadores"> Senadores</label>
-                                                                    <div class="col-md-9">
-                                                                        <input type="number" id="senadores" name="senadores" class="form-control" required>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group row mb-3">
-                                                                    <label class="col-md-3 col-form-label" for="intendente"> Intendente</label>
-                                                                    <div class="col-md-9">
-                                                                        <input type="number" id="intendente" name="intendente" class="form-control" required>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group row mb-3">
-                                                                    <label class="col-md-3 col-form-label" for="concejales"> Concejales</label>
-                                                                    <div class="col-md-9">
-                                                                        <input type="number" id="concejales" name="concejales" class="form-control" required>
-                                                                    </div>
-                                                                </div>
-                                                            </div> <!-- end col -->
-                                                        </div> <!-- end row -->
-                                                    </form>
-                                                </div>
-
-                                                <div class="tab-pane fade" id="jpc">
-                                                    <form id="jpcForm" method="post" action="#" class="form-horizontal">
-                                                        <div class="row">
-                                                            <div class="col-12">
-                                                                <div class="form-group row mb-3">
-                                                                    <label class="col-md-3 col-form-label" for="gobernador">Gobernador</label>
-                                                                    <div class="col-md-9">
-                                                                        <input type="number" class="form-control" id="gobernador" name="gobernador" required>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group row mb-3">
-                                                                    <label class="col-md-3 col-form-label" for="diputados"> Diputados</label>
-                                                                    <div class="col-md-9">
-                                                                        <input type="number" id="diputados" name="diputados" class="form-control" required>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group row mb-3">
-                                                                    <label class="col-md-3 col-form-label" for="senadores"> Senadores</label>
-                                                                    <div class="col-md-9">
-                                                                        <input type="number" id="senadores" name="senadores" class="form-control" required>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group row mb-3">
-                                                                    <label class="col-md-3 col-form-label" for="intendente"> Intendente</label>
-                                                                    <div class="col-md-9">
-                                                                        <input type="number" id="intendente" name="intendente" class="form-control" required>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group row mb-3">
-                                                                    <label class="col-md-3 col-form-label" for="concejales"> Concejales</label>
-                                                                    <div class="col-md-9">
-                                                                        <input type="number" id="concejales" name="concejales" class="form-control" required>
-                                                                    </div>
-                                                                </div>
-                                                            </div> <!-- end col -->
-                                                        </div> <!-- end row -->
-                                                    </form>
-                                                </div>
-
-                                                <div class="tab-pane fade" id="fin">
-                                                    <form id="finForm" method="post" action="#" class="form-horizontal">
-                                                        <div class="row">
-                                                            <div class="col-12">
-                                                                <div class="text-center">
-                                                                    <h2 class="mt-0">
-                                                                        <i class="mdi mdi-check-all"></i>
-                                                                    </h2>
-                                                                    <h3 class="mt-0">Gracias !</h3>
-                                                    
-                                                                    <p class="w-75 mb-2 mx-auto">Los datos fueron cargados.</p>
-                                                    
-                                                                    <div class="mb-3">
-                                                                        <div class="custom-control custom-checkbox">
-                                                                            <input type="checkbox" class="custom-control-input" id="customCheck4" required>
-                                                                            <label class="custom-control-label" for="customCheck4">I agree with the Terms and Conditions</label>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <!-- end col -->
-                                                        </div>
-                                                        <!-- end row -->
-                                                    </form>
-                                                </div>
-
-                                                <ul class="list-inline wizard mb-0">
-                                                    <li class="previous list-inline-item"><a href="javascript: void(0);" class="btn btn-secondary">Previo</a>
-                                                    </li>
-                                                    <li class="next list-inline-item float-right"><a href="javascript: void(0);" class="btn btn-secondary">Siguiente</a></li>
-                                                </ul>
-
-                                            </div> <!-- tab-content -->
-                                        </div> <!-- end #rootwizard-->
-
-                                    </div> <!-- end card-body -->
-                                </div> <!-- end card-->
-                            </div> <!-- end col -->
+                                    </div> 
+                                    {{-- end card-body --}}
+                                </div> 
+                                {{-- end card --}}
+                            </div> 
+                            {{-- end col --}}
                         </div> 
                         {{-- end row --}}
                         

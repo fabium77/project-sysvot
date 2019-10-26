@@ -179,21 +179,23 @@
                                    
                                     <div class="form-row">
                                         <div class="form-group col-md-4">
-                                            <select class="selectpicker" data-live-search="true" data-style="btn-light">
-                                                <option title="Circuito">San Isidro</option>
-                                                <option title="Circuito">Villa Dolores</option>
-                                                <option title="Circuito">Sumalao</option>
+                                            <select class="selectpicker" data-live-search="true" data-style="btn-light" id="circuito">
+                                                {{-- @forelse($circuitos as $circuito)
+                                                    <option value="{{ $circuito.nombre }}">{{ $circuito.nombre }}</option>
+                                                @empty
+                                                    <option value="">Country not available</option>
+                                                @endforelse --}}
                                             </select>
                                         </div>
                                         <div class="form-group col-md-4">
-                                            <select class="selectpicker" data-live-search="true" data-style="btn-light">
+                                            <select class="selectpicker" data-live-search="true" data-style="btn-light" id="escuela">
                                                 <option title="Escuela">Escuela 1</option>
                                                 <option title="Escuela">Escuela 1</option>
                                                 <option title="Escuela">Escuela 1</option>
                                             </select>
                                         </div>
                                         <div class="form-group col-md-4">
-                                            <select class="selectpicker" data-live-search="true" data-style="btn-light">
+                                            <select class="selectpicker" data-live-search="true" data-style="btn-light" id="mesa">
                                                 <option title="Mesa">Mesa 1</option>
                                                 <option title="Mesa">Mesa 2</option>
                                                 <option title="Mesa">Mesa 3</option>
@@ -399,7 +401,16 @@
                     console.log("Data: " + JSON.stringify(data) + "\nStatus: " + status);
                 });
 
+<<<<<<< HEAD
                 
+=======
+<<<<<<< HEAD
+
+=======
+                */
+
+     
+>>>>>>> b3521846fd5bccf6ab746acf6f5b410aadc12fa9
 
 
                 var timeout = setInterval(function() {
@@ -436,6 +447,7 @@
       
 
             
+>>>>>>> 91b1636b70b023d21b438b86c17178afbec9e9cc
             });
         </script>
 

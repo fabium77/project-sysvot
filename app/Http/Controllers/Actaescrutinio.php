@@ -114,6 +114,9 @@ class Actaescrutinio extends Controller
 
         $votantes = 0;
 
+        //Circuitos
+        $circuitos = Circuito::all();
+        
         
         foreach ($CargosElectivos as $cargoElectivo)
 
@@ -258,7 +261,8 @@ class Actaescrutinio extends Controller
             'votosRecurridos' => $votosRecurridos,
             'votosImpugnados' => $votosImpugnados,
             'votosBlancos' => $votosBlancos,
-            'totalVotosEspeciales' => $totalVotosEspeciales
+            'totalVotosEspeciales' => $totalVotosEspeciales,
+            'circuitos' => $circuitos
         ]);
 
     }
