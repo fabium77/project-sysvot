@@ -60,7 +60,7 @@
                                                 data-thickness=".15"/>
                                         </div>
                                         <div class="text-right">
-                                            <h2 class="mt-3 pt-1 mb-1"> 7580 </h2>
+                                            <h2 class="mt-3 pt-1 mb-1" id="card-lista-64"> 0 </h2>
                                             <p class="mb-0">Votos</p>
                                         </div>
                                         <div class="clearfix"></div>
@@ -386,7 +386,7 @@
 
         <script>
             $(document).ready(function(){
-/*
+
                 let url = @json(route('actaescrutinio'));
                 $.post(url,
                 {
@@ -399,9 +399,7 @@
                     console.log("Data: " + JSON.stringify(data) + "\nStatus: " + status);
                 });
 
-                */
-
-     
+                
 
 
                 var timeout = setInterval(function() {
@@ -409,24 +407,29 @@
 
                  }, 1000);
 
+                 // Importante la tabla Escrutinio debe llenarse con todos los datos de los postulantes y votos nulos sino no funciona
+
+                 var mesasEscrutadas = 78;
+
                  $.get('/listamesas',
                 function(listarmesas, status) {
 
                     listarmesas.forEach(listarmesa => {
 
-                        console.log(listarmesa.idMesas);
 
-                        let url = @json(route('actaescrutinio'));
-                        $.post(url,
+                        if (listarmesa.cargado=="1")
+
                         {
-                            districto: 1,
-                            eleccion: 1,
-                            mesa: 1,
-                            tipocomicio: listarmesa.idMesas
-                        },
-                        function(data, status) {
-                            console.log("Data: " + JSON.stringify(data) + "\nStatus: " + status);
-                        });
+
+
+                                
+                            
+
+                            //mesasEscrutadas = mesasEscrutadas - 1;
+
+                        }
+
+
                         
                     });
                 });

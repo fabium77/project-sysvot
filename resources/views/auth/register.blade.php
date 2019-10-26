@@ -28,7 +28,7 @@
                                 
                                 <div class="text-center w-75 m-auto">
                                     <a href="{{ route('login') }}">
-                                        <span><img src="{{ asset('images/logo-dark.png') }}" alt="" height="22"></span>
+                                        <span><img src="{{ asset('images/logo-dark.png') }}" alt="" height="60"></span>
                                     </a>
                                     <p class="text-muted mb-4 mt-3">
                                         ¿No tienes una cuenta? Crea tu propia cuenta, lleva menos de un minuto

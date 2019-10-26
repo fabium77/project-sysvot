@@ -25,7 +25,7 @@
                                 <div class="text-center w-75 m-auto">
                                     <a href="index.html">
                                         <span>
-                                            <img src="{{ asset('images/logo-dark.png') }}" alt="" height="22">
+                                            <img src="{{ asset('images/logo-dark.png') }}" alt="" height="60">
                                         </span>
                                     </a>
                                     <p class="text-muted mb-4 mt-3">Ingrese su correo electrónico y su contraseña para acceder.</p>
