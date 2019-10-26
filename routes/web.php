@@ -237,7 +237,6 @@ Route::middleware(['auth'])->group(function(){
         ->middleware('can:escrutinio.index');
 
     Route::post('escrutinio/store', 'EscrutinioController@store')->name('escrutinio.store')
-        ->middleware('can:escrutinio.create');    
+        ->middleware('can:escrutinio.create');  
                 
 });
-

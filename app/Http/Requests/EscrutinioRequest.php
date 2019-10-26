@@ -24,7 +24,8 @@ class EscrutinioRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'mesa' => 'required',
+            'votos' => 'required'
         ];
     }
 }

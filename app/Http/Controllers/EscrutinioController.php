@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Escrutinio;
 use App\Mesa;
 use App\Listainterna;
+use App\Comicios_has_mesa;
+use App\User;
 use Illuminate\Http\Request;
 
 class EscrutinioController extends Controller
@@ -40,13 +42,31 @@ class EscrutinioController extends Controller
     {
         $input = $request->all();
         
-        dd($input);
+        //dd($input);
 
         //Busco mesa
-        $mesa = Mesa::where('numero', '=', $input['mesa'])->firstOrFail();
-        dd($mesa);
+        // $mesa = Mesa::where('numero', '=', $input['mesa'])->firstOrFail();
+        // $comicio_mesa = Comicios_has_mesa::where('Mesas_idMesas', '=', $mesa->idMesas)->firstOrFail();
+        // dd($comicio_mesa);
 
-        Escrutinio::create($input);
+        // Escrutinio::create($input);
+
+        // $var = [
+        //     'Comicios_has_Mesas' => 8,
+        //     'ListaInter_has_CargosElectivos' => 2,
+        //     'voto' => 29,
+        //     'timestamp' => \Carbon\Carbon::now()->toDateTimeString(),
+        //     'usuario' => 3
+        // ];
+        // dd($var);
+
+        Escrutinio::create([
+            'Comicios_has_Mesas' => 8,
+            'ListaInter_has_CargosElectivos' => 2,
+            'voto' => 29,
+            'timestamp' => \Carbon\Carbon::now()->toDateTimeString(),
+            'usuario' => 3
+        ]);
         
         return redirect('/escrutinio/success');
         

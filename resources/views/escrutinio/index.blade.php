@@ -101,9 +101,6 @@
                                                         <span class="d-none d-sm-inline">Mesa</span>
                                                     </a>
                                                 </li>
-                                                @foreach ($listas as $lista)
-                                            <p>{{ $lista->nombre }}</p>
-                                                @endforeach
                                                 <li class="nav-item" data-target-form="#gemForm">
                                                     <a href="#gem" data-toggle="tab" class="nav-link">
                                                         <span class="number">69</span>
@@ -135,6 +132,15 @@
                                                     </a>
                                                 </li>
                                             </ul>
+
+                                            {{-- @foreach ($listas as $lista)
+                                                <li class="nav-item" data-target-form="#{{ $lista->numero }}{{ $lista->letra }}Form">
+                                                    <a href="#{{ $lista->numero }}{{ $lista->letra }}" data-toggle="tab" class="nav-link">
+                                                        <span class="number"> {{ $lista->numero }} </span>
+                                                        <span class="d-none d-sm-inline">{{ $lista->nombre }}</span>
+                                                    </a>
+                                                </li>
+                                            @endforeach --}}
 
                                             {!! Form::open(['route' => 'escrutinio.store']) !!}
                                                 @csrf
