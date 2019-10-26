@@ -420,7 +420,7 @@
 
                  // Importante la tabla Escrutinio debe llenarse con todos los datos de los postulantes y votos nulos sino no funciona
 
-                 var mesasEscrutadas = 78;
+         /*        var mesasEscrutadas = 78;
 
                  $.get('/listamesas',
                 function(listarmesas, status) {
@@ -444,6 +444,8 @@
                         
                     });
                 });
+
+                */
       
 
             
