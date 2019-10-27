@@ -103,7 +103,7 @@
                                     <div class="mt-1">
                                         <div class="float-left" dir="ltr">
                                             <input data-plugin="knob" data-width="64" data-height="64" data-fgColor="#675db7"
-                                                data-bgColor="#e8e7f4" value="10"
+                                                data-bgColor="#e8e7f4" value="20"
                                                 data-skin="tron" data-angleOffset="180" data-readOnly=true
                                                 data-thickness=".15"/>
                                         </div>
