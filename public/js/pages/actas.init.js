@@ -15,7 +15,8 @@ function mostrarTabla(flag)
 {
     if (flag)
     {
-        getActa();
+        //getActa();
+                        
         $("#div-tabla").show();
     }
     else

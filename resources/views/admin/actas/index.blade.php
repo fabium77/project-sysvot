@@ -103,3 +103,7 @@
 <script src="{{ asset('js/pages/form-xeditable.init.js') }}"></script>
 <script src="{{ asset('js/pages/actas.init.js') }}"></script>
 @endsection
+
+<script>
+  
+</script>
