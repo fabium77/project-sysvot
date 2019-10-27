@@ -58,7 +58,7 @@ class Actaescrutinio extends Controller
 
         // Nombre de la Escuela
 
-        $Escuelas_idEscuelas = Mesa::where('Escuelas_idEscuelas', $mesa)->first()->Escuelas_idEscuelas;      
+        $Escuelas_idEscuelas = Mesa::where('idMesas', $mesa)->first()->Escuelas_idEscuelas;      
 
         $NombreEscuela = Escuela::where('idEscuelas', $Escuelas_idEscuelas)->first()->nombre;
 

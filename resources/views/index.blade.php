@@ -396,7 +396,7 @@
 
         <script>
             $(document).ready(function(){
-
+/*
                 let url = @json(route('actaescrutinio'));
                 $.post(url,
                 {
@@ -406,8 +406,10 @@
                     tipocomicio: 1
                 },
                 function(data, status) {
-                    //console.log("Data: " + JSON.stringify(data) + "\nStatus: " + status);
+                    console.log("Data: " + JSON.stringify(data) + "\nStatus: " + status);
                 });
+
+                */
 
 
 
@@ -415,11 +417,11 @@
 
                  // Importante la tabla Escrutinio debe llenarse con todos los datos de los postulantes y votos nulos sino no funciona
 
-
+                 var timeout = setInterval(function() {
 
         $.get( "/listamesas", function( listarmesas ) {
 
-            var timeout = setInterval(function() {
+
 
             var mesasEscrutadas = 0;
 
@@ -948,12 +950,12 @@
 
                            ;porcMesasEscrutadas= 0;votantes= 0;
 
-            
+                        });            
 
         }, 1000);
 
 
-        });
+
 
 
         //console.log(mesasEscrutadas);
