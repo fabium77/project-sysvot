@@ -25,23 +25,19 @@ options = {
     series:[
         {
             name:"Frente de Todos",
-            data:[45,40,37,43,36]
+            data:[0,0,0,0,0]
         },
         {
             name:"Juntos por el cambio",
-            data:[26,28,32,43,33]
+            data:[0,0,0,0,0]
         },
         {
             name:"GEM",
-            data:[6,8,2,10,10]
+            data:[0,0,0,0,0]
         },
         {
             name:"Consenso Federal",
-            data:[2,2,2,3,3]
-        },
-        {
-            name:"Otros",
-            data:[11,22,23,1,18]
+            data:[0,0,0,0,0]
         }
     ],
     xaxis:{
@@ -74,3 +70,62 @@ options = {
     }
 };
 (chart = new ApexCharts(document.querySelector("#apex-column-1"),options)).render();
+
+
+
+
+
+var options = {
+    chart: {
+        height: 180,
+        width: 180,
+        bottom: 0,
+        margin: 0,
+        type: 'radialBar',
+        offsetY: -20,
+        offsetX: -45,
+        left:0,
+
+    },
+    plotOptions: {
+        radialBar: {
+            startAngle: -90,
+            endAngle: 90,
+            track: {
+                background: "#e7e7e7",
+                strokeWidth: '97%',
+                margin: 0, // margin is in pixels
+                shadow: {
+                    enabled: true,
+                    top: 2,
+                    left: 0,
+                    color: '#999',
+                    opacity: 1,
+                    blur: 2
+                }
+            },
+            dataLabels: {
+                name: {
+                    show: false
+                },   
+                value: {
+                    offsetY: -2,
+                    fontSize: '18px'
+                }                     
+            }
+        }
+    },
+    fill: {
+
+    },
+    series: [20],
+    labels: ['Average Results'],
+   
+}
+
+var chart2 = new ApexCharts(
+    document.querySelector("#porcentaje-lista-506"),
+    options
+);
+
+chart2.render();
