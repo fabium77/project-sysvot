@@ -59,6 +59,7 @@ class EscrutinioController extends Controller
                     'Comicios_has_Mesas' => $comicio_mesa->idComiciosHasMesas,
                     'ListaInter_has_CargosElectivos' => $lista->idListInternaHasCargElectivo,
                     'voto' => $voto,
+                    'timestamp' => \Carbon\Carbon::now()->toDateTimeString(),
                     'usuario' => auth()->id()
                 ];
                 Escrutinio::create($registro);
@@ -71,7 +72,7 @@ class EscrutinioController extends Controller
             return redirect()->route('escrutinio.success');
             
         } else {
-            return redirect()->route('escrutinio.index')->with('info', 'Mesa ya esta cargada');
+            return redirect()->route('escrutinio.index')->with('info', 'La mesa ya fue cargada!');
         }
         
 
