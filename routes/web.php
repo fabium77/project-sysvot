@@ -243,5 +243,8 @@ Route::middleware(['auth'])->group(function(){
 
     Route::get('escrutinio/success', 'EscrutinioController@success')->name('escrutinio.success')
         ->middleware('can:escrutinio.create');
-                
+
+    //Actas
+    Route::get('actas-escrutinio', 'ActasController@index')->name('actas-escrutinio.index')
+        ->middleware('can:actas-escrutinio.index');
 });

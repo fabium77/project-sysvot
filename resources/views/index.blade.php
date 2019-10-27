@@ -789,14 +789,12 @@
                             document.getElementById("int-506").innerHTML = int506;
                             document.getElementById("con-506").innerHTML = con506;
 
-                            /*
-
                             document.getElementById("gob-vb").innerHTML = gobvb;
                             document.getElementById("dip-vb").innerHTML = dipvb;
                             document.getElementById("sen-vb").innerHTML = senvb;
                             document.getElementById("int-vb").innerHTML = intvb;
                             document.getElementById("con-vb").innerHTML = convb;
-                            
+
                             document.getElementById("gob-vn").innerHTML = gobvn;
                             document.getElementById("dip-vn").innerHTML = dipvn;
                             document.getElementById("sen-vn").innerHTML = senvn;
@@ -808,8 +806,6 @@
                             document.getElementById("sen-vr").innerHTML = senvr;
                             document.getElementById("int-vr").innerHTML = intvr;
                             document.getElementById("con-vr").innerHTML = convr;
-
-                            */
 
                             
 
