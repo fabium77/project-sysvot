@@ -167,8 +167,13 @@
                                 <div class="card-body">
                                     <div class="mt-1">
                                         <div class="float-left" dir="ltr">
+<<<<<<< HEAD
                                             <input data-plugin="knob"  id="porcentaje-lista-69" data-width="64" data-height="64" data-fgColor="#675db7"
                                                 data-bgColor="#e8e7f4" value="0"
+=======
+                                            <input data-plugin="knob" data-width="64" data-height="64" data-fgColor="#675db7"
+                                                data-bgColor="#e8e7f4" value="20"
+>>>>>>> d2762fdb80d5c89274308fc55aad20c2d2afa918
                                                 data-skin="tron" data-angleOffset="180" data-readOnly=true
                                                 data-thickness=".15"/>
                                         </div>

@@ -107,16 +107,16 @@
                                                         <span class="d-none d-sm-inline">GEM</span>
                                                     </a>
                                                 </li>
-                                                <li class="nav-item" data-target-form="#cfForm">
-                                                    <a href="#cf" data-toggle="tab" class="nav-link">
-                                                        <span class="number">182</span>
-                                                        <span class="d-none d-sm-inline">Consenso Federal</span>
-                                                    </a>
-                                                </li>
                                                 <li class="nav-item" data-target-form="#ftForm">
                                                     <a href="#ft" data-toggle="tab" class="nav-link">
                                                         <span class="number">503</span>
                                                         <span class="d-none d-sm-inline">Frente de Todos</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item" data-target-form="#cfForm">
+                                                    <a href="#cf" data-toggle="tab" class="nav-link">
+                                                        <span class="number">504</span>
+                                                        <span class="d-none d-sm-inline">Consenso Federal</span>
                                                     </a>
                                                 </li>
                                                 <li class="nav-item" data-target-form="#jpcForm">
@@ -204,6 +204,22 @@
 
         {{-- App js --}}
         <script src="{{ asset('js/app.min.js') }}"></script>
+
+        <script>
+            $("#mesa").change(function() {
+                var mesa = $("input:text[name=mesa]").val();
+                $.get('/getMesa/' + mesa,
+                function(mesa, status) {
+                    if (mesa.cargado=="1")
+                    {
+                        alert('La mesa ya fue cargada');
+                        $("input:text[name=mesa]").val("");
+                        $("input:text[name=mesa]").focus();
+                    }
+                });
+            })
+            
+        </script>
         
     </body>
 </html>

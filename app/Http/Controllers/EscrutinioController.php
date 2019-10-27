@@ -6,7 +6,8 @@ use App\Escrutinio;
 use App\Mesa;
 use App\Listainterna;
 use App\Comicios_has_mesa;
-use App\User;
+use App\Listainterna_has_cargoselectivo;
+
 use Illuminate\Http\Request;
 
 class EscrutinioController extends Controller
@@ -18,7 +19,7 @@ class EscrutinioController extends Controller
      */
     public function index()
     {
-        $listas = Listainterna::all();
+        $listas = Listainterna_has_cargoselectivo::all();
         return view('escrutinio.index', compact('listas'));
     }
 
@@ -42,35 +43,36 @@ class EscrutinioController extends Controller
     {
         $input = $request->all();
         
-        //dd($input);
-
         //Busco mesa
-        // $mesa = Mesa::where('numero', '=', $input['mesa'])->firstOrFail();
-        // $comicio_mesa = Comicios_has_mesa::where('Mesas_idMesas', '=', $mesa->idMesas)->firstOrFail();
-        // dd($comicio_mesa);
-
-        // Escrutinio::create($input);
-
-        // $var = [
-        //     'Comicios_has_Mesas' => 8,
-        //     'ListaInter_has_CargosElectivos' => 2,
-        //     'voto' => 29,
-        //     'timestamp' => \Carbon\Carbon::now()->toDateTimeString(),
-        //     'usuario' => 3
-        // ];
-        // dd($var);
-
-        Escrutinio::create([
-            'Comicios_has_Mesas' => 8,
-            'ListaInter_has_CargosElectivos' => 2,
-            'voto' => 29,
-            'timestamp' => \Carbon\Carbon::now()->toDateTimeString(),
-            'usuario' => 3
-        ]);
+        $mesa = Mesa::where('numero', '=', $input['mesa'])->firstOrFail();
         
-        return redirect('/escrutinio/success');
+        if ($mesa->cargado == 1) {
+            $comicio_mesa = Comicios_has_mesa::where('Mesas_idMesas', '=', $mesa->idMesas)->firstOrFail();
+            $listas = Listainterna_has_cargoselectivo::all();
+                
+            foreach($listas as $lista) {
+                if($lista->idListInternaHasCargElectivo <= 6 || $lista->idListInternaHasCargElectivo >= 26) {
+                    $registro = [
+                        'Comicios_has_Mesas' => $comicio_mesa->idComiciosHasMesas,
+                        'ListaInter_has_CargosElectivos' => $lista->idListInternaHasCargElectivo,
+                        'voto' => $input[$lista->idListInternaHasCargElectivo],
+                        'usuario' => auth()->id()
+                    ];
+                    Escrutinio::create($registro);
+                }
+            }
+    
+            Mesa::where('idMesas', '=', $mesa->idMesas)->update(['cargado' => 1]);
+    
+            Comicios_has_mesa::where('Mesas_idMesas', '=', $mesa->idMesas)->update(['votantes' => $input['votos']]);
+                   
+            return redirect()->route('escrutinio.success');
+            
+        } else {
+            return redirect()->route('escrutinio.index')->with('info', 'Mesa ya esta cargada');
+        }
         
-        // dd('Okey');
+
     }
 
     /**
@@ -116,5 +118,10 @@ class EscrutinioController extends Controller
     public function destroy(Escrutinio $escrutinio)
     {
         //
+    }
+
+    public function success()
+    {
+        return view('escrutinio.success');
     }
 }

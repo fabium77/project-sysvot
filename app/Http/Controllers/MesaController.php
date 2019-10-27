@@ -200,6 +200,11 @@ class MesaController extends Controller
         return $listarmesas;
     }    
 
+    public function getMesa($mesa)
+    {
+        $mesa = Mesa::where('numero', '=', $mesa)->firstOrFail();
 
+        return $mesa;
+    } 
 
 }

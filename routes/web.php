@@ -37,6 +37,8 @@ Route::get('/test', 'Estadistica@Estadistica');
 
 Route::get('/listamesas', 'MesaController@listarmesas');
 
+Route::get('/getMesa/{idMesa}', 'MesaController@getMesa');
+
 
 //Routers
 
@@ -237,6 +239,9 @@ Route::middleware(['auth'])->group(function(){
         ->middleware('can:escrutinio.index');
 
     Route::post('escrutinio/store', 'EscrutinioController@store')->name('escrutinio.store')
-        ->middleware('can:escrutinio.create');  
+        ->middleware('can:escrutinio.create'); 
+
+    Route::get('escrutinio/success', 'EscrutinioController@success')->name('escrutinio.success')
+        ->middleware('can:escrutinio.create');
                 
 });
