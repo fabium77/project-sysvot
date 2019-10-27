@@ -3,6 +3,8 @@
 	{{ Form::text('name', null, ['class' => 'form-control']) }}
 </div>
 
+
+
 <hr>
 
 <h3>Lista de roles</h3>
@@ -20,6 +22,18 @@
         @endforeach
     </ul>
 </div>
+
+
+<h3>Mesa</h3>
+
+<hr>
+
+
+<div class="form-group">
+	{{ Form::label('numero', 'Numero de mesa') }}
+	{{ Form::number('numero', null, ['class' => 'form-control']) }}
+</div>
+
 
 <div class="form-group">
 	<div class="text-right">

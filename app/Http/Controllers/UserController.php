@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use Caffeinated\Shinobi\Models\Role;
 use Illuminate\Http\Request;
+use App\Mesa;
 
 class UserController extends Controller
 {
@@ -15,11 +16,13 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::paginate();
+        $users = User::get();
 
         $roles = Role::all();
 
-        return view('admin.users.index', compact('users', 'roles'));
+        $mesas = Mesa::pluck('numero', 'idMesas')->prepend('Seleccionar ', ''); // creating list;
+
+        return view('admin.users.index', compact('users', 'roles', 'mesas'));
     }
 
 
@@ -47,7 +50,9 @@ class UserController extends Controller
     {
         $roles = Role::get();
 
-        return view('admin.users.edit', compact('user', 'roles'));
+        $mesas = Mesa::pluck('numero', 'idMesas')->prepend('Seleccionar ', ''); // creating list;
+
+        return view('admin.users.edit', compact('user', 'roles', 'mesas'));
     }
 
     /**
@@ -57,7 +62,7 @@ class UserController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, User $user, Mesa $mesa)
     {
 
         // actualizar usuario    
@@ -68,8 +73,20 @@ class UserController extends Controller
 
         $user->roles()->sync($request->get('roles'));
 
+        //$idMesa=Mesa::where('numero', '=', $request->numero)->first();
+
+        //$mesa->fiscalmesa = $request->id;
+
+        //Mesa::find($idMesa)->update(['fiscalmesa' => $request->id]);
+
+        Mesa::where('numero', '=', $request->numero)->update(array('fiscalmesa' => $user->id));
+
+        $user->update($request->all());
+
+        //$comicios_has_mesa = Comicios_has_mesa::find($MesaRequest->Mesas_idMesas);
+
         return redirect()->route('users.index', $user->id)
-            ->with('info', 'Usuario actualizado con exito');
+            ->with('info', 'Usuario actualizado con exito Mesa: '.$user->id);
 
     }
 
