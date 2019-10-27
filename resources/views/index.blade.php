@@ -25,6 +25,33 @@
                 left: 0 !important;
             }
 
+            #porcentaje-lista-503 {
+                min-height: 60px !important;
+                left: 0 !important;
+            }
+
+            #porcentaje-lista-69 {
+                min-height: 60px !important;
+                left: 0 !important;
+            }
+
+            #porcentaje-lista-504 {
+                min-height: 60px !important;
+                left: 0 !important;
+            }
+
+            #porcentaje-participacion {
+                min-height: 60px !important;
+                left: 0 !important;
+            }
+
+            #porcentaje-mesasEscrutadas {
+                min-height: 60px !important;
+                left: 0 !important;
+            }
+
+            
+
         </style>
 
     </head>
@@ -73,33 +100,29 @@
                                                         <h4 class="header-title mt-0 mb-3">Participación</h4>
                                                         <div class="mt-1">
                                                             <div class="float-left" dir="ltr">
-                                                                <input data-plugin="knob" data-width="64" data-height="64" data-fgColor="#675db7"
-                                                                    data-bgColor="#e8e7f4" value="80"
-                                                                    data-skin="tron" data-angleOffset="180" data-readOnly=true
-                                                                    data-thickness=".15"/>
+                                                                    <div  id="porcentaje-participacion" style="margin: 0px; min-height: 60px !important; height: 64px;">
+                                                                        </div>
                                                             </div>
                                                             <div class="text-right">
-                                                                <h2 class="mt-3 pt-1 mb-1"> 25461 </h2>
-                                                                <p class="text-muted mb-0">Votantes Habilitados</p>
+                                                                <h4 class="mt-3 pt-1 mb-1" id="votantes"> 25461 </h4>
+                                                                <p class="text-muted mb-0">Votantes</p>
                                                             </div>
                                                             <div class="clearfix"></div>
                                                         </div>
                                                     </div>
                                                 </div><!-- end col -->
-                        
+                                                
                                                 <div class="col-xl-3 col-md-6">
                                                     <div class="card-box">
                                                         <h4 class="header-title mt-0 mb-3">Mesas Escrutadas</h4>
                                                         <div class="mt-1">
                                                             <div class="float-left" dir="ltr">
-                                                                <input data-plugin="knob" data-width="64" data-height="64" data-fgColor="#23b397"
-                                                                    data-bgColor="#c8ece5" value="77"
-                                                                    data-skin="tron" data-angleOffset="180" data-readOnly=true
-                                                                    data-thickness=".15"/>
+                                                                    <div  id="porcentaje-mesasEscrutadas" style="margin: 0px; min-height: 60px !important; height: 64px;">
+                                                                        </div>
                                                             </div>
                                                             <div class="text-right">
-                                                                <h2 class="mt-3 pt-1 mb-1"> 72 </h2>
-                                                                <p class="text-muted mb-0">Mesas Habilitadas</p>
+                                                                <h2 class="mt-3 pt-1 mb-1" id="mesasEscrutada"> 78 </h2>
+                                                                <p class="text-muted mb-0">Mesas</p>
                                                             </div>
                                                             <div class="clearfix"></div>
                                                         </div>
@@ -142,12 +165,11 @@
                                 <img class="img-fluid" src="{{ asset('images/candidatos/susana.jpg') }}" alt="Susana Zenteno">
                                 <div class="card-body">
                                     <div class="mt-1">
-                                        <div class="float-left" dir="ltr">
-                                            <input data-plugin="knob"  id="porcentaje-lista-503"  data-width="64" data-height="64" data-fgColor="#675db7"
-                                                data-bgColor="#e8e7f4" value="0"
-                                                data-skin="tron" data-angleOffset="180" data-readOnly=true
-                                                data-thickness=".15"/>
-                                        </div>
+                                            <div class="float-left" dir="ltr"  style="width: 100px;
+                                            margin: 0; ">
+                                                <div  id="porcentaje-lista-503" style="margin: 0px; min-height: 60px !important; height: 64px;">
+                                            </div>
+                                            </div>
                                         <div class="text-right">
                                             <h2 class="mt-3 pt-1 mb-1"  id="card-lista-503"> 0 </h2>
                                             <p class="mb-0">Votos</p>
@@ -166,17 +188,11 @@
                                 <img class="img-fluid" src="{{ asset('images/candidatos/guido.jpg') }}" alt="Guido Medina">
                                 <div class="card-body">
                                     <div class="mt-1">
-                                        <div class="float-left" dir="ltr">
-<<<<<<< HEAD
-                                            <input data-plugin="knob"  id="porcentaje-lista-69" data-width="64" data-height="64" data-fgColor="#675db7"
-                                                data-bgColor="#e8e7f4" value="0"
-=======
-                                            <input data-plugin="knob" data-width="64" data-height="64" data-fgColor="#675db7"
-                                                data-bgColor="#e8e7f4" value="20"
->>>>>>> d2762fdb80d5c89274308fc55aad20c2d2afa918
-                                                data-skin="tron" data-angleOffset="180" data-readOnly=true
-                                                data-thickness=".15"/>
-                                        </div>
+                                            <div class="float-left" dir="ltr"  style="width: 100px;
+                                            margin: 0; ">
+                                                <div  id="porcentaje-lista-69" style="margin: 0px; min-height: 60px !important; height: 64px;">
+                                            </div>
+                                            </div>
                                         <div class="text-right">
                                             <h2 class="mt-3 pt-1 mb-1"  id="card-lista-69" > 0 </h2>
                                             <p class="mb-0">Votos</p>
@@ -195,12 +211,11 @@
                             <img class="img-fluid" src="{{ asset('images/candidatos/gordo.jpg') }}" alt="Cristian Barrionuevo">
                                 <div class="card-body">
                                     <div class="mt-1">
-                                        <div class="float-left" dir="ltr">
-                                            <input data-plugin="knob"  id="porcentaje-lista-504"  data-width="64" data-height="64" data-fgColor="#675db7"
-                                                data-bgColor="#e8e7f4" value="0"
-                                                data-skin="tron" data-angleOffset="180" data-readOnly=true
-                                                data-thickness=".15"/>
-                                        </div>
+                                            <div class="float-left" dir="ltr"  style="width: 100px;
+                                            margin: 0; ">
+                                                <div  id="porcentaje-lista-504" style="margin: 0px; min-height: 60px !important; height: 64px;">
+                                            </div>
+                                            </div>
                                         <div class="text-right">
                                             <h2 class="mt-3 pt-1 mb-1"  id="card-lista-504" > 0 </h2>
                                             <p class="mb-0">Votos</p>
@@ -265,59 +280,59 @@
                                         <tbody>
                                         <tr>
                                             <th scope="row">GEM - Lista 69</th>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
+                                            <td id="gob-69">0</td>
+                                            <td id="dip-69">0</td>
+                                            <td id="sen-69">0</td>
+                                            <td id="int-69">0</td>
+                                            <td id="con-69">0</td>
                                         </tr>
                                         <tr>
-                                            <th scope="row">Consenso Federal - Lista 169</th>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
+                                            <th scope="row">Consenso Federal - Lista 504</th>
+                                            <td id="gob-504">0</td>
+                                            <td id="dip-504">0</td>
+                                            <td id="sen-504">0</td>
+                                            <td id="int-504">0</td>
+                                            <td id="con-504">0</td>
                                         </tr>
                                         <tr class="table-info">
                                             <th scope="row">Frente de Todos - Lista 503</th>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
+                                            <td id="gob-503">0</td>
+                                            <td id="dip-503">0</td>
+                                            <td id="sen-503">0</td>
+                                            <td id="int-503">0</td>
+                                            <td id="con-503">0</td>
                                         </tr>
                                         <tr  class="table-danger">
                                             <th scope="row">Juntos por el cambio - Lista 506</th>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
+                                            <td id="gob-506">0</td>
+                                            <td id="dip-506">0</td>
+                                            <td id="sen-506">0</td>
+                                            <td id="int-506">0</td>
+                                            <td id="con-506">0</td>
                                         </tr>
                                         <tr>
                                             <th scope="row">Votos en blanco</th>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
+                                            <td id="gob-vb">0</td>
+                                            <td id="dip-vb">0</td>
+                                            <td id="sen-vb">0</td>
+                                            <td id="int-vb">0</td>
+                                            <td id="con-vb">0</td>
                                         </tr>
                                         <tr>
                                             <th scope="row">Votos nulos</th>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
+                                            <td id="gob-vn">0</td>
+                                            <td id="dip-vn">0</td>
+                                            <td id="sen-vn">0</td>
+                                            <td id="int-vn">0</td>
+                                            <td id="con-vn">0</td>
                                         </tr>
                                         <tr>
                                             <th scope="row">Votos recurridos</th>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
+                                            <td id="gob-vr">0</td>
+                                            <td id="dip-vr">0</td>
+                                            <td id="sen-vr">0</td>
+                                            <td id="int-vr">0</td>
+                                            <td id="con-vr">0</td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -396,10 +411,7 @@
 
 
 
-                var timeout = setInterval(function() {
 
-
-                 }, 1000);
 
                  // Importante la tabla Escrutinio debe llenarse con todos los datos de los postulantes y votos nulos sino no funciona
 
@@ -407,7 +419,9 @@
 
         $.get( "/listamesas", function( listarmesas ) {
 
-            var mesasEscrutadas = 78;
+            var timeout = setInterval(function() {
+
+            var mesasEscrutadas = 0;
 
             //console.log(listarmesas);
 
@@ -460,6 +474,41 @@
             var totalVotosInt = 0;
 
             var totalVotosCon = 0;
+
+            var votantes = 0;
+
+            var gobvb = 0;
+
+            var dipvb = 0;
+
+            var senvb = 0;
+
+            var intvb = 0;
+
+            var convb = 0;
+
+            var gobvn = 0;
+
+            var dipvn = 0;
+
+            var senvn = 0;
+
+            var intvn = 0;
+
+            var convn = 0;
+
+            var gobvr = 0;
+
+            var dipvr = 0;
+
+            var senvr = 0;
+
+            var intvr = 0;
+
+            var convr = 0;
+
+
+
             
             
 
@@ -471,7 +520,7 @@
 
                 {
 
-                    mesasEscrutadas = mesasEscrutadas - 1;
+                   
 
                     let url = @json(route('actaescrutinio'));
                     $.post(url,
@@ -484,9 +533,48 @@
                         function(data, status) {
                             //console.log("Data: " + JSON.stringify(data) + "\nStatus: " + status);
 
-                            var votosPartidos = data.votosPartidos;
 
-                        
+                            var votosPartidos = data.votosPartidos;
+                            
+                            
+
+                            votantes = votantes + data.votantes;
+
+                            mesasEscrutadas = mesasEscrutadas + 1;
+
+                            gobvb = data.votosBlancos.Gobernador;
+
+                            dipvb = data.votosBlancos.Diputado;
+
+                            senvb = data.votosBlancos.Senador;
+
+                            intvb = data.votosBlancos.Intendecia;
+
+                            convb = data.votosBlancos.Concejal;
+
+                            gobvn = data.votosNulos.Gobernador;
+
+                            dipvn = data.votosNulos.Diputado;
+
+                            senvn = data.votosNulos.Senador;
+
+                            intvn = data.votosNulos.Intendecia;
+
+                            convn = data.votosNulos.Concejal;
+
+                            gobvr = data.votosRecurridos.Gobernador;
+
+                            dipvr = data.votosRecurridos.Diputado;
+
+                            senvr = data.votosRecurridos.Senador;
+
+                            intvr = data.votosRecurridos.Intendecia;
+
+                            convr = data.votosRecurridos.Concejal;
+
+
+
+
 
 
                             for (i=1; i< 20; i++ )
@@ -494,7 +582,7 @@
                             {
                                 
 
-                                console.log (votosPartidos[i]);
+                                //console.log(data);
 
                                 
 
@@ -646,6 +734,7 @@
                                     {
                                         sen506 = sen506 + votosPartidos[i].votos;
                                         totalVotosSen = totalVotosSen + sen506;
+                                        
                                     }
 
                                     if (votosPartidos[i].cargo=="Diputado")
@@ -676,14 +765,53 @@
                                     default:
                                         
                                     }
-
+                                    
                             }
 
-                            document.getElementById("card-lista-69").innerHTML = int69;
-                            document.getElementById("card-lista-503").innerHTML = int503;
-                            document.getElementById("card-lista-504").innerHTML = int504;
-                            document.getElementById("card-lista-506").innerHTML = int506;
+                            document.getElementById("gob-69").innerHTML = gob69;
+                            document.getElementById("dip-69").innerHTML = dip69;
+                            document.getElementById("sen-69").innerHTML = sen69;
+                            document.getElementById("int-69").innerHTML = int69;
+                            document.getElementById("con-69").innerHTML = con69;
+                            document.getElementById("gob-503").innerHTML = gob503;
+                            document.getElementById("dip-503").innerHTML = dip503;
+                            document.getElementById("sen-503").innerHTML = sen503;
+                            document.getElementById("int-503").innerHTML = int503;
+                            document.getElementById("con-503").innerHTML = con503;
+                            document.getElementById("gob-504").innerHTML = gob504;
+                            document.getElementById("dip-504").innerHTML = dip504;
+                            document.getElementById("sen-504").innerHTML = sen504;
+                            document.getElementById("int-504").innerHTML = int504;
+                            document.getElementById("con-504").innerHTML = con504;
+                            document.getElementById("gob-506").innerHTML = gob506;
+                            document.getElementById("dip-506").innerHTML = dip506;
+                            document.getElementById("sen-506").innerHTML = sen506;
+                            document.getElementById("int-506").innerHTML = int506;
+                            document.getElementById("con-506").innerHTML = con506;
 
+                            /*
+
+                            document.getElementById("gob-vb").innerHTML = gobvb;
+                            document.getElementById("dip-vb").innerHTML = dipvb;
+                            document.getElementById("sen-vb").innerHTML = senvb;
+                            document.getElementById("int-vb").innerHTML = intvb;
+                            document.getElementById("con-vb").innerHTML = convb;
+                            
+                            document.getElementById("gob-vn").innerHTML = gobvn;
+                            document.getElementById("dip-vn").innerHTML = dipvn;
+                            document.getElementById("sen-vn").innerHTML = senvn;
+                            document.getElementById("int-vn").innerHTML = intvn;
+                            document.getElementById("con-vn").innerHTML = convn;
+
+                            document.getElementById("gob-vr").innerHTML = gobvr;
+                            document.getElementById("dip-vr").innerHTML = dipvr;
+                            document.getElementById("sen-vr").innerHTML = senvr;
+                            document.getElementById("int-vr").innerHTML = intvr;
+                            document.getElementById("con-vr").innerHTML = convr;
+
+                            */
+
+                            
 
                             porcgob69 =  gob69*100/totalVotosInt;
                             porcgob503 = gob503*100/totalVotosInt;
@@ -745,12 +873,40 @@
                             
                             ////
 
+                            /// Tabla Detallada
+
+                            document.getElementById("porcentaje-lista-69").innerHTML = porcint69;
+
+
+
 
                             document.getElementById("porcentaje-lista-69").value = porcint69;
                             document.getElementById("porcentaje-lista-503").value = porcint503;
                             document.getElementById("porcentaje-lista-504").value = porcint504;
                             document.getElementById("porcentaje-lista-506").value = porcint506;
+
+                            chart2.updateSeries([porcint506]);
+                            chart3.updateSeries([porcint503]); 
+                            chart4.updateSeries([porcint69]); 
+                            chart5.updateSeries([porcint504]);
+
+                            porcVotantes = votantes*100/25461;
+
+                            porcVotantes = porcVotantes.toFixed(2);
+
+                            chart6.updateSeries([porcVotantes]);
                             
+                            
+                            porcMesasEscrutadas = mesasEscrutadas*100/78;
+
+                            porcMesasEscrutadas = porcMesasEscrutadas.toFixed(2);
+
+                            chart7.updateSeries([porcMesasEscrutadas]);
+
+                            document.getElementById("votantes").innerHTML = votantes+" / "+25461;
+
+                                            
+                            document.getElementById("mesasEscrutada").innerHTML = mesasEscrutadas+" / "+78;
 
 
                             chart.updateSeries([
@@ -785,6 +941,22 @@
 
 
             });
+
+
+            porcgob503= 0;porcdip503= 0;porcsen503= 0;porcint503= 0;porccon503= 0;porcgob506= 0;porcdip506= 0;porcsen506= 0;porcint506= 0;porccon506= 0;porcgob69= 0;porcdip69= 0;porcsen69= 0;porcint69= 0;porccon69
+                               = 0;porcgob504= 0;porcdip504= 0;porcsen504= 0;porcint504= 0;porccon504=0;
+
+
+
+            porcint506= 0;porcint503= 0;porcint69= 0;porcint504= 0;porcVotantes= 0;votantes= 0;porcVotantes= 0;porcVotantes= 0;porcMesasEscrutadas= 0;mesasEscrutadas= 0;porcMesasEscrutadas= 0;porcMesasEscrutadas= 0;
+
+                           ;porcMesasEscrutadas= 0;votantes= 0;
+
+            
+
+        }, 1000);
+
+
         });
 
 
