@@ -401,18 +401,6 @@
                     console.log("Data: " + JSON.stringify(data) + "\nStatus: " + status);
                 });
 
-<<<<<<< HEAD
-                
-=======
-<<<<<<< HEAD
-
-=======
-                */
-
-     
->>>>>>> b3521846fd5bccf6ab746acf6f5b410aadc12fa9
-
-
                 var timeout = setInterval(function() {
 
 
@@ -448,8 +436,6 @@
                 */
       
 
-            
->>>>>>> 91b1636b70b023d21b438b86c17178afbec9e9cc
             });
         </script>
 

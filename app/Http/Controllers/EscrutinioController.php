@@ -46,7 +46,7 @@ class EscrutinioController extends Controller
         //Busco mesa
         $mesa = Mesa::where('numero', '=', $input['mesa'])->firstOrFail();
         
-        if ($mesa->cargado == 1) {
+        if ($mesa->cargado == 0) {
             $comicio_mesa = Comicios_has_mesa::where('Mesas_idMesas', '=', $mesa->idMesas)->firstOrFail();
             $listas = Listainterna_has_cargoselectivo::all();
                 
