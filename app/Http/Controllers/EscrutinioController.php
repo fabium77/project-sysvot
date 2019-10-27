@@ -51,15 +51,17 @@ class EscrutinioController extends Controller
             $listas = Listainterna_has_cargoselectivo::all();
                 
             foreach($listas as $lista) {
+                $voto = 0;
                 if($lista->idListInternaHasCargElectivo <= 6 || $lista->idListInternaHasCargElectivo >= 26) {
-                    $registro = [
-                        'Comicios_has_Mesas' => $comicio_mesa->idComiciosHasMesas,
-                        'ListaInter_has_CargosElectivos' => $lista->idListInternaHasCargElectivo,
-                        'voto' => $input[$lista->idListInternaHasCargElectivo],
-                        'usuario' => auth()->id()
-                    ];
-                    Escrutinio::create($registro);
+                    $voto = $input[$lista->idListInternaHasCargElectivo];
                 }
+                $registro = [
+                    'Comicios_has_Mesas' => $comicio_mesa->idComiciosHasMesas,
+                    'ListaInter_has_CargosElectivos' => $lista->idListInternaHasCargElectivo,
+                    'voto' => $voto,
+                    'usuario' => auth()->id()
+                ];
+                Escrutinio::create($registro);
             }
     
             Mesa::where('idMesas', '=', $mesa->idMesas)->update(['cargado' => 1]);
