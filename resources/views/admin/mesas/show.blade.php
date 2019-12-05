@@ -69,70 +69,8 @@
 
                                 <br />
                                 @if ($mesa->cargado == 1)
-                                <table class="table table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">N°</th>
-                                            <th scope="col">
-                                                Agrupacion Politica
-                                            </th>
-                                            <th scope="col">Presidente</th>
-                                            <th scope="col">
-                                                Diputado Nacional
-                                            </th>
-                                            <th scope="col">Gobernador Prov</th>
-                                            <th scope="col">Diputado Prov</th>
-                                            <th scope="col">Senador Prov</th>
-                                            <th scope="col">Intendente Mun</th>
-                                            <th scope="col">Concejal Mun</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>
-                                                @foreach ($listas as $item)
-                                                {{$item->nombre}}
-                                                @endforeach
-                                            </td>
-                                            <td style="background:#d3d3d3">
-                                                No Presenta
-                                            </td>
-                                            <td style="background:#d3d3d3">
-                                                No Presenta
-                                            </td>
-                                            <td>3</td>
-                                            <td>4</td>
-                                            <td>5</td>
-                                            <td>6</td>
-                                            <td>7</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td>GEM</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>3</td>
-                                            <td>4</td>
-                                            <td>5</td>
-                                            <td>6</td>
-                                            <td>7</td>
-                                        </tr>
-                                        <tr>
-                                            <th 1scope="row">3</th>
-                                            <td>1GEM</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>3</td>
-                                            <td>4</td>
-                                            <td>5</td>
-                                            <td>6</td>
-                                            <td>7</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-
-                                {{-- -------------------------------------------------------- --}}
+                                {{-- -----------------------------
+                                    TABLA--------------------------- --}}
 
                                 <table class="table table-bordered">
                                     <thead>
@@ -161,7 +99,20 @@
 
                                             <td>
                                                 {{$item->nombre}}
+                                               
                                             </td>
+
+                                            <td>
+                                                    
+                                            </td>
+
+                                            <td>
+                                                    
+                                                </td>
+
+                                                <td>
+                                                   
+                                                    </td>
                                         </tr>
 
                                         @endforeach
@@ -169,6 +120,7 @@
                                 </table>
                                 @else @endif
                             </div>
+                            
                         </div>
                         {{-- end row --}}
                     </div>

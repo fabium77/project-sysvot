@@ -129,6 +129,22 @@ class MesaController extends Controller
         where mesas.numero = '$numeroMesa' ");
 
        
+        $gob = DB::select('SELECT
+
+   
+        listainternas.numero as Numero,
+        listainternas.nombre as ListaInterna,
+        escrutinios.voto
+
+
+        FROM  escrutinios
+        inner join comicios_has_mesas on escrutinios.Comicios_has_Mesas = comicios_has_mesas.idComiciosHasMesas
+        inner join mesas on comicios_has_mesas.Mesas_idMesas = mesas.idMesas
+        inner join listainterna_has_cargoselectivos on escrutinios.ListaInter_has_CargosElectivos = listainterna_has_cargoselectivos.idListInternaHasCargElectivo
+        inner join listainternas on listainterna_has_cargoselectivos.ListaInterna_idListaInterna = listainternas.idListaInterna
+        inner join agrupacionespoliticas on listainternas.AgrupacionesPoliticas_idAgrupacionesPoliticas = agrupacionespoliticas.idAgrupacionesPoliticas
+        inner join cargoselectivos on listainterna_has_cargoselectivos.CargosElectivos_idCargosElectivos = cargoselectivos.idCargosElectivos
+        where mesas.numero = 601 and cargoselectivos.nombre = "gobernador" order by listainternas.numero desc');
 
        //dd($datos);
 
@@ -146,7 +162,7 @@ class MesaController extends Controller
 
         $escuelas = Escuela::where('idEscuelas', $mesa->Escuelas_idEscuelas)->first()->nombre;   
 
-        return view('admin.mesas.show', compact('mesa','escuelas','datos','numeroMesa','cantelectores','listas'));
+        return view('admin.mesas.show', compact('mesa','escuelas','datos','numeroMesa','cantelectores','listas','gob'));
         
     }
 
