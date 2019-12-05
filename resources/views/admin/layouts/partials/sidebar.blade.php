@@ -17,6 +17,13 @@
                     </a>
                 </li>
 
+                <li>
+                    <a href="{{ url('/escrutinio') }}" class="waves-effect">
+                            <i class="remixicon-file-add-fill"></i>
+                            <span> Cargar Datos </span>
+                        </a>
+                    </li>
+
                 <li class="menu-title mt-2">Mantenimiento</li>
 
                 <li>

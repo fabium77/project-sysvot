@@ -113,9 +113,11 @@ class Listainterna_has_cargoselectivoController extends Controller
 
         //$listainternas = $listainterna_has_cargoselectivo->listainternas()->get();
 
-        $listainternas = Listainterna::where('idListainternas', $listainterna_has_cargoselectivo->Listainternas_idListainternas)->first()->nombre;   
+        $listainternas = Listainterna::where('idListainterna', $listainterna_has_cargoselectivo->Listainternas_idListainternas); 
 
-        return view('admin.listainterna_has_cargoselectivos.show', compact('listainterna_has_cargoselectivo','listainternas'));
+        $cargoselectivos = Cargoselectivo::get();
+        
+        return view('admin.listainterna_has_cargoselectivos.show', compact('listainterna_has_cargoselectivo','listainternas','cargoselectivos'));
         
     }
 

@@ -86,7 +86,7 @@ class EscrutinioController extends Controller
      */
     public function show(Escrutinio $escrutinio)
     {
-        //
+      
     }
 
     /**

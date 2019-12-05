@@ -61,7 +61,7 @@
                         <table class="table table-hover m-0 table-centered dt-responsive nowrap w-100" cellspacing="0" id="tickets-table">
                             <thead class="bg-light">
                             <tr>
-                                <th class="font-weight-medium">ID</th>
+                                <th class="font-weight-medium">Estado</th>
                                 <th class="font-weight-medium">Numero</th>
                                 <th class="font-weight-medium">Escuela</th>
                                 <th class="font-weight-medium">Acciones</th>
@@ -71,8 +71,26 @@
                                 @foreach($mesas as $mesa)
                                 <tr>
                                     <td>
-                                        {{ $ultimo = $mesa->idMesas }}
-                                    </td>
+                                        {{-- {{ $ultimo = $mesa->idMesas }} --}}
+
+                                        @if ( $mesa->cargado == 1 )
+                                        {{-- {{ $ultimo = $mesa->idMesas }} --}}
+                                        
+                                        
+                                     
+                                        <i style="color:green; font-size:20px" class="remixicon-checkbox-circle-fill"></i>
+                                        
+                                        @else
+                                       
+                                        <i style="color:red; font-size:20px" class="remixicon-close-circle-fill"></i>
+                                      
+                                        @endif
+
+                                        </td>
+
+
+
+
                                     <td>
                                         @can('mesas.show')
                                         <a href="{{ route('mesas.show', $mesa->idMesas) }}">

@@ -37,7 +37,14 @@
                             {{-- item --}}
                             <div class="dropdown-header noti-title">
                                 <h6 class="text-overflow m-0">Bienvenido !</h6>
+                                <br>
+                                <a href="{{ url('/home') }}" class="waves-effect">
+                                   
+                                    <span> Dashboard </span>
+                                </a>
                             </div>
+
+                            
 
                             {{-- item --}}
                             {{-- <a href="javascript:void(0);" class="dropdown-item notify-item">
@@ -82,7 +89,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box" style="left: 0; right: 0">
-                                    <h4 class="page-title">Cargar datos escrutinio</h4>
+                                    <h4 class="page-title">Cargar datos de Escrutinio</h4>
                                 </div>
                             </div>
                         </div>     

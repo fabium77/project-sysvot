@@ -6,6 +6,7 @@ use App\Mesa;
 use App\Escuela;
 use App\Circuito;
 use App\Comicios_has_mesa;
+use Illuminate\Support\Facades\DB;
 
 
 use Illuminate\Http\Request;
@@ -102,14 +103,50 @@ class MesaController extends Controller
      */
     public function show(Mesa $mesa)
     {
-        //dd($mesa->idMesas); 
-        $escuelas = Escuela::get();
 
-        //$escuelas = $mesa->escuelas()->get();
+        $escuelas = Escuela::get();
+        $numeroMesa = $mesa->numero;
+        
+        $datos = DB::select("SELECT 
+        
+        mesas.numero as Numero_Mesa,
+        Comicios_has_Mesas.CantidadElectores,
+        escrutinios.voto,
+        cargoselectivos.nombre,
+        listainternas.nombre as ListaInterna,
+        listainternas.numero as Numero,
+        listainternas.letra as Letra,
+        agrupacionespoliticas.nombre as Agrupacion_Politica,
+        agrupacionespoliticas.numero as Num_Agrupacion
+        
+        FROM escrutinios
+        inner join comicios_has_mesas on escrutinios.Comicios_has_Mesas = comicios_has_mesas.idComiciosHasMesas
+        inner join mesas on comicios_has_mesas.Mesas_idMesas = mesas.idMesas
+        inner join listainterna_has_cargoselectivos on escrutinios.ListaInter_has_CargosElectivos = listainterna_has_cargoselectivos.idListInternaHasCargElectivo
+        inner join listainternas on listainterna_has_cargoselectivos.ListaInterna_idListaInterna = listainternas.idListaInterna
+        inner join agrupacionespoliticas on listainternas.AgrupacionesPoliticas_idAgrupacionesPoliticas = agrupacionespoliticas.idAgrupacionesPoliticas
+        inner join cargoselectivos on listainterna_has_cargoselectivos.CargosElectivos_idCargosElectivos = cargoselectivos.idCargosElectivos
+        where mesas.numero = '$numeroMesa' ");
+
+       
+
+       //dd($datos);
+
+       $cantelectores = DB::select("SELECT 
+        comicios_has_mesas.CantidadElectores 
+        FROM escrutinios
+        inner join comicios_has_mesas on escrutinios.Comicios_has_Mesas = comicios_has_mesas.idComiciosHasMesas
+        inner join mesas on comicios_has_mesas.Mesas_idMesas = mesas.idMesas
+        where mesas.numero = '$numeroMesa' LIMIT 1");
+
+       $listas = DB::select('SELECT listainternas.numero, listainternas.nombre FROM listainternas;');
+
+      // dd($cantelectores);
+
 
         $escuelas = Escuela::where('idEscuelas', $mesa->Escuelas_idEscuelas)->first()->nombre;   
 
-        return view('admin.mesas.show', compact('mesa','escuelas'));
+        return view('admin.mesas.show', compact('mesa','escuelas','datos','numeroMesa','cantelectores','listas'));
         
     }
 

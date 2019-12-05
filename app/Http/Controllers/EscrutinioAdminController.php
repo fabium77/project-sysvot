@@ -1,13 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\EscrutinioAdmin;
 
 use App\Escrutinio;
 use App\Listainterna;
 use App\Cargoselectivo;
 use App\Mesa;
+use App\Escuela;
 use App\Comicio;
 use App\Agrupacionespolitica;
+use App\Circuito;
+use App\Comicios_has_mesa;
+use App\User;
 
 
 
@@ -33,7 +38,7 @@ class EscrutinioAdminController extends Controller
     public function index()
     {
 
-
+       
 
         $escrutinioAdmins = Escrutinio::get();
 
@@ -66,9 +71,12 @@ class EscrutinioAdminController extends Controller
             }
 
         $cargoselectivosNombres = Cargoselectivo::get();
-        
 
-        return view('admin.escrutinioAdmins.index', compact('escrutinioAdmins', 'listainternas', 'listainternasNombres', 'cargoselectivos', 'cargoselectivosNombres'));
+
+        $escuelasNombres = Escuela::get();
+        $mesas = Mesa::get();
+
+        return view('admin.escrutinioAdmins.index', compact('escrutinioAdmins','mesas','escuelasNombres', 'listainternas', 'listainternasNombres', 'cargoselectivos', 'cargoselectivosNombres'));
 
     }
 
@@ -110,14 +118,22 @@ class EscrutinioAdminController extends Controller
      */
     public function show(EscrutinioAdmin $escrutinioAdmin)
     {
-        //dd($escrutinioAdmin->idEscrutinioAdmins); 
-        $listainternas = Listainterna::get();
+        // //dd($escrutinioAdmin->idEscrutinioAdmins); 
+        // $listainternas = Listainterna::get();
+        $mesa = Mesa::get();
+        // //$listainternas = $escrutinioAdmin->listainternas()->get();
 
-        //$listainternas = $escrutinioAdmin->listainternas()->get();
+        // $listainternas = Listainterna::where('idListainternas', $escrutinioAdmin->Listainternas_idListainternas)->first()->nombre;   
 
-        $listainternas = Listainterna::where('idListainternas', $escrutinioAdmin->Listainternas_idListainternas)->first()->nombre;   
 
-        return view('admin.escrutinioAdmins.show', compact('escrutinioAdmin','listainternas'));
+        $escuelas = Escuela::get();
+        
+
+        // $escuelas = Escuela::where('idEscuelas', $mesas->Escuelas_idEscuelas);   
+
+        // return view('admin.mesas.show', compact('mesa','escuelas'));
+
+        return view('admin.escrutinioAdmins.show', compact('escrutinioAdmin','mesa','escuelas','escrutinioAdmin'));
         
     }
 

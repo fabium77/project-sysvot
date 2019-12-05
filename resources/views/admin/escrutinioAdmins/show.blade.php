@@ -23,21 +23,21 @@
                                     <strong class="font-weight-bold">
                                         Numero:
                                     </strong>
-                                    {{ $mesa->numero }}
+                                    {{-- {{ $mesa->numero }} --}}
                                 </p>
                                 <p>
                                     <strong class="font-weight-bold">
                                         Escuela:
                                     </strong>
 
-                                    {{ $escuelas }}
+                                    {{ $escrutinio }}
 
                                 </p>
                                 <p>
                                     <strong class="font-weight-bold">
                                         Fecha de Creacion:
                                     </strong>
-                                    {{ $mesa->created_at }}
+                                    {{-- {{ $mesa->created_at }} --}}
                                 </p>
                             </div>
                         </div>

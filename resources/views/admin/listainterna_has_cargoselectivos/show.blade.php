@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box">
-                        <h4 class="page-title">Usuario</h4>
+                        <h4 class="page-title">Candidatos</h4>
                     </div>
                 </div>
             </div>
@@ -21,11 +21,42 @@
                             <div class="card-body">
                                 <p>
                                     <strong class="font-weight-bold">
-                                        Numero:
+                                        Candidato: 
                                     </strong>
-                                    {{ $mesa->numero }}
+
+                                
+                                 {{  $listainterna_has_cargoselectivo->nombre    }}
+                                 <br>
+                                
+                                 <strong class="font-weight-bold">
+                                    Cargo Politico: 
+                                </strong>
+                                
+                                    @foreach ($cargoselectivos as $cargo)
+
+                                    @if ($listainterna_has_cargoselectivo->CargosElectivos_idCargosElectivos  == $cargo->idCargosElectivos)
+
+                                    {{$cargo->nombre}}
+
+                                    @endif
+
+                                 @endforeach
+                                
+                                 
+
+                                 
+                                 
+                                
+                                     
+
+
+                                
+
+                                   
+
+
                                 </p>
-                                <p>
+                                {{-- <p>
                                     <strong class="font-weight-bold">
                                         Escuela:
                                     </strong>
@@ -38,7 +69,7 @@
                                         Fecha de Creacion:
                                     </strong>
                                     {{ $mesa->created_at }}
-                                </p>
+                                </p> --}}
                             </div>
                         </div>
                         {{-- end row --}}
