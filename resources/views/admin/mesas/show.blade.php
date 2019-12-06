@@ -101,17 +101,120 @@
                                                 {{$item->nombre}}
                                                
                                             </td>
-
+                                                
                                             <td>
+                                                @foreach ($datos as $dato)
+
+                                                    @if ($dato->Numero == $item->numero)
+
                                                     
+                                                            @if ($dato->nombre == "Presidente")
+
+                                                                {{ $dato->voto }}
+                                                                
+                                                            @endif
+                                                        
+                                                    @endif
+                                                    
+                                                @endforeach
                                             </td>
 
                                             <td>
-                                                    
+                                                    @foreach ($datos as $dato)
+    
+                                                        @if ($dato->Numero == $item->numero)
+    
+                                                        
+                                                                @if ($dato->nombre == "DiputadoN")
+    
+                                                                    {{ $dato->voto }}
+                                                                    
+                                                                @endif
+                                                            
+                                                        @endif
+                                                        
+                                                    @endforeach
                                                 </td>
 
                                                 <td>
-                                                   
+                                                        @foreach ($datos as $dato)
+        
+                                                            @if ($dato->Numero == $item->numero)
+        
+                                                            
+                                                                    @if ($dato->nombre == "Gobernador")
+        
+                                                                        {{ $dato->voto }}
+                                                                        
+                                                                    @endif
+                                                                
+                                                            @endif
+                                                            
+                                                        @endforeach
+                                                    </td>
+
+                                                    <td>
+                                                        @foreach ($datos as $dato)
+            
+                                                            @if ($dato->Numero == $item->numero)
+
+                                                                @if ($dato->nombre == "Diputado")
+            
+                                                                    {{ $dato->voto }}
+                                                                            
+                                                                @endif
+                                                                    
+                                                            @endif
+                                                                
+                                                        @endforeach
+                                                    </td>
+
+                                                    <td>
+                                                            @foreach ($datos as $dato)
+                
+                                                                @if ($dato->Numero == $item->numero)
+    
+                                                                    @if ($dato->nombre == "Senador")
+                
+                                                                        {{ $dato->voto }}
+                                                                                
+                                                                    @endif
+                                                                        
+                                                                @endif
+                                                                    
+                                                            @endforeach
+                                                    </td>
+
+                                                    <td>
+                                                            @foreach ($datos as $dato)
+                
+                                                                @if ($dato->Numero == $item->numero)
+    
+                                                                    @if ($dato->nombre == "Intendecia")
+                
+                                                                        {{ $dato->voto }}
+                                                                                
+                                                                    @endif
+                                                                        
+                                                                @endif
+                                                                    
+                                                            @endforeach
+                                                    </td>
+
+                                                    <td>
+                                                            @foreach ($datos as $dato)
+                
+                                                                @if ($dato->Numero == $item->numero)
+    
+                                                                    @if ($dato->nombre == "Concejal")
+                
+                                                                        {{ $dato->voto }}
+                                                                                
+                                                                    @endif
+                                                                        
+                                                                @endif
+                                                                    
+                                                            @endforeach
                                                     </td>
                                         </tr>
 
