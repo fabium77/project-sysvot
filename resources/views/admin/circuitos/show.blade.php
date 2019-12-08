@@ -43,7 +43,7 @@
                                     <strong class="font-weight-bold">
                                         Fecha de Creacion:
                                     </strong>
-                                    {{ $circuito->created_at }}
+                                    {{ $circuito->created_at->diffForHumans() }}
                                 </p>
                             </div>
                         </div>

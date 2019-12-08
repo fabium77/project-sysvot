@@ -38,14 +38,21 @@
                                     @foreach($roles as $role)
 
                                     {{ $role->name }}
+                                    <br>
+                                    <br>
+                                    <strong class="font-weight-bold">
+                                        Descripción:
+                                    </strong>
+                                    {{ $role->description }}
 
                                     @endforeach
+
                                 </p>
                                 <p>
                                     <strong class="font-weight-bold">
                                         Fecha de Creacion:
                                     </strong>
-                                    {{ $user->created_at }}
+                                    {{ $user->created_at->diffForhumans() }}
                                 </p>
                             </div>
                         </div>

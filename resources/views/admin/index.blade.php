@@ -77,7 +77,7 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="card">
-                            <div class="card-body">
+                            <div class="card-body text-center">
                                 <div class="card-widgets">
                                     <a href="javascript: void(0);" data-toggle="reload">
                                         <i class="mdi mdi-refresh"></i>
@@ -91,9 +91,15 @@
                                 </div>
                                 <h4 class="header-title mb-0">Gráfico general</h4>
 
-                                <div id="chartResults" class="collapse pt-3 show" dir="ltr">
+                                    {{-- Grafica --}}
+                                    <div class="text-center" id="piechart_3d" style="width: 1200px; height: 500px;"></div>
+
+
+                                
+                                {{-- <div id="chartResults" class="collapse pt-3 show" dir="ltr">
                                     <div id="apex-column-1" class="apex-charts"></div>
-                                </div> <!-- collapsed end -->
+                                </div>  --}}
+                                <!-- collapsed end -->
                             </div> <!-- end card-body -->
                         </div> <!-- end card-->
                     </div> <!-- end col-->
@@ -117,9 +123,32 @@
                 
             </div>
             {{-- container --}}
-
+         
         </div>
+
         {{-- content --}}
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Votos', 'Gobernador'],
+            @foreach ($estadisticas as $item)
+              ['{{ $item->Lista}}', {{ $item->Votos}}],
+            @endforeach
+        ]);
+
+        var options = {
+          title: '',
+          is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+      }
+    </script>
+        
 @endsection
 
 @section('scripts')

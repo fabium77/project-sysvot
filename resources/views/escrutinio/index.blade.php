@@ -104,7 +104,7 @@
                                             <ul class="nav nav-pills nav-justified form-wizard-header mb-3">
                                                 <li class="nav-item" data-target-form="#mesaForm">
                                                     <a href="#mesa" data-toggle="tab" class="nav-link">
-                                                        <span class="number">1</span>
+                                                        <span class="number"> </span>
                                                         <span class="d-none d-sm-inline">Mesa</span>
                                                     </a>
                                                 </li>
@@ -226,6 +226,16 @@
                 });
             })
             
+        </script>
+
+        <script>
+        function on() {
+          document.getElementById("overlay").style.display = "block";
+        }
+        
+        function off() {
+          document.getElementById("overlay").style.display = "none";
+        }
         </script>
         
     </body>

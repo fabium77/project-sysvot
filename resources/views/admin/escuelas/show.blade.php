@@ -31,6 +31,10 @@
                                     </strong>
                                     {{ $escuela->direccion }}
                                 </p>
+
+                                {{-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14031.171024867894!2d-65.724503!3d-28.4556631!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa39f43fad1258825!2sEscuela%20N%C2%B0%20366%20Provincia%20de%20La%20Pampa!5e0!3m2!1ses-419!2sar!4v1575788648433!5m2!1ses-419!2sar" width="1200" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe> --}}
+
+
                                 <p>
                                     <strong class="font-weight-bold">
                                         Direccion:
@@ -43,7 +47,7 @@
                                     <strong class="font-weight-bold">
                                         Fecha de Creacion:
                                     </strong>
-                                    {{ $escuela->created_at }}
+                                    {{ $escuela->created_at->diffForHumans() }}
                                 </p>
                             </div>
                         </div>

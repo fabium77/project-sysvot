@@ -63,6 +63,7 @@
                             <tr>
                                 <th class="font-weight-medium">ID</th>
                                 <th class="font-weight-medium">Nombre</th>
+                                <th class="font-weight-medium">Numero</th>
                                 <th class="font-weight-medium">Acciones</th>
                             </tr>
                             </thead>
@@ -76,6 +77,14 @@
                                         @can('circuitos.show')
                                         <a href="{{ route('circuitos.show', $circuito->idCircuitos) }}">
                                             {{ $circuito->nombre }}
+                                        </a>
+                                        @endcan
+                                            
+                                        </td>
+                                        <td>
+                                        @can('circuitos.show')
+                                        <a href="{{ route('circuitos.show', $circuito->idCircuitos) }}">
+                                            {{ $circuito->numero }}
                                         </a>
                                         @endcan
                                             

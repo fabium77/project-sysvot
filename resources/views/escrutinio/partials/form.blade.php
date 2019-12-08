@@ -33,6 +33,7 @@
         <div id="gemForm" class="form-horizontal">
             <div class="row">
                 <div class="col-12">
+                    
                     <div class="form-group row mb-3">
                         {{ Form::label('1', 'Gobernador', ['class' => 'col-md-3 col-form-label']) }}
                         {{-- <label class="col-md-3 col-form-label" for="gobernador">Gobernador</label> --}}

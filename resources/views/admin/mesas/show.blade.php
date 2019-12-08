@@ -64,7 +64,7 @@
                                     {{$item->CantidadElectores}}
                                     @endforeach
                                 </p>
-
+                                
                                 <p></p>
 
                                 <br />
@@ -227,6 +227,34 @@
                         </div>
                         {{-- end row --}}
                     </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card-box">
+                                <div class="row">
+                                    <div class="card-body">
+                                            <div class="card-widgets">
+                                                    <a href="javascript: void(0);" data-toggle="reload">
+                                                        <i class="mdi mdi-refresh"></i>
+                                                    </a>
+                                                    <a data-toggle="collapse" href="#piechart_3d" role="button" aria-expanded="false" aria-controls="cardCollpase5">
+                                                        <i class="mdi mdi-minus"></i>
+                                                    </a>
+                                                    <a href="javascript: void(0);" data-toggle="remove">
+                                                        <i class="mdi mdi-close"></i>
+                                                    </a>
+                                                </div>
+                                            <h4 class="header-title mb-0">Gráfico Gobernador</h4>
+                                        <div class="text-center" id="piechart_3d" style="width: 700px; height: 400px; margin: 0 auto; "></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+
                     <div class="mt-4 mb-3">
                         <div class="text-center d-print-none">
                             <a
@@ -242,10 +270,38 @@
                 {{-- end col --}}
             </div>
             {{-- end row --}}
+
+
+
+
+                {{-- end col --}}
+            </div>
         </div>
         {{-- container --}}
     </div>
     {{-- content --}}
 </div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Votos', 'Gobernador'],
+            @foreach ($gob as $item)
+              ['{{ $item->Lista}}', {{ $item->Votos}}],
+            @endforeach
+        ]);
+
+        var options = {
+          title: '',
+          is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+      }
+    </script>
 
 @endsection

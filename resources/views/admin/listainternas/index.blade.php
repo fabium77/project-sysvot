@@ -127,7 +127,7 @@
                 <button type="button" class="close" onclick="Custombox.modal.close();">
                     <span>&times;</span><span class="sr-only">Cerrar</span>
                 </button>
-                <h4 class="custom-modal-title">Agregar Agrupación Política</h4>
+                <h4 class="custom-modal-title">Agregar Lista Interna</h4>
                 <div class="custom-modal-text text-left">
                     {!! Form::open(['route' => 'listainternas.store']) !!}
                         @csrf
