@@ -13,7 +13,7 @@ use App\Agrupacionespolitica;
 use App\Circuito;
 use App\Comicios_has_mesa;
 use App\User;
-
+use Illuminate\Support\Facades\DB;
 
 
 use Illuminate\Http\Request;
@@ -74,7 +74,23 @@ class EscrutinioAdminController extends Controller
 
 
         $escuelasNombres = Escuela::get();
-        $mesas = Mesa::get();
+
+        //$mesas = Mesa::get();
+        $mesas = DB::select("SELECT 
+        mesas.numero as Numero_Mesa,
+        mesas.idMesas as id,
+        users.name
+        
+        FROM escrutinios
+        inner join comicios_has_mesas on escrutinios.Comicios_has_Mesas = comicios_has_mesas.idComiciosHasMesas
+        inner join mesas on comicios_has_mesas.Mesas_idMesas = mesas.idMesas
+        inner join users on users.id = escrutinios.usuario
+            where mesas.cargado = 1 group by mesas.numero, users.name, mesas.idMesas");
+        
+
+
+       
+        
 
         return view('admin.escrutinioAdmins.index', compact('escrutinioAdmins','mesas','escuelasNombres', 'listainternas', 'listainternasNombres', 'cargoselectivos', 'cargoselectivosNombres'));
 

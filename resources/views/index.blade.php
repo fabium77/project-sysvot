@@ -148,7 +148,13 @@
                                         </div>
                                         </div>
                                         <div class="text-right">
-                                            <h2 class="mt-3 pt-1 mb-1" id="card-lista-506"> 0 </h2>
+                                            <h2 class="mt-3 pt-1 mb-1" id="card-lista-506"> 
+                                                @foreach ($votosgob as $item)
+                                                    @if ($item->Lista == 'Juntos por el Cambio')
+                                                    {{$item->Votos }}
+                                                    @endif
+                                                 @endforeach
+                                            </h2>
                                             <p class="mb-0">Votos</p>
                                         </div>
                                         <div class="clearfix"></div>
@@ -171,7 +177,13 @@
                                             </div>
                                             </div>
                                         <div class="text-right">
-                                            <h2 class="mt-3 pt-1 mb-1"  id="card-lista-503"> 0 </h2>
+                                            <h2 class="mt-3 pt-1 mb-1"  id="card-lista-503"> 
+                                            @foreach ($votosgob as $item)
+                                               @if ($item->Lista == 'Frente de Todos')
+                                               {{$item->Votos }}
+                                               @endif
+                                            @endforeach
+                                        </h2>
                                             <p class="mb-0">Votos</p>
                                         </div>
                                         <div class="clearfix"></div>
@@ -194,7 +206,14 @@
                                             </div>
                                             </div>
                                         <div class="text-right">
-                                            <h2 class="mt-3 pt-1 mb-1"  id="card-lista-69" > 0 </h2>
+                                            <h2 class="mt-3 pt-1 mb-1"  id="card-lista-69" >
+                                                    @foreach ($votosgob as $item)
+                                                    @if ($item->Lista == 'GEM')
+                                                    {{$item->Votos }}
+                                                    @endif
+                                                 @endforeach
+
+                                            </h2>
                                             <p class="mb-0">Votos</p>
                                         </div>
                                         <div class="clearfix"></div>
@@ -217,7 +236,13 @@
                                             </div>
                                             </div>
                                         <div class="text-right">
-                                            <h2 class="mt-3 pt-1 mb-1"  id="card-lista-504" > 0 </h2>
+                                            <h2 class="mt-3 pt-1 mb-1"  id="card-lista-504" >
+                                                    @foreach ($votosgob as $item)
+                                                    @if ($item->Lista == 'Consenso Federal')
+                                                    {{$item->Votos }}
+                                                    @endif
+                                                 @endforeach    
+                                            </h2>
                                             <p class="mb-0">Votos</p>
                                         </div>
                                         <div class="clearfix"></div>
@@ -354,7 +379,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-6">
-                            2019 &copy; Escrutinio por <a href="#">Old Valley Soft</a> 
+                            2019 &copy; Escrutinio por <a href="#">Gabriel Villalon</a> 
                         </div>
                         <div class="col-md-6">
                             <div class="text-md-right footer-links d-none d-sm-block">

@@ -71,7 +71,7 @@
                             
                                 @foreach($mesas as $mesa)
                                 
-                                @if ($mesa->cargado == 1 )
+                                
                                 <tr>
                                     
                                     <td>
@@ -101,7 +101,7 @@
                                             <td>
                                                 {{ $mesa->updated_at->format('d/m/Y') }}
                                             </td>
-                                @endif
+                                
 
                                 
                                 @endforeach  

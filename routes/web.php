@@ -238,9 +238,19 @@ Route::middleware(['auth'])->group(function(){
     Route::get('escrutinio', 'EscrutinioController@index')->name('escrutinio.index')
         ->middleware('can:escrutinio.index');
 
+       
     Route::post('escrutinio/store', 'EscrutinioController@store')->name('escrutinio.store')
         ->middleware('can:escrutinio.create'); 
 
+    Route::put('escrutinio/{escrutinio}', 'EscrutinioController@update')->name('escrutinio.update')
+        ->middleware('can:escrutinio.edit'); 
+
+        Route::get('actualizardatos', 'EscrutinioController@actualizardatos')->name('actualizardatos');
+        
+    
+        Route::get('escrutinio/{NumMesa}/edit', 'EscrutinioController@edit')->name('escrutinio.edit')
+            ->middleware('can:escrutinio.edit');
+        
     Route::get('escrutinio/success', 'EscrutinioController@success')->name('escrutinio.success')
         ->middleware('can:escrutinio.create');
 

@@ -34,12 +34,12 @@
             @include('admin.escuelas.fragment.error')
 
             @if(session('info'))
-            <div class="alert alert-success">
-                <button class="close" data-dismiss="alert">
-                    &times;
-                </button>
-                {{ session('info') }}
-            </div>
+                <div class="alert alert-success">
+                    <button class="close" data-dismiss="alert">
+                        &times;
+                    </button>
+                    {{ session('info') }}
+                </div>
             @endif
 
             <div class="row">

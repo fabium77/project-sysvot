@@ -132,8 +132,8 @@ class MesaController extends Controller
         $gob = DB::select("SELECT 
         
 		listainternas.nombre as Lista,
-       cargoselectivos.nombre as Cargo,
-       sum(escrutinios.voto) as Votos
+        cargoselectivos.nombre as Cargo,
+        sum(escrutinios.voto) as Votos
 
         FROM escrutinios
         inner join comicios_has_mesas on escrutinios.Comicios_has_Mesas = comicios_has_mesas.idComiciosHasMesas
@@ -156,13 +156,23 @@ class MesaController extends Controller
        $listas = DB::select('SELECT listainternas.numero, listainternas.nombre FROM listainternas;');
 
 
+        $usuariocarga = DB::select("SELECT 
+        mesas.numero as Numero_Mesa,
+        users.name,
+        escrutinios.usuario
+        
+        FROM escrutinios
+        inner join comicios_has_mesas on escrutinios.Comicios_has_Mesas = comicios_has_mesas.idComiciosHasMesas
+        inner join mesas on comicios_has_mesas.Mesas_idMesas = mesas.idMesas
+        inner join users on users.id = escrutinios.usuario
+        where mesas.numero = '$numeroMesa' limit 1");
 
-      // dd($cantelectores);
+       //dd($usuariocarga);
 
 
         $escuelas = Escuela::where('idEscuelas', $mesa->Escuelas_idEscuelas)->first()->nombre;   
 
-        return view('admin.mesas.show', compact('mesa','escuelas','datos','numeroMesa','cantelectores','listas','gob'));
+        return view('admin.mesas.show', compact('mesa','escuelas','datos','numeroMesa','cantelectores','listas','gob','usuariocarga'));
         
     }
 

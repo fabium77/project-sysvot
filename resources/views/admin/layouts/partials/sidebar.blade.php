@@ -17,12 +17,22 @@
                     </a>
                 </li>
 
-                <li>
-                    <a href="{{ url('/escrutinio') }}" class="waves-effect">
-                            <i class="remixicon-file-add-fill"></i>
-                            <span> Cargar Datos </span>
+                    <li>
+                        <a href="{{ url('/escrutinio') }}" class="waves-effect">
+                                <i class="remixicon-file-add-fill"></i>
+                                <span> Cargar Datos </span>
                         </a>
                     </li>
+                    @can('listainternas.index')
+                    <li>
+                        <a href="{{ url('escrutinio.edit') }}" class="waves-effect" data-toggle="modal" data-target="#myModal">
+                                <i class="remixicon-edit-fill"></i>
+                                <span> Editar Mesas Cargadas </span>
+                        </a>
+                    </li>
+                    @endcan
+                    
+
 
                 <li class="menu-title mt-2">Mantenimiento</li>
 
@@ -59,13 +69,13 @@
                             </a>
                         </li>
                         @endcan
-                        @can('mesas.index')                         
+                        {{-- @can('mesas.index')                         
                         <li>
                             <a href="{{ route('escrutinioAdmins.index') }}" class="waves-effect">
                                 Escrutinio
                             </a>
                         </li>
-                        @endcan
+                        @endcan --}}
                     </ul>
                 </li>
 

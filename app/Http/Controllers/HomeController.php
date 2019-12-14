@@ -42,7 +42,6 @@ class HomeController extends Controller
         inner join cargoselectivos on listainterna_has_cargoselectivos.CargosElectivos_idCargosElectivos = cargoselectivos.idCargosElectivos
 			 where  cargoselectivos.nombre = 'Gobernador' group by listainternas.nombre, cargoselectivos.nombre order by listainternas.nombre");
         
-
         //dd($estadisticas);
        // return view('admin.index', ['title' => $title ]);
         return view('admin.index', compact('title','estadisticas'));

@@ -90,6 +90,8 @@
                             <div class="col-12">
                                 <div class="page-title-box" style="left: 0; right: 0">
                                     <h4 class="page-title">Cargar datos de Escrutinio</h4>
+
+                                    
                                 </div>
                             </div>
                         </div>     
@@ -99,7 +101,8 @@
                             <div class="col-xl-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="header-title mb-3"> Ingrese los datos</h4>
+                                        <h4 class="header-title mb-3"> Ingrese los datos  </h4>
+                                        
                                         <div id="rootwizard">
                                             <ul class="nav nav-pills nav-justified form-wizard-header mb-3">
                                                 <li class="nav-item" data-target-form="#mesaForm">
@@ -149,10 +152,16 @@
                                                 </li>
                                             @endforeach --}}
 
-                                            {!! Form::open(['route' => 'escrutinio.store']) !!}
+                                            {!! Form::model([$datos, 'route' => 'escrutinio.update']) !!}
                                                 @csrf
-                                                @include('escrutinio.partials.form')
+                                                @include('escrutinio.partials.form-edit')
+                                                @method('PUT')
+                                                
                                             {!! Form::close() !!}
+
+                                            {{-- <a href="{{ route('actualizardatos', $datos) }}" type="submit">Enviar datos</a> --}}
+
+                                            
                                                 
                                         </div> 
                                         {{-- end #rootwizard --}}

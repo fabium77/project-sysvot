@@ -47,7 +47,7 @@
                                     <strong class="font-weight-bold">
                                         Fecha de Creacion:
                                     </strong>
-                                    {{ $escuela->created_at->diffForHumans() }}
+                                    {{ $escuela->created_at }}
                                 </p>
                             </div>
                         </div>

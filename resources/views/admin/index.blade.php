@@ -89,10 +89,11 @@
                                         <i class="mdi mdi-close"></i>
                                     </a>
                                 </div>
-                                <h4 class="header-title mb-0">Gráfico general</h4>
+                                <h4 class="header-title mb-0">Gráfico general Gobernador</h4>
 
                                     {{-- Grafica --}}
-                                    <div class="text-center" id="piechart_3d" style="width: 1200px; height: 500px;"></div>
+                                    {{-- <div class="text-center" id="piechart_3d" style="width: 1200px; height: 500px;"></div> --}}
+                                    <div class="" id="piechart_3d" style="width: 100%; height: 150%;"></div>
 
 
                                 
@@ -116,9 +117,11 @@
                             </div>
                             <h4 class="header-title mb-3">Registro de actividad</h4>
 
+                            
+
                         </div> <!-- end card-box-->
                     </div> <!-- end col -->
-                </div>
+                </div> 
                 {{-- end row --}}
                 
             </div>

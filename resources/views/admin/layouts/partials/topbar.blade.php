@@ -21,7 +21,7 @@
                 </div>
 
                 {{-- item --}}
-                <a href="#" class="dropdown-item notify-item">
+                <a href="{{ route('users.show',  Auth::user()->id ) }}" class="dropdown-item notify-item">
                     <i class="remixicon-account-circle-line"></i>
                     <span>Mi Cuenta</span>
                 </a>

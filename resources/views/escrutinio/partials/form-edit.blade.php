@@ -10,24 +10,37 @@
                         {{ Form::label('mesa', 'N° de mesa', ['class' => 'col-md-3 col-form-label']) }}
                         {{-- <label class="col-md-3 col-form-label" for="mesa">N° de mesa</label> --}}
                         <div class="col-md-9">
-                            {{ Form::text('mesa', null, ['class' => 'form-control']) }}
+                            {{ Form::text('mesa', $numeroMesa, ['class' => 'form-control','disabled' => 'disabled']) }}
                             {{-- <input type="number" class="form-control" id="mesa" name="mesa" required> --}}
                         </div>
                     </div>
-                    <div class="form-group row mb-3">
-                        {{ Form::label('votos', 'Cantidad votos emitidos', ['class' => 'col-md-3 col-form-label']) }}
-                        {{-- <label class="col-md-3 col-form-label" for="votos"> Cantidad votos emitidos</label> --}}
-                        <div class="col-md-9">
-                            {{ Form::number('votos', null, ['class' => 'form-control']) }}
-                            {{-- <input type="number" id="votos" name="votos" class="form-control" required> --}}
-                        </div>
-                    </div>
+
+                    @foreach ($cantelectores as $item)
+                               
+                               <div class="form-group row mb-3">
+                                {{ Form::label('votos', 'Cantidad votos emitidos', ['class' => 'col-md-3 col-form-label']) }}
+                                {{-- <label class="col-md-3 col-form-label" for="votos"> Cantidad votos emitidos</label> --}}
+                                <div class="col-md-9">
+                                    {{ Form::number('votos',  $item->CantidadElectores, ['class' => 'form-control']) }}
+        
+                                   
+                                </div>
+                            </div>
+                            @break
+                    @endforeach
+
+
+                    
                 </div> 
                 {{-- end col --}}
             </div> 
             {{-- end row --}}
         </div>
     </div>
+
+    {{-- @foreach ($cargos as $item)
+       {{$item->nombre}}
+    @endforeach --}}
 
     
     
@@ -36,23 +49,32 @@
             <div class="row">
                 <div class="col-12">
                     
-                    <div class="form-group row mb-3">
+                    {{-- <div class="form-group row mb-3">
                         {{ Form::label('1', 'Gobernador', ['class' => 'col-md-3 col-form-label']) }}
-                        {{-- <label class="col-md-3 col-form-label" for="gobernador">Gobernador</label> --}}
+
                         <div class="col-md-9">
                             {{ Form::number('1', null, ['class' => 'form-control']) }}
-                            {{-- <input type="number" class="form-control" id="gobernador" name="gobernador" required> --}}
                         </div>
-                    </div>
-                    <div class="form-group row mb-3">
+                    </div> --}}
+
+                    @foreach ($datos as $item)
+                        @if ($item->ListaInterna == 'GEM')
+                            <div class="form-group row mb-3">
+                                {{ Form::label($item->listainterhascarg, $item->nombre, ['class' => 'col-md-3 col-form-label']) }}
+                                <div class="col-md-9">
+                                    {{ Form::number($item->listainterhascarg, $item->voto, ['class' => 'form-control']) }}
+                                </div>
+                            </div>
+                        @endif
+                    @endforeach
+
+
+                    {{-- <div class="form-group row mb-3">
                         {{ Form::label('2', 'Senadores', ['class' => 'col-md-3 col-form-label']) }}
                         <div class="col-md-9">
                             {{ Form::number('2', null, ['class' => 'form-control']) }}
                         </div>
-                        {{-- <label class="col-md-3 col-form-label" for="senadores"> Senadores</label>
-                        <div class="col-md-9">
-                            <input type="number" id="senadores" name="senadores" class="form-control" required>
-                        </div> --}}
+                       
                     </div>
                     <div class="form-group row mb-3">
                         {{ Form::label('3', 'Diputados', ['class' => 'col-md-3 col-form-label']) }}
@@ -60,31 +82,23 @@
                             {{ Form::number('3', null, ['class' => 'form-control']) }}
                         </div>
                         
-                        {{-- <label class="col-md-3 col-form-label" for="diputados"> Diputados</label>
-                        <div class="col-md-9">
-                            <input type="number" id="diputados" name="diputados" class="form-control" required>
-                        </div> --}}
                     </div>
                     <div class="form-group row mb-3">
                         {{ Form::label('4', 'Intendente', ['class' => 'col-md-3 col-form-label']) }}
                         <div class="col-md-9">
                             {{ Form::number('4', null, ['class' => 'form-control']) }}
                         </div>
-                        {{-- <label class="col-md-3 col-form-label" for="intendente"> Intendente</label>
-                        <div class="col-md-9">
-                            <input type="number" id="intendente" name="intendente" class="form-control" required>
-                        </div> --}}
+                        
                     </div>
                     <div class="form-group row mb-3">
                         {{ Form::label('5', 'Concejales', ['class' => 'col-md-3 col-form-label']) }}
                         <div class="col-md-9">
                             {{ Form::number('5', null, ['class' => 'form-control']) }}
                         </div>
-                        {{-- <label class="col-md-3 col-form-label" for="concejales"> Concejales</label>
-                        <div class="col-md-9">
-                            <input type="number" id="concejales" name="concejales" class="form-control" required>
-                        </div> --}}
-                    </div>
+                        
+                    </div> --}}
+
+
                 </div> 
                 {{-- end col --}}
             </div> 
@@ -96,36 +110,16 @@
         <div id="ftForm" class="form-horizontal">
             <div class="row">
                 <div class="col-12">
-                    <div class="form-group row mb-3">
-                        {{ Form::label('6', 'Gobernador', ['class' => 'col-md-3 col-form-label']) }}
-                        <div class="col-md-9">
-                            {{ Form::number('6', null, ['class' => 'form-control']) }}
-                        </div>
-                    </div>
-                    <div class="form-group row mb-3">
-                        {{ Form::label('26', 'Senadores', ['class' => 'col-md-3 col-form-label']) }}
-                        <div class="col-md-9">
-                            {{ Form::number('26', null, ['class' => 'form-control']) }}
-                        </div>
-                    </div>
-                    <div class="form-group row mb-3">
-                        {{ Form::label('27', 'Diputados', ['class' => 'col-md-3 col-form-label']) }}
-                        <div class="col-md-9">
-                            {{ Form::number('27', null, ['class' => 'form-control']) }}
-                        </div>
-                    </div>
-                    <div class="form-group row mb-3">
-                        {{ Form::label('28', 'Intendente', ['class' => 'col-md-3 col-form-label']) }}
-                        <div class="col-md-9">
-                            {{ Form::number('28', null, ['class' => 'form-control']) }}
-                        </div>
-                    </div>
-                    <div class="form-group row mb-3">
-                        {{ Form::label('29', 'Concejales', ['class' => 'col-md-3 col-form-label']) }}
-                        <div class="col-md-9">
-                            {{ Form::number('29', null, ['class' => 'form-control']) }}
-                        </div>
-                    </div>
+                    @foreach ($datos as $item)
+                        @if ($item->ListaInterna == 'Frente de Todos')
+                            <div class="form-group row mb-3">
+                                {{ Form::label($item->listainterhascarg, $item->nombre, ['class' => 'col-md-3 col-form-label']) }}
+                                <div class="col-md-9">
+                                    {{ Form::number($item->listainterhascarg, $item->voto, ['class' => 'form-control']) }}
+                                </div>
+                            </div>
+                        @endif
+                    @endforeach
                 </div> 
                 {{-- end col --}}
                 {{-- <div class="col-12">
@@ -169,36 +163,16 @@
         <div id="cfForm" class="form-horizontal">
             <div class="row">
                 <div class="col-12">
-                    <div class="form-group row mb-3">
-                        {{ Form::label('30', 'Gobernador', ['class' => 'col-md-3 col-form-label']) }}
-                        <div class="col-md-9">
-                            {{ Form::number('30', null, ['class' => 'form-control']) }}
+                    @foreach ($datos as $item)
+                    @if ($item->ListaInterna == 'Consenso Federal')
+                        <div class="form-group row mb-3">
+                            {{ Form::label($item->listainterhascarg, $item->nombre, ['class' => 'col-md-3 col-form-label']) }}
+                            <div class="col-md-9">
+                                {{ Form::number($item->listainterhascarg, $item->voto, ['class' => 'form-control']) }}
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row mb-3">
-                        {{ Form::label('31', 'Senadores', ['class' => 'col-md-3 col-form-label']) }}
-                        <div class="col-md-9">
-                            {{ Form::number('31', null, ['class' => 'form-control']) }}
-                        </div>
-                    </div>
-                    <div class="form-group row mb-3">
-                        {{ Form::label('32', 'Diputados', ['class' => 'col-md-3 col-form-label']) }}
-                        <div class="col-md-9">
-                            {{ Form::number('32', null, ['class' => 'form-control']) }}
-                        </div>
-                    </div>
-                    <div class="form-group row mb-3">
-                        {{ Form::label('33', 'Intendente', ['class' => 'col-md-3 col-form-label']) }}
-                        <div class="col-md-9">
-                            {{ Form::number('33', null, ['class' => 'form-control']) }}
-                        </div>
-                    </div>
-                    <div class="form-group row mb-3">
-                        {{ Form::label('34', 'Concejales', ['class' => 'col-md-3 col-form-label']) }}
-                        <div class="col-md-9">
-                            {{ Form::number('34', null, ['class' => 'form-control']) }}
-                        </div>
-                    </div>
+                    @endif
+                @endforeach
                 </div> 
                 {{-- end col --}}
                 {{-- <div class="col-12">
@@ -242,36 +216,16 @@
         <div id="jpcForm" class="form-horizontal">
             <div class="row">
                 <div class="col-12">
-                    <div class="form-group row mb-3">
-                        {{ Form::label('35', 'Gobernador', ['class' => 'col-md-3 col-form-label']) }}
-                        <div class="col-md-9">
-                            {{ Form::number('35', null, ['class' => 'form-control']) }}
+                    @foreach ($datos as $item)
+                    @if ($item->ListaInterna == 'Juntos por el Cambio')
+                        <div class="form-group row mb-3">
+                            {{ Form::label($item->listainterhascarg, $item->nombre, ['class' => 'col-md-3 col-form-label']) }}
+                            <div class="col-md-9">
+                                {{ Form::number($item->listainterhascarg, $item->voto, ['class' => 'form-control']) }}
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row mb-3">
-                        {{ Form::label('36', 'Senadores', ['class' => 'col-md-3 col-form-label']) }}
-                        <div class="col-md-9">
-                            {{ Form::number('36', null, ['class' => 'form-control']) }}
-                        </div>
-                    </div>
-                    <div class="form-group row mb-3">
-                        {{ Form::label('37', 'Diputados', ['class' => 'col-md-3 col-form-label']) }}
-                        <div class="col-md-9">
-                            {{ Form::number('37', null, ['class' => 'form-control']) }}
-                        </div>
-                    </div>
-                    <div class="form-group row mb-3">
-                        {{ Form::label('38', 'Intendente', ['class' => 'col-md-3 col-form-label']) }}
-                        <div class="col-md-9">
-                            {{ Form::number('38', null, ['class' => 'form-control']) }}
-                        </div>
-                    </div>
-                    <div class="form-group row mb-3">
-                        {{ Form::label('39', 'Concejales', ['class' => 'col-md-3 col-form-label']) }}
-                        <div class="col-md-9">
-                            {{ Form::number('39', null, ['class' => 'form-control']) }}
-                        </div>
-                    </div>
+                    @endif
+                    @endforeach
                 </div> 
                 {{-- end col --}}
                 {{-- <div class="col-12">
@@ -325,7 +279,7 @@
         
                         <div class="mb-3">
                             <div class="custom-control custom-checkbox">
-                                {{ Form::submit('Registrar', ['class' => 'btn btn-success waves-effect waves-light']) }}
+                                {{ Form::submit('Actualizar Datos', ['class' => 'btn btn-success waves-effect waves-light']) }}
                                 {{-- <input type="submit" class="btn btn-success" value="Enviar"> --}}
                             </div>
                         </div>

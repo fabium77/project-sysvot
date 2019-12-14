@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box">
-                        <h4 class="page-title">Mesa</h4>
+                        <h4 class="page-title">Resultado de Escrutinio de Mesa</h4>
                     </div>
                 </div>
             </div>
@@ -55,6 +55,19 @@
                                     @if ( $mesa->cargado == 1 ) Si @else No
                                     @endif
                                 </p>
+
+                                <p>
+                                        <strong class="font-weight-bold">
+                                            Cargada Por:
+                                        </strong>
+
+                                        @foreach ($usuariocarga as $item)
+                                            
+                                            <a href="{{ route('users.show', $item->usuario) }}">{{$item->name}}</a>
+                                        @endforeach
+
+                                        
+                                    </p>
 
                                 <p>
                                     <strong class="font-weight-bold">

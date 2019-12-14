@@ -49,7 +49,7 @@
         </div>
         {{-- end page --}}
         <footer class="footer footer-alt">
-            2019 &copy; Escrutinio por <a href="#" class="text-muted">Old Valley Soft</a> 
+            2019 &copy; Escrutinio por <a href="#" class="text-muted">Gabriel Villalon</a> 
         </footer>
     </body>
 </html>
