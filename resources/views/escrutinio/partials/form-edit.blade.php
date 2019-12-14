@@ -12,6 +12,7 @@
                         <div class="col-md-9">
                             {{ Form::text('mesa', $numeroMesa, ['class' => 'form-control','disabled' => 'disabled']) }}
                             {{-- <input type="number" class="form-control" id="mesa" name="mesa" required> --}}
+                            <input type="hidden" name="_method" value="PUT">
                         </div>
                     </div>
 
@@ -38,24 +39,12 @@
         </div>
     </div>
 
-    {{-- @foreach ($cargos as $item)
-       {{$item->nombre}}
-    @endforeach --}}
-
     
     
     <div class="tab-pane" id="gem">
         <div id="gemForm" class="form-horizontal">
             <div class="row">
                 <div class="col-12">
-                    
-                    {{-- <div class="form-group row mb-3">
-                        {{ Form::label('1', 'Gobernador', ['class' => 'col-md-3 col-form-label']) }}
-
-                        <div class="col-md-9">
-                            {{ Form::number('1', null, ['class' => 'form-control']) }}
-                        </div>
-                    </div> --}}
 
                     @foreach ($datos as $item)
                         @if ($item->ListaInterna == 'GEM')
@@ -67,36 +56,6 @@
                             </div>
                         @endif
                     @endforeach
-
-
-                    {{-- <div class="form-group row mb-3">
-                        {{ Form::label('2', 'Senadores', ['class' => 'col-md-3 col-form-label']) }}
-                        <div class="col-md-9">
-                            {{ Form::number('2', null, ['class' => 'form-control']) }}
-                        </div>
-                       
-                    </div>
-                    <div class="form-group row mb-3">
-                        {{ Form::label('3', 'Diputados', ['class' => 'col-md-3 col-form-label']) }}
-                        <div class="col-md-9">
-                            {{ Form::number('3', null, ['class' => 'form-control']) }}
-                        </div>
-                        
-                    </div>
-                    <div class="form-group row mb-3">
-                        {{ Form::label('4', 'Intendente', ['class' => 'col-md-3 col-form-label']) }}
-                        <div class="col-md-9">
-                            {{ Form::number('4', null, ['class' => 'form-control']) }}
-                        </div>
-                        
-                    </div>
-                    <div class="form-group row mb-3">
-                        {{ Form::label('5', 'Concejales', ['class' => 'col-md-3 col-form-label']) }}
-                        <div class="col-md-9">
-                            {{ Form::number('5', null, ['class' => 'form-control']) }}
-                        </div>
-                        
-                    </div> --}}
 
 
                 </div> 
@@ -121,39 +80,7 @@
                         @endif
                     @endforeach
                 </div> 
-                {{-- end col --}}
-                {{-- <div class="col-12">
-                    <div class="form-group row mb-3">
-                        <label class="col-md-3 col-form-label" for="gobernador">Gobernador</label>
-                        <div class="col-md-9">
-                            <input type="number" class="form-control" id="gobernador" name="gobernador" required>
-                        </div>
-                    </div>
-                    <div class="form-group row mb-3">
-                        <label class="col-md-3 col-form-label" for="diputados"> Diputados</label>
-                        <div class="col-md-9">
-                            <input type="number" id="diputados" name="diputados" class="form-control" required>
-                        </div>
-                    </div>
-                    <div class="form-group row mb-3">
-                        <label class="col-md-3 col-form-label" for="senadores"> Senadores</label>
-                        <div class="col-md-9">
-                            <input type="number" id="senadores" name="senadores" class="form-control" required>
-                        </div>
-                    </div>
-                    <div class="form-group row mb-3">
-                        <label class="col-md-3 col-form-label" for="intendente"> Intendente</label>
-                        <div class="col-md-9">
-                            <input type="number" id="intendente" name="intendente" class="form-control" required>
-                        </div>
-                    </div>
-                    <div class="form-group row mb-3">
-                        <label class="col-md-3 col-form-label" for="concejales"> Concejales</label>
-                        <div class="col-md-9">
-                            <input type="number" id="concejales" name="concejales" class="form-control" required>
-                        </div>
-                    </div>
-                </div> <!-- end col --> --}}
+          
             </div>
             {{-- end row --}}
         </div>
@@ -174,39 +101,7 @@
                     @endif
                 @endforeach
                 </div> 
-                {{-- end col --}}
-                {{-- <div class="col-12">
-                    <div class="form-group row mb-3">
-                        <label class="col-md-3 col-form-label" for="gobernador">Gobernador</label>
-                        <div class="col-md-9">
-                            <input type="number" class="form-control" id="gobernador" name="gobernador" required>
-                        </div>
-                    </div>
-                    <div class="form-group row mb-3">
-                        <label class="col-md-3 col-form-label" for="diputados"> Diputados</label>
-                        <div class="col-md-9">
-                            <input type="number" id="diputados" name="diputados" class="form-control" required>
-                        </div>
-                    </div>
-                    <div class="form-group row mb-3">
-                        <label class="col-md-3 col-form-label" for="senadores"> Senadores</label>
-                        <div class="col-md-9">
-                            <input type="number" id="senadores" name="senadores" class="form-control" required>
-                        </div>
-                    </div>
-                    <div class="form-group row mb-3">
-                        <label class="col-md-3 col-form-label" for="intendente"> Intendente</label>
-                        <div class="col-md-9">
-                            <input type="number" id="intendente" name="intendente" class="form-control" required>
-                        </div>
-                    </div>
-                    <div class="form-group row mb-3">
-                        <label class="col-md-3 col-form-label" for="concejales"> Concejales</label>
-                        <div class="col-md-9">
-                            <input type="number" id="concejales" name="concejales" class="form-control" required>
-                        </div>
-                    </div>
-                </div> <!-- end col --> --}}
+                
             </div> 
             {{-- end row --}}
         </div>
@@ -228,38 +123,6 @@
                     @endforeach
                 </div> 
                 {{-- end col --}}
-                {{-- <div class="col-12">
-                    <div class="form-group row mb-3">
-                        <label class="col-md-3 col-form-label" for="gobernador">Gobernador</label>
-                        <div class="col-md-9">
-                            <input type="number" class="form-control" id="gobernador" name="gobernador" required>
-                        </div>
-                    </div>
-                    <div class="form-group row mb-3">
-                        <label class="col-md-3 col-form-label" for="diputados"> Diputados</label>
-                        <div class="col-md-9">
-                            <input type="number" id="diputados" name="diputados" class="form-control" required>
-                        </div>
-                    </div>
-                    <div class="form-group row mb-3">
-                        <label class="col-md-3 col-form-label" for="senadores"> Senadores</label>
-                        <div class="col-md-9">
-                            <input type="number" id="senadores" name="senadores" class="form-control" required>
-                        </div>
-                    </div>
-                    <div class="form-group row mb-3">
-                        <label class="col-md-3 col-form-label" for="intendente"> Intendente</label>
-                        <div class="col-md-9">
-                            <input type="number" id="intendente" name="intendente" class="form-control" required>
-                        </div>
-                    </div>
-                    <div class="form-group row mb-3">
-                        <label class="col-md-3 col-form-label" for="concejales"> Concejales</label>
-                        <div class="col-md-9">
-                            <input type="number" id="concejales" name="concejales" class="form-control" required>
-                        </div>
-                    </div>
-                </div> <!-- end col --> --}}
             </div> 
             {{-- end row --}}
         </div>
@@ -291,56 +154,6 @@
         </div>
     </div>
 
-    {{-- <ul class="list-inline wizard mb-0">
-        <li class="previous list-inline-item">
-            <a href="javascript: void(0);" class="btn btn-secondary">Previo</a>
-        </li>
-        <li class="next list-inline-item float-right">
-            <a href="javascript: void(0);" class="btn btn-secondary">Siguiente</a>
-        </li>
-    </ul> --}}
-
 </div> 
 {{-- tab-content --}}
 
-{{-- @foreach ($listas as $lista)
-    <div class="tab-pane fade" id="{{ $lista->numero }}{{ $lista->letra }}">
-        <div id="{{ $lista->numero }}{{ $lista->letra }}Form" class="form-horizontal"> --}}
-            {{-- <div class="row">
-                <div class="col-12">
-                    <div class="form-group row mb-3">
-                        {{ Form::label('gob$lista->numero$lista->letra', 'Gobernador', ['class' => 'col-md-3 col-form-label']) }}
-                        <div class="col-md-9">
-                            {{ Form::number('gob{!! $lista->numero !!}{!! $lista->letra !!}', null, ['class' => 'form-control']) }}
-                        </div>
-                    </div>
-                    <div class="form-group row mb-3">
-                        {{ Form::label('dip{!! $lista->numero !!}{!! $lista->letra !!}', 'Diputados', ['class' => 'col-md-3 col-form-label']) }}
-                        <div class="col-md-9">
-                            {{ Form::number('dip{!! $lista->numero !!}{!! $lista->letra !!}', null, ['class' => 'form-control']) }}
-                        </div>
-                    </div>
-                    <div class="form-group row mb-3">
-                        {{ Form::label('sen{!! $lista->numero !!}{!! $lista->letra !!}', 'Senadores', ['class' => 'col-md-3 col-form-label']) }}
-                        <div class="col-md-9">
-                            {{ Form::number('sen{!! $lista->numero !!}{!! $lista->letra !!}', null, ['class' => 'form-control']) }}
-                        </div>
-                    </div>
-                    <div class="form-group row mb-3">
-                        {{ Form::label('int{!! $lista->numero !!}{!! $lista->letra !!}', 'Intendente', ['class' => 'col-md-3 col-form-label']) }}
-                        <div class="col-md-9">
-                            {{ Form::number('int{!! $lista->numero !!}{!! $lista->letra !!}', null, ['class' => 'form-control']) }}
-                        </div>
-                    </div>
-                    <div class="form-group row mb-3">
-                        {{ Form::label('con{!! $lista->numero !!}{!! $lista->letra !!}', 'Concejales', ['class' => 'col-md-3 col-form-label']) }}
-                        <div class="col-md-9">
-                            {{ Form::number('con{!! $lista->numero !!}{!! $lista->letra !!}', null, ['class' => 'form-control']) }}
-                        </div>
-                    </div>
-                </div> 
-            </div>  --}}
-            {{-- 1
-        </div>
-    </div>
-@endforeach --}}

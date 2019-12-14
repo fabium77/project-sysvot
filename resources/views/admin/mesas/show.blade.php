@@ -92,10 +92,10 @@
                                             <th scope="col">
                                                 Agrupacion Politica
                                             </th>
-                                            <th scope="col">Presidente</th>
+                                            {{-- <th scope="col">Presidente</th>
                                             <th scope="col">
                                                 Diputado Nacional
-                                            </th>
+                                            </th> --}}
                                             <th scope="col">Gobernador Prov</th>
                                             <th scope="col">Diputado Prov</th>
                                             <th scope="col">Senador Prov</th>
@@ -115,7 +115,7 @@
                                                
                                             </td>
                                                 
-                                            <td>
+                                            {{-- <td>
                                                 @foreach ($datos as $dato)
 
                                                     @if ($dato->Numero == $item->numero)
@@ -130,9 +130,9 @@
                                                     @endif
                                                     
                                                 @endforeach
-                                            </td>
+                                            </td> --}}
 
-                                            <td>
+                                            {{-- <td>
                                                     @foreach ($datos as $dato)
     
                                                         @if ($dato->Numero == $item->numero)
@@ -147,7 +147,7 @@
                                                         @endif
                                                         
                                                     @endforeach
-                                                </td>
+                                                </td> --}}
 
                                                 <td>
                                                         @foreach ($datos as $dato)

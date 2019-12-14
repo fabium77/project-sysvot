@@ -114,7 +114,19 @@ class EscrutinioController extends Controller
         inner join mesas on comicios_has_mesas.Mesas_idMesas = mesas.idMesas
         where mesas.idMesas = '$numeroMesa' limit 1");
         
-       
+        $datito = DB::table('escrutinios')
+                    ->join('comicios_has_mesas', 'escrutinios.Comicios_has_Mesas', '=', 'comicios_has_mesas.idComiciosHasMesas')
+                    ->join('mesas', 'comicios_has_mesas.Mesas_idMesas', '=', 'mesas.idMesas')
+                    ->join('listainterna_has_cargoselectivos', 'escrutinios.ListaInter_has_CargosElectivos', '=', 'listainterna_has_cargoselectivos.idListInternaHasCargElectivo')
+                    ->join('listainternas', 'listainterna_has_cargoselectivos.ListaInterna_idListaInterna', '=', 'listainternas.idListaInterna')
+                    ->select('escrutinios.idEscrutinios','mesas.numero as NumeroMesa','Comicios_has_Mesas.CantidadElectores as CantElectores','listainternas.nombre as ListaInterna','escrutinios.voto as Voto','listainterna_has_cargoselectivos.idListInternaHasCargElectivo as listainterhascarg')
+                    ->where('mesas.idMesas','=', $numeroMesa)
+                    ->get();
+        //dd($datito);
+
+
+
+
         $datos = DB::select("SELECT 
         
         mesas.numero as Numero_Mesa,
@@ -156,34 +168,35 @@ class EscrutinioController extends Controller
     {
         
 
-        $input = $request->all();
+        // $input = $request->all();
         
-        //Busco mesa
-        $mesa = Mesa::where('numero', '=', $input['mesa'])->firstOrFail();
+        // //Busco mesa
+        // $mesa = Mesa::where('numero', '=', $input['mesa'])->firstOrFail();
         
        
-            $comicio_mesa = Comicios_has_mesa::where('Mesas_idMesas', '=', $mesa->idMesas)->firstOrFail();
-            $listas = Listainterna_has_cargoselectivo::all();
+        //     $comicio_mesa = Comicios_has_mesa::where('Mesas_idMesas', '=', $mesa->idMesas)->firstOrFail();
+        //     $listas = Listainterna_has_cargoselectivo::all();
                 
-            foreach($listas as $lista) {
-                $voto = 0;
-                if($lista->idListInternaHasCargElectivo <= 6 || $lista->idListInternaHasCargElectivo >= 26) {
-                    $voto = $input[$lista->idListInternaHasCargElectivo];
-                }
-                $registro = [
-                    'Comicios_has_Mesas' => $comicio_mesa->idComiciosHasMesas,
-                    'ListaInter_has_CargosElectivos' => $lista->idListInternaHasCargElectivo,
-                    'voto' => $voto,
-                    'timestamp' => \Carbon\Carbon::now()->toDateTimeString(),
-                    'usuario' => auth()->user()->id
-                ];
+        //     foreach($listas as $lista) {
+        //         $voto = 0;
+        //         if($lista->idListInternaHasCargElectivo <= 6 || $lista->idListInternaHasCargElectivo >= 26) {
+        //             $voto = $input[$lista->idListInternaHasCargElectivo];
+        //         }
+        //         $registro = [
+        //             'Comicios_has_Mesas' => $comicio_mesa->idComiciosHasMesas,
+        //             'ListaInter_has_CargosElectivos' => $lista->idListInternaHasCargElectivo,
+        //             'voto' => $voto,
+        //             'timestamp' => \Carbon\Carbon::now()->toDateTimeString(),
+        //             'usuario' => auth()->user()->id
+        //         ];
 
-                Escrutinio::save($registro);
-            }
+        //         Escrutinio::save($registro);
+        //     }
     
-            Comicios_has_mesa::where('Mesas_idMesas', '=', $mesa->idMesas)->update(['votantes' => $input['votos']]);
+        //     Comicios_has_mesa::where('Mesas_idMesas', '=', $mesa->idMesas)->update(['votantes' => $input['votos']]);
                    
-            return redirect()->route('escrutinio.success');
+            // return redirect()->route('escrutinio.success');
+            return 'hola';
             
         
     }
