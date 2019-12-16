@@ -115,8 +115,36 @@
                                 <a data-toggle="collapse" href="#activityTable" role="button" aria-expanded="false" aria-controls="cardCollpase5"><i class="mdi mdi-minus"></i></a>
                                 <a href="javascript: void(0);" data-toggle="remove"><i class="mdi mdi-close"></i></a>
                             </div>
-                            <h4 class="header-title mb-3">Registro de actividad</h4>
+                            <h4 class="header-title mb-3">Registro de actividad - Ultimas Actas Cargadas</h4>
+                              <table class="table table-striped table-bordered">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Operador</th>
+                                    <th scope="col">Mesa Cargada</th>
+                                    <th scope="col">Fecha</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($Actividad as $item)
+                                        <tr>
+                                            <th scope="row">{{$loop->iteration}}</th>
+                                            <td>
+                                                    <a href="{{ route('users.show', $item->iduser) }}">
+                                                            {{$item->Usuario}}
+                                                    </a>
+                                            </td>
 
+                                            <td>
+                                                <a href="{{ route('mesas.show', $item->idMesa) }}">
+                                                    {{ $item->numero }}
+                                                </a>
+                                            </td>
+                                            <td>{{ \Carbon\Carbon::parse($item->created_at)->diffForHumans() }}</td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                              </table>
                             
 
                         </div> <!-- end card-box-->

@@ -132,6 +132,12 @@
                                                         <span class="d-none d-sm-inline">Juntos Por el Cambio</span>
                                                     </a>
                                                 </li>
+                                                <li class="nav-item" data-target-form="#votnul">
+                                                    <a href="#votnul" data-toggle="tab" class="nav-link">
+                                                        <span class="number"> </span>
+                                                        <span class="d-none d-sm-inline">Votos en Blanco</span>
+                                                    </a>
+                                                </li>
                                                 <li class="nav-item" data-target-form="#finForm">
                                                     <a href="#fin" data-toggle="tab" class="nav-link">
                                                         <span class="number">Fin</span>

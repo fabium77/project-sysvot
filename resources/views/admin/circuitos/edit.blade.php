@@ -25,7 +25,8 @@
                         <div class="row">
                             <div class="card-body">
                                 @include('admin.circuitos.fragment.error')
-                                {!! Form::model($circuito, ['route' => ['circuitos.update', $circuito->idCircuitos],
+                               
+                               {!! Form::model($circuito, ['route' => ['circuitos.update', $circuito->idCircuitos],
                                 'method' => 'PUT']) !!}
                                     @include('admin.circuitos.partials.form')
                                 {!! Form::close() !!}                            

@@ -311,6 +311,79 @@
         </div>
     </div>
 
+    <div class="tab-pane fade" id="votnul">
+        <div id="votnul" class="form-horizontal">
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group row mb-3">
+                        {{ Form::label('35', 'Gobernador', ['class' => 'col-md-3 col-form-label']) }}
+                        <div class="col-md-9">
+                            {{ Form::number('35', null, ['class' => 'form-control']) }}
+                        </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                        {{ Form::label('36', 'Senadores', ['class' => 'col-md-3 col-form-label']) }}
+                        <div class="col-md-9">
+                            {{ Form::number('36', null, ['class' => 'form-control']) }}
+                        </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                        {{ Form::label('37', 'Diputados', ['class' => 'col-md-3 col-form-label']) }}
+                        <div class="col-md-9">
+                            {{ Form::number('37', null, ['class' => 'form-control']) }}
+                        </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                        {{ Form::label('38', 'Intendente', ['class' => 'col-md-3 col-form-label']) }}
+                        <div class="col-md-9">
+                            {{ Form::number('38', null, ['class' => 'form-control']) }}
+                        </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                        {{ Form::label('39', 'Concejales', ['class' => 'col-md-3 col-form-label']) }}
+                        <div class="col-md-9">
+                            {{ Form::number('39', null, ['class' => 'form-control']) }}
+                        </div>
+                    </div>
+                </div> 
+                {{-- end col --}}
+                {{-- <div class="col-12">
+                    <div class="form-group row mb-3">
+                        <label class="col-md-3 col-form-label" for="gobernador">Gobernador</label>
+                        <div class="col-md-9">
+                            <input type="number" class="form-control" id="gobernador" name="gobernador" required>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                        <label class="col-md-3 col-form-label" for="diputados"> Diputados</label>
+                        <div class="col-md-9">
+                            <input type="number" id="diputados" name="diputados" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                        <label class="col-md-3 col-form-label" for="senadores"> Senadores</label>
+                        <div class="col-md-9">
+                            <input type="number" id="senadores" name="senadores" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                        <label class="col-md-3 col-form-label" for="intendente"> Intendente</label>
+                        <div class="col-md-9">
+                            <input type="number" id="intendente" name="intendente" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                        <label class="col-md-3 col-form-label" for="concejales"> Concejales</label>
+                        <div class="col-md-9">
+                            <input type="number" id="concejales" name="concejales" class="form-control" required>
+                        </div>
+                    </div>
+                </div> <!-- end col --> --}}
+            </div> 
+            {{-- end row --}}
+        </div>
+    </div>
+
     <div class="tab-pane fade" id="fin">
         <div id="finForm" class="form-horizontal">
             <div class="row">

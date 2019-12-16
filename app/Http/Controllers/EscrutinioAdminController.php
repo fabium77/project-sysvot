@@ -42,6 +42,8 @@ class EscrutinioAdminController extends Controller
 
         $escrutinioAdmins = Escrutinio::get();
 
+      
+
         $listainternas = Listainterna::pluck('nombre', 'idListaInterna')->prepend('Seleccionar ', '');
 
         $cargoselectivos = Cargoselectivo::pluck('nombre', 'idCargosElectivos')->prepend('Seleccionar ', '');

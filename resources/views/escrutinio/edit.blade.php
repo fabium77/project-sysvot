@@ -152,12 +152,16 @@
                                                 </li>
                                             @endforeach --}}
 
-                                            {!! Form::model([$datos, 'route' => 'escrutinio.update']) !!}
+                                            {!! Form::model($datos, ['route' => ['escrutinio.update', 32],
+                                            'method' => 'PUT']) !!}
+                                                @include('escrutinio.partials.form-edit')
+                                            {!! Form::close() !!}  
+
+                                            {{-- {!! Form::model([$datos, 'route' => 'escrutinio.success' ]) !!}
                                                 @csrf
                                                 @include('escrutinio.partials.form-edit')
                                                 @method('PUT')
-                                                
-                                            {!! Form::close() !!}
+                                            {!! Form::close() !!} --}}
 
                                             {{-- <a href="{{ route('actualizardatos', $datos) }}" type="submit">Enviar datos</a> --}}
 

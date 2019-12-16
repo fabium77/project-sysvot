@@ -10,8 +10,10 @@ class Escrutinio extends Model
 
     protected $primaryKey = 'idEscrutinios';
 
+
     protected $fillable = [
-        'Comicios_has_Mesas', 'ListaInter_has_CargosElectivos', 'voto', 'usuario', 
+        'Comicios_has_Mesas', 'ListaInter_has_CargosElectivos', 'voto', 'usuario', 'created_at',
+        'updated_at'
     ];
     
 }
